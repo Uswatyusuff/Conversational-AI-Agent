@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "wH4xD4wpVn0=",
+  "success": true,
+  "projectFilePath": "/Users/samikhafeez/Desktop/Chatbot/CouncilChatbotPrototype.csproj",
+  "expectedPackageFiles": [
+    "/Users/samikhafeez/.nuget/packages/microsoft.aspnetcore.jsonpatch/10.0.2/microsoft.aspnetcore.jsonpatch.10.0.2.nupkg.sha512",
+    "/Users/samikhafeez/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/10.0.2/microsoft.aspnetcore.mvc.newtonsoftjson.10.0.2.nupkg.sha512",
+    "/Users/samikhafeez/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/samikhafeez/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "projectPath": "/Users/samikhafeez/Desktop/Chatbot/CouncilChatbotPrototype.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/samikhafeez/Desktop/Chatbot/CouncilChatbotPrototype.csproj",
+      "targetGraphs": []
+    }
+  ]
+}

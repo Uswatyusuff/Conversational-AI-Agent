@@ -1,0 +1,207 @@
+{"ts":"2026-02-10T15:51:50.297811Z","userMessage":"help me","service":"Unknown"}
+{"ts":"2026-02-10T15:52:02.423188Z","userMessage":"Council Tax","service":"Council Tax"}
+{"ts":"2026-02-10T16:24:57.975727Z","userMessage":"Council Tax","service":"Council Tax"}
+{"ts":"2026-02-10T16:57:39.779921Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"Council Ta","matchedService":"","score":1}
+{"ts":"2026-02-10T16:57:45.228543Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"Council Tax","matchedService":"","score":1}
+{"ts":"2026-02-11T23:57:20.300349Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Council Tax","matchedService":"","score":1}
+{"ts":"2026-02-11T23:57:23.65013Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Waste \u0026 Bins","matchedService":"","score":1}
+{"ts":"2026-02-11T23:57:24.715049Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Benefits","matchedService":"","score":1}
+{"ts":"2026-02-11T23:57:25.507344Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Education","matchedService":"","score":1}
+{"ts":"2026-02-12T00:01:23.990365Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"when is my bin collection","matchedService":"Waste \u0026 Bins","score":2}
+{"ts":"2026-02-12T00:01:57.940054Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for school admissions","matchedService":"Education","score":4}
+{"ts":"2026-02-12T00:03:12.382206Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"Am I eligible for benefits?","matchedService":"Benefits \u0026 Support","score":4}
+{"ts":"2026-02-12T00:12:22.920221Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Benefits","matchedService":"Benefits \u0026 Support","score":4}
+{"ts":"2026-02-12T00:12:28.543667Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Council Tax","matchedService":"Council Tax","score":3}
+{"ts":"2026-02-12T00:12:30.851658Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Waste \u0026 Bins","matchedService":"Waste \u0026 Bins","score":3}
+{"ts":"2026-02-12T00:12:35.430673Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Benefits","matchedService":"Benefits \u0026 Support","score":4}
+{"ts":"2026-02-12T00:12:36.972614Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Education","matchedService":"Benefits \u0026 Support","score":2}
+{"ts":"2026-02-12T00:12:37.963553Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Education","matchedService":"Benefits \u0026 Support","score":2}
+{"ts":"2026-02-12T00:12:38.582451Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Education","matchedService":"Benefits \u0026 Support","score":2}
+{"ts":"2026-02-12T00:12:39.346636Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Benefits","matchedService":"Benefits \u0026 Support","score":4}
+{"ts":"2026-02-12T00:12:47.847771Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"My bin wasn\u0027t collected","matchedService":"Council Tax","score":0}
+{"ts":"2026-02-12T00:13:01.480202Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want help with payment","matchedService":"Council Tax","score":4}
+{"ts":"2026-02-12T00:15:51.266192Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection.","matchedService":"Waste \u0026 Bins","score":2}
+{"ts":"2026-02-12T00:16:06.502086Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"My bin wasn\u0027t collected","matchedService":"Council Tax","score":0}
+{"ts":"2026-02-12T00:16:16.812597Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"contact details","matchedService":"Council Tax","score":0}
+{"ts":"2026-02-12T00:16:28.068523Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want help with contact details","matchedService":"Benefits \u0026 Support","score":2}
+{"ts":"2026-02-12T00:29:10.833213Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I transfer my child to another school?","matchedService":"Education","score":2}
+{"ts":"2026-02-12T00:29:31.690113Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"transfer school","matchedService":"Education","score":2}
+{"ts":"2026-02-12T00:29:43.342549Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I am applying for primary school","matchedService":"Education","score":4}
+{"ts":"2026-02-12T00:30:09.183889Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need emergency financial help","matchedService":"Benefits \u0026 Support","score":4}
+{"ts":"2026-02-12T00:30:42.217672Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I am in immediate danger.","matchedService":"","score":1}
+{"ts":"2026-02-12T00:30:53.208757Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I am in immediate danger.","matchedService":"","score":1}
+{"ts":"2026-02-12T00:32:58.358357Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How to apply for primary school","matchedService":"Education","score":4}
+{"ts":"2026-02-12T00:37:44.613885Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"Special Educational Needs","matchedService":"Education","score":3}
+{"ts":"2026-02-12T00:51:24.756498Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my council tax balance?","matchedService":"Council Tax","score":5}
+{"ts":"2026-02-12T00:51:37.731858Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my council tax balance","matchedService":"Council Tax","score":5}
+{"ts":"2026-02-12T00:52:00.990489Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my council tax balance?","matchedService":"Council Tax","score":5}
+{"ts":"2026-02-12T00:52:34.141951Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my council tax balance?","matchedService":"Council Tax","score":5}
+{"ts":"2026-02-12T00:52:48.556482Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for a school place?","matchedService":"Education","score":4}
+{"ts":"2026-02-12T00:52:58.1693Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for a school place?","matchedService":"Education","score":4}
+{"ts":"2026-02-12T00:53:06.999925Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for a school place?","matchedService":"Education","score":4}
+{"ts":"2026-02-12T00:53:17.951829Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for a school place?","matchedService":"Education","score":4}
+{"ts":"2026-02-12T00:54:51.185394Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":4}
+{"ts":"2026-02-12T00:55:08.823633Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":4}
+{"ts":"2026-02-12T00:55:12.726316Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":4}
+{"ts":"2026-02-12T00:55:15.880268Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":4}
+{"ts":"2026-02-12T00:57:25.653448Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Education","matchedService":"Benefits \u0026 Support","score":2}
+{"ts":"2026-02-12T00:57:26.336594Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Benefits","matchedService":"Benefits \u0026 Support","score":4}
+{"ts":"2026-02-12T00:57:27.078488Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Waste \u0026 Bins","matchedService":"Waste \u0026 Bins","score":3}
+{"ts":"2026-02-12T00:57:28.536776Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Council Tax","matchedService":"Council Tax","score":3}
+{"ts":"2026-02-12T00:57:35.022006Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"council tax","matchedService":"Council Tax","score":3}
+{"ts":"2026-02-12T00:57:48.720744Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"bin collection.","matchedService":"Waste \u0026 Bins","score":2}
+{"ts":"2026-02-12T01:09:36.094534Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Council Tax","matchedService":"Council Tax","score":10}
+{"ts":"2026-02-12T01:09:37.737238Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Council Tax","matchedService":"Council Tax","score":10}
+{"ts":"2026-02-12T01:09:38.361102Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Council Tax","matchedService":"Council Tax","score":10}
+{"ts":"2026-02-12T01:09:40.227768Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Council Tax","matchedService":"Council Tax","score":10}
+{"ts":"2026-02-12T01:09:41.458184Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Council Tax","matchedService":"Council Tax","score":10}
+{"ts":"2026-02-12T01:09:42.352681Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Council Tax","matchedService":"Council Tax","score":10}
+{"ts":"2026-02-12T01:09:43.540185Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Waste \u0026 Bins","matchedService":"Waste \u0026 Bins","score":7}
+{"ts":"2026-02-12T01:09:44.190022Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Waste \u0026 Bins","matchedService":"Waste \u0026 Bins","score":7}
+{"ts":"2026-02-12T01:09:44.923518Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Waste \u0026 Bins","matchedService":"Waste \u0026 Bins","score":7}
+{"ts":"2026-02-12T01:09:45.473694Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Waste \u0026 Bins","matchedService":"Waste \u0026 Bins","score":7}
+{"ts":"2026-02-12T01:09:45.957324Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Waste \u0026 Bins","matchedService":"Waste \u0026 Bins","score":7}
+{"ts":"2026-02-12T01:09:46.672403Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Waste \u0026 Bins","matchedService":"Waste \u0026 Bins","score":7}
+{"ts":"2026-02-12T01:14:42.346942Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with Waste \u0026 Bins","matchedService":"Waste \u0026 Bins","score":7}
+{"ts":"2026-02-12T01:16:17.85518Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":18}
+{"ts":"2026-02-12T01:16:19.24082Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":15}
+{"ts":"2026-02-12T01:16:20.254871Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for Council Tax Support?","matchedService":"Council Tax","score":12}
+{"ts":"2026-02-12T01:16:21.055261Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for a school place?","matchedService":"Education","score":17}
+{"ts":"2026-02-12T01:16:53.506295Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"clear screen","matchedService":"Council Tax","score":0}
+{"ts":"2026-02-12T01:17:08.272012Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":18}
+{"ts":"2026-02-12T01:17:37.797312Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is the bin collection","matchedService":"Waste \u0026 Bins","score":8}
+{"ts":"2026-02-12T01:17:55.184613Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":10}
+{"ts":"2026-02-12T01:18:02.859288Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":18}
+{"ts":"2026-02-12T01:59:53.579214Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin day?","matchedService":"Waste \u0026 Bins","score":10}
+{"ts":"2026-02-12T01:59:59.461188Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"What are the next steps?","matchedService":"Waste \u0026 Bins","score":5}
+{"ts":"2026-02-12T02:00:08.023258Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"What are the next steps?","matchedService":"Waste \u0026 Bins","score":5}
+{"ts":"2026-02-12T02:00:10.472617Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply?","matchedService":"Education","score":6}
+{"ts":"2026-02-12T02:00:15.638949Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"What if I missed a payment?","matchedService":"Council Tax","score":8}
+{"ts":"2026-02-12T02:00:24.432038Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for a school place?","matchedService":"Education","score":17}
+{"ts":"2026-02-12T02:00:29.581217Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":18}
+{"ts":"2026-02-12T02:00:30.556162Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":15}
+{"ts":"2026-02-12T02:01:08.4072Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"help","matchedService":"Benefits \u0026 Support","score":5}
+{"ts":"2026-02-12T02:15:15.582548Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for a school place?","matchedService":"Education","score":19}
+{"ts":"2026-02-12T02:15:21.596151Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"What are the next steps?","matchedService":"Waste \u0026 Bins","score":5}
+{"ts":"2026-02-12T02:16:30.187524Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"council","matchedService":"Council Tax","score":3}
+{"ts":"2026-02-12T02:16:41.996366Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"1","matchedService":"Council Tax","score":0}
+{"ts":"2026-02-12T02:16:52.647732Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"contact details","matchedService":"Council Tax","score":0}
+{"ts":"2026-02-12T02:16:59.892193Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"eligibility","matchedService":"Benefits \u0026 Support","score":6}
+{"ts":"2026-02-12T02:17:07.422275Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"1","matchedService":"Benefits \u0026 Support","score":0}
+{"ts":"2026-02-12T02:17:11.625749Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"payment","matchedService":"Council Tax","score":8}
+{"ts":"2026-02-12T04:05:55.63353Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"Council tax","matchedService":"Council Tax","score":11}
+{"ts":"2026-02-12T04:06:08.777868Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"1","matchedService":"Council Tax","score":0}
+{"ts":"2026-02-12T04:06:18.661712Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"contact details","matchedService":"Council Tax","score":0}
+{"ts":"2026-02-12T04:06:26.182141Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"contact details","matchedService":"Council Tax","score":0}
+{"ts":"2026-02-12T04:06:32.211891Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"eligibility","matchedService":"Benefits \u0026 Support","score":6}
+{"ts":"2026-02-12T04:06:41.622226Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"2","matchedService":"Benefits \u0026 Support","score":0}
+{"ts":"2026-02-12T04:06:53.354007Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"payment","matchedService":"Council Tax","score":8}
+{"ts":"2026-02-12T04:07:05.610659Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":20}
+{"ts":"2026-02-12T04:07:09.600253Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"Who can I contact?","matchedService":"Council Tax","score":0}
+{"ts":"2026-02-12T04:07:12.201266Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"What if I missed a payment?","matchedService":"Council Tax","score":8}
+{"ts":"2026-02-12T04:07:14.430464Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"What are the next steps?","matchedService":"Waste \u0026 Bins","score":5}
+{"ts":"2026-02-12T04:07:16.155529Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply?","matchedService":"Education","score":7}
+{"ts":"2026-02-12T04:07:18.495833Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"Who can I contact?","matchedService":"Education","score":0}
+{"ts":"2026-02-12T04:07:20.738225Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"What if I missed a payment?","matchedService":"Council Tax","score":8}
+{"ts":"2026-02-12T04:24:44.681927Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","detectedService":"Council Tax","score":18,"mode":"faq"}
+{"ts":"2026-02-12T04:24:48.540722Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"bin","matchedService":"Council Tax","detectedService":"Waste \u0026 Bins","score":0,"mode":"follow-up"}
+{"ts":"2026-02-12T04:24:57.905675Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"details","matchedService":"Council Tax","detectedService":"Unknown","score":0,"mode":"follow-up"}
+{"ts":"2026-02-12T04:25:01.454492Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply?","matchedService":"Education","detectedService":"Unknown","score":6,"mode":"faq"}
+{"ts":"2026-02-12T04:25:06.486482Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","detectedService":"Council Tax","score":18,"mode":"faq"}
+{"ts":"2026-02-12T04:25:14.255306Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"council tax","matchedService":"Council Tax","detectedService":"Council Tax","score":10,"mode":"faq"}
+{"ts":"2026-02-12T04:40:58.585229Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":20}
+{"ts":"2026-02-12T04:41:02.301146Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"council","matchedService":"Council Tax","score":3}
+{"ts":"2026-02-12T04:41:14.071415Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"apply for a council tax","matchedService":"Council Tax","score":13}
+{"ts":"2026-02-12T04:41:27.442155Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collected?","matchedService":"Waste \u0026 Bins","score":7}
+{"ts":"2026-02-12T04:41:42.874571Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"My bin is not collected.","matchedService":"Waste \u0026 Bins","score":7}
+{"ts":"2026-02-12T04:49:56.382026Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"my bin didn\u0027t come","matchedService":"Waste \u0026 Bins","score":0.4016096}
+{"ts":"2026-02-12T04:50:10.817838Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I get financial help?","matchedService":"Benefits \u0026 Support","score":0.18898226}
+{"ts":"2026-02-12T04:50:41.447111Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"i moved house, what do I do?","matchedService":"Waste \u0026 Bins","score":0.30618623}
+{"ts":"2026-02-12T04:52:14.752949Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want help with payments","matchedService":"Unknown","score":0.109108955}
+{"ts":"2026-02-12T04:52:26.230657Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"Benefits","matchedService":"Benefits \u0026 Support","score":0.60246414}
+{"ts":"2026-02-12T04:52:48.441754Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I am not sure I want benefits","matchedService":"Benefits \u0026 Support","score":0.47628975}
+{"ts":"2026-02-12T04:52:57.651972Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for Council Tax Support?","matchedService":"Benefits \u0026 Support","score":0.65759605}
+{"ts":"2026-02-12T04:53:38.352184Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How can I get financial help","matchedService":"Benefits \u0026 Support","score":0.16903086}
+{"ts":"2026-02-12T05:02:08.183412Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with payments","matchedService":"Council Tax","score":0.55339867}
+{"ts":"2026-02-12T05:02:17.18738Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I\u0027m struggling with bills","matchedService":"Council Tax","score":0.6172134}
+{"ts":"2026-02-12T05:02:32.617259Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"My bin wasn\u0027t collected","matchedService":"Waste \u0026 Bins","score":0.40824834}
+{"ts":"2026-02-12T05:02:44.317299Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I move house?","matchedService":"Waste \u0026 Bins","score":0.16666667}
+{"ts":"2026-02-12T05:03:01.863338Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need emergency money help","matchedService":"Benefits \u0026 Support","score":0.39283714}
+{"ts":"2026-02-12T05:03:13.66914Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I change my child\u0027s school?","matchedService":"Education","score":0.28603876}
+{"ts":"2026-02-12T06:25:35.605674Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection day?","matchedService":"Unknown","similarity":0.7572366}
+{"ts":"2026-02-12T06:25:46.781777Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"council","matchedService":"Unknown","similarity":0.51905435}
+{"ts":"2026-02-12T06:25:55.469716Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"benefits","matchedService":"Unknown","similarity":0.31720284}
+{"ts":"2026-02-12T06:26:11.658296Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want my bin collected","matchedService":"Unknown","similarity":0.66562337}
+{"ts":"2026-02-12T06:26:15.247245Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"Who can I contact?","matchedService":"Unknown","similarity":0.26885307}
+{"ts":"2026-02-12T06:26:17.45924Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply?","matchedService":"Unknown","similarity":0.42144477}
+{"ts":"2026-02-12T06:26:20.550846Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"What are the next steps?","matchedService":"Unknown","similarity":0.2700972}
+{"ts":"2026-02-12T06:32:38.398411Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Unknown","similarity":0.77384716}
+{"ts":"2026-02-12T06:32:45.712006Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"Council tax","matchedService":"Unknown","similarity":0.7498851}
+{"ts":"2026-02-12T06:38:15.317361Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Unknown","similarity":0.77384716}
+{"ts":"2026-02-12T06:38:24.94882Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"council tax","matchedService":"Unknown","similarity":0.7498851}
+{"ts":"2026-02-12T06:38:28.068907Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply?","matchedService":"Unknown","similarity":0.42144477}
+{"ts":"2026-02-12T06:38:29.034951Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"Who can I contact?","matchedService":"Unknown","similarity":0.26885307}
+{"ts":"2026-02-12T06:38:29.943754Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"What if I missed a payment?","matchedService":"Unknown","similarity":0.39794153}
+{"ts":"2026-02-12T06:38:56.28883Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"waste","matchedService":"Unknown","similarity":0.4623215}
+{"ts":"2026-02-12T06:39:03.600382Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"school admissions","matchedService":"Unknown","similarity":0.5253265}
+{"ts":"2026-02-12T06:44:14.124368Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Unknown","similarity":0.7385152}
+{"ts":"2026-02-12T06:44:30.068877Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"benefits","matchedService":"Unknown","similarity":0.32627553}
+{"ts":"2026-02-12T06:44:42.355766Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want my bin collection","matchedService":"Unknown","similarity":0.5339408}
+{"ts":"2026-02-12T06:44:53.260238Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"school admissions","matchedService":"Unknown","similarity":0.5703379}
+{"ts":"2026-02-12T06:47:59.741969Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"council tax","matchedService":"Council Tax","similarity":0.656074}
+{"ts":"2026-02-12T06:48:12.614283Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want my bin collected","matchedService":"Waste \u0026 Bins","similarity":0.5803026}
+{"ts":"2026-02-12T06:48:34.437856Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want financial support","matchedService":"Waste \u0026 Bins","similarity":0.4155905}
+{"ts":"2026-02-12T06:48:44.301657Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need support","matchedService":"Waste \u0026 Bins","similarity":0.3436892}
+{"ts":"2026-02-12T06:48:48.941539Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"payment","matchedService":"Waste \u0026 Bins","similarity":0.35146835}
+{"ts":"2026-02-12T06:48:53.517941Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"contact details","matchedService":"Waste \u0026 Bins","similarity":0.2532996}
+{"ts":"2026-02-12T06:53:34.368838Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want financial support","matchedService":"Benefits \u0026 Support","similarity":0.4940811}
+{"ts":"2026-02-12T06:53:56.437976Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"benefits","matchedService":"Benefits \u0026 Support","similarity":0.31720284}
+{"ts":"2026-02-12T06:54:01.874551Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"application","matchedService":"Benefits \u0026 Support","similarity":0.23229416}
+{"ts":"2026-02-12T06:54:07.586678Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"payment","matchedService":"Benefits \u0026 Support","similarity":0.32002112}
+{"ts":"2026-02-12T06:54:15.787171Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want my bin collection","matchedService":"Waste \u0026 Bins","similarity":0.6501494}
+{"ts":"2026-02-12T06:54:18.872047Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"bin","matchedService":"Waste \u0026 Bins","similarity":0.5725825}
+{"ts":"2026-02-12T06:54:22.285433Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"collection","matchedService":"Waste \u0026 Bins","similarity":0.37621802}
+{"ts":"2026-02-12T06:54:28.885121Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"school","matchedService":"Education","similarity":0.25791147}
+{"ts":"2026-02-12T23:52:19.553585Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"bin day","matchedService":"Waste \u0026 Bins","similarity":0.625524}
+{"ts":"2026-02-12T23:52:29.528987Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"help","matchedService":"Waste \u0026 Bins","similarity":0.1925281}
+{"ts":"2026-02-12T23:52:35.62573Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"waste","matchedService":"Waste \u0026 Bins","similarity":0.4623215}
+{"ts":"2026-02-12T23:52:43.879989Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"benefits","matchedService":"Benefits \u0026 Support","similarity":0.31720284}
+{"ts":"2026-02-12T23:52:55.649459Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"when is my bin collection","matchedService":"Waste \u0026 Bins","similarity":0.75747234}
+{"ts":"2026-02-12T23:53:09.841128Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection","matchedService":"Waste \u0026 Bins","similarity":0.75747234}
+{"ts":"2026-02-12T23:54:29.859006Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"tax","matchedService":"Waste \u0026 Bins","similarity":0.46586785}
+{"ts":"2026-02-12T23:54:44.244625Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"how much council tax do I need to pay","matchedService":"Council Tax","similarity":0.68567526}
+{"ts":"2026-02-12T23:55:56.819794Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"what about discounts?","matchedService":"Council Tax","similarity":0.33325842}
+{"ts":"2026-02-12T23:56:12.76304Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need help with council tax payments","matchedService":"Council Tax","similarity":0.8048818}
+{"ts":"2026-02-13T00:14:42.352649Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"how much tax should I pay?","matchedService":"Council Tax","similarity":0.35338205}
+{"ts":"2026-02-13T00:15:03.066719Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I have missed my payment for council tax.","matchedService":"Council Tax","similarity":0.74206656}
+{"ts":"2026-02-13T00:18:30.792923Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"how much tax should I pay","matchedService":"Council Tax","similarity":0.40483564}
+{"ts":"2026-02-13T00:18:39.450908Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I have missed my tax payment","matchedService":"Council Tax","similarity":0.50690734}
+{"ts":"2026-02-13T00:19:12.334073Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I have missed my council tax payment","matchedService":"Council Tax","similarity":0.75025904}
+{"ts":"2026-02-13T00:19:44.60119Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"how much tax shoud I pay","matchedService":"Council Tax","similarity":0.33403817}
+{"ts":"2026-02-13T00:19:57.68635Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"how much council tax should I pay","matchedService":"Council Tax","similarity":0.7146852}
+{"ts":"2026-02-13T00:20:16.115785Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"how much council tax should I pay","matchedService":"Council Tax","similarity":0.7146852}
+{"ts":"2026-02-13T00:33:41.719666Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","similarity":0.77384716}
+{"ts":"2026-02-13T00:42:27.394631Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want financial help","matchedService":"Council Tax","similarity":0.45558307}
+{"ts":"2026-02-13T05:44:17.638613Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","similarity":0.77384716}
+{"ts":"2026-02-13T05:44:28.93226Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"help me","matchedService":"Council Tax","similarity":0.23574395}
+{"ts":"2026-02-13T05:44:38.648758Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection","matchedService":"Waste \u0026 Bins","similarity":0.75747234}
+{"ts":"2026-02-13T05:44:57.219211Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin supposed to be collected?","matchedService":"Waste \u0026 Bins","similarity":0.7420511}
+{"ts":"2026-02-13T06:23:06.472269Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.77384716}
+{"ts":"2026-02-13T06:23:15.218423Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"when is my bin collection.","matchedService":"Waste \u0026 Bins","score":0.762286}
+{"ts":"2026-02-13T06:23:29.655014Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"when will my bin be collected","matchedService":"Waste \u0026 Bins","score":0.74035174}
+{"ts":"2026-02-13T06:50:24.787069Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":0.7572366}
+{"ts":"2026-02-13T06:50:34.59026Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want financial support","matchedService":"Benefits \u0026 Support","score":0.4940811}
+{"ts":"2026-02-13T06:50:46.158244Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I need financial support.","matchedService":"Benefits \u0026 Support","score":0.5175836}
+{"ts":"2026-02-13T06:50:55.428183Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"when will my bin be collected","matchedService":"Waste \u0026 Bins","score":0.74035174}
+{"ts":"2026-02-13T06:51:27.661036Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want benefits","matchedService":"Benefits \u0026 Support","score":0.36822888}
+{"ts":"2026-02-13T06:51:35.235537Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want support with money","matchedService":"Benefits \u0026 Support","score":0.47544816}
+{"ts":"2026-02-13T06:51:57.567902Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want to get school admission in bradford","matchedService":"Education","score":0.5725175}
+{"ts":"2026-02-13T06:52:09.341136Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want to get school admission in bradford","matchedService":"Education","score":0.5725175}
+{"ts":"2026-02-13T15:56:23.695244Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.7694539}
+{"ts":"2026-02-13T15:56:36.938887Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.7694539}
+{"ts":"2026-02-13T16:13:43.451999Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want to get school admission?","matchedService":"Education","score":0.6215031}
+{"ts":"2026-02-13T16:14:11.576746Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want to get school admission?","matchedService":"Education","score":0.6215031}
+{"ts":"2026-02-13T16:31:50.513889Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for a school place?","matchedService":"Education","score":0.66064376}
+{"ts":"2026-02-13T16:31:51.812564Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for Council Tax Support?","matchedService":"Council Tax","score":0.74176836}
+{"ts":"2026-02-13T17:39:13.800143Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.77384716}
+{"ts":"2026-02-13T17:39:23.029221Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"I want help with council tax","matchedService":"Council Tax","score":0.75708544}

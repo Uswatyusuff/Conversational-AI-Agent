@@ -1,0 +1,165 @@
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/appsettings.Development.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/appsettings.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/Data/embeddings.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/Data/faqs.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/CouncilChatbotPrototype.staticwebassets.runtime.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/CouncilChatbotPrototype.staticwebassets.endpoints.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/CouncilChatbotPrototype
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/CouncilChatbotPrototype.deps.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/CouncilChatbotPrototype.runtimeconfig.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/CouncilChatbotPrototype.pdb
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/Newtonsoft.Json.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/bin/Debug/net10.0/Newtonsoft.Json.Bson.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/CouncilChatbotPrototype.csproj.AssemblyReference.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/rpswa.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/CouncilChatbotPrototype.GeneratedMSBuildEditorConfig.editorconfig
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/CouncilChatbotPrototype.AssemblyInfoInputs.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/CouncilChatbotPrototype.AssemblyInfo.cs
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/CouncilChatbotPrototype.csproj.CoreCompileInputs.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/CouncilChatbotPrototype.MvcApplicationPartsAssemblyInfo.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/rjimswa.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/scopedcss/bundle/CouncilChatbotPrototype.styles.css
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/compressed/tya4agatd4-{0}-5ipweew5fc-5ipweew5fc.gz
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/compressed/niitb0gzxw-{0}-klxgyjflkt-klxgyjflkt.gz
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/staticwebassets.build.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/staticwebassets.build.json.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/staticwebassets.development.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/swae.build.ex.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/CouncilC.ADE8B3FA.Up2Date
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/refint/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/CouncilChatbotPrototype.pdb
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/CouncilChatbotPrototype.genruntimeconfig.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/ref/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype/obj/Debug/net10.0/compressed/8be86xgnah-{0}-7cj4jx0m2v-7cj4jx0m2v.gz
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/appsettings.Development.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/appsettings.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/Data/embeddings.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/Data/faqs.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/CouncilChatbotPrototype.staticwebassets.endpoints.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/CouncilChatbotPrototype.staticwebassets.runtime.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/CouncilChatbotPrototype
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/CouncilChatbotPrototype.deps.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/CouncilChatbotPrototype.runtimeconfig.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/CouncilChatbotPrototype.pdb
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/Newtonsoft.Json.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/Newtonsoft.Json.Bson.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/CouncilChatbotPrototype.csproj.AssemblyReference.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/rpswa.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/CouncilChatbotPrototype.GeneratedMSBuildEditorConfig.editorconfig
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/CouncilChatbotPrototype.AssemblyInfoInputs.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/CouncilChatbotPrototype.AssemblyInfo.cs
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/CouncilChatbotPrototype.csproj.CoreCompileInputs.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/CouncilChatbotPrototype.MvcApplicationPartsAssemblyInfo.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/rjimswa.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/scopedcss/bundle/CouncilChatbotPrototype.styles.css
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/compressed/tya4agatd4-{0}-5ipweew5fc-5ipweew5fc.gz
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/compressed/8be86xgnah-{0}-7cj4jx0m2v-7cj4jx0m2v.gz
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/compressed/niitb0gzxw-{0}-klxgyjflkt-klxgyjflkt.gz
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/staticwebassets.build.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/staticwebassets.build.json.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/staticwebassets.development.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/swae.build.ex.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/CouncilC.ADE8B3FA.Up2Date
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/refint/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/CouncilChatbotPrototype.pdb
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/CouncilChatbotPrototype.genruntimeconfig.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/obj/Debug/net10.0/ref/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver1/bin/Debug/net10.0/Data/vectorstore.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/CouncilChatbotPrototype.csproj.AssemblyReference.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/rpswa.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/CouncilChatbotPrototype.GeneratedMSBuildEditorConfig.editorconfig
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/CouncilChatbotPrototype.AssemblyInfoInputs.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/CouncilChatbotPrototype.AssemblyInfo.cs
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/CouncilChatbotPrototype.csproj.CoreCompileInputs.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/CouncilChatbotPrototype.MvcApplicationPartsAssemblyInfo.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/refint/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/CouncilChatbotPrototype.pdb
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/appsettings.Development.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/Data/embeddings.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/Data/faqs.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/Data/vectorstore.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/CouncilChatbotPrototype.staticwebassets.endpoints.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/appsettings.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/CouncilChatbotPrototype.staticwebassets.runtime.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/CouncilChatbotPrototype
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/CouncilChatbotPrototype.deps.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/CouncilChatbotPrototype.runtimeconfig.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/CouncilChatbotPrototype.pdb
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/Newtonsoft.Json.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/bin/Debug/net10.0/Newtonsoft.Json.Bson.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/rjimswa.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/scopedcss/bundle/CouncilChatbotPrototype.styles.css
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/compressed/tya4agatd4-{0}-5ipweew5fc-5ipweew5fc.gz
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/compressed/8be86xgnah-{0}-7cj4jx0m2v-7cj4jx0m2v.gz
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/compressed/niitb0gzxw-{0}-klxgyjflkt-klxgyjflkt.gz
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/staticwebassets.build.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/staticwebassets.build.json.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/staticwebassets.development.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/swae.build.ex.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/CouncilC.ADE8B3FA.Up2Date
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/CouncilChatbotPrototype.genruntimeconfig.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver2/obj/Debug/net10.0/ref/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/appsettings.Development.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/appsettings.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/Data/embeddings.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/Data/faqs.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/Data/vectorstore.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/CouncilChatbotPrototype.staticwebassets.endpoints.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/Data/faqs.embeddings.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/CouncilChatbotPrototype.staticwebassets.runtime.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/CouncilChatbotPrototype
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/CouncilChatbotPrototype.deps.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/CouncilChatbotPrototype.runtimeconfig.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/CouncilChatbotPrototype.pdb
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/Microsoft.AspNetCore.JsonPatch.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/Newtonsoft.Json.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/bin/Debug/net10.0/Newtonsoft.Json.Bson.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/CouncilChatbotPrototype.csproj.AssemblyReference.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/rpswa.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/CouncilChatbotPrototype.GeneratedMSBuildEditorConfig.editorconfig
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/CouncilChatbotPrototype.AssemblyInfoInputs.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/CouncilChatbotPrototype.AssemblyInfo.cs
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/CouncilChatbotPrototype.csproj.CoreCompileInputs.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/CouncilChatbotPrototype.MvcApplicationPartsAssemblyInfo.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/rjimswa.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/scopedcss/bundle/CouncilChatbotPrototype.styles.css
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/compressed/tya4agatd4-{0}-5ipweew5fc-5ipweew5fc.gz
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/compressed/8be86xgnah-{0}-7cj4jx0m2v-7cj4jx0m2v.gz
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/compressed/niitb0gzxw-{0}-klxgyjflkt-klxgyjflkt.gz
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/staticwebassets.build.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/staticwebassets.build.json.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/staticwebassets.development.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/swae.build.ex.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/CouncilC.ADE8B3FA.Up2Date
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/refint/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/CouncilChatbotPrototype.pdb
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/CouncilChatbotPrototype.genruntimeconfig.cache
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/ref/CouncilChatbotPrototype.dll
+/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver3/obj/Debug/net10.0/CouncilChatbotPrototype.sourcelink.json

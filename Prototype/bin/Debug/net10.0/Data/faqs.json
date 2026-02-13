@@ -1,0 +1,256 @@
+[
+  {
+    "Service": "Council Tax",
+    "Title": "Check your Council Tax balance and bills",
+    "Keywords": ["council tax", "bill", "balance", "statement", "account"],
+    "Answer": "You can view your Council Tax bill and balance by signing in to the Bradford Council online account.",
+    "Responses": [
+      "You can view your Council Tax bill and balance by signing in to the Bradford Council online account.",
+      "Sign in to your Council Tax online account to view bills, balances, and instalments.",
+      "If you can’t access your account, you can request a copy bill or contact the Council Tax team."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/benefits/council-tax/"
+  },
+  {
+    "Service": "Council Tax",
+    "Title": "Apply for a Council Tax discount or exemption",
+    "Keywords": ["discount", "exemption", "single person", "student", "reduction", "council tax"],
+    "Answer": "You may be eligible for a discount or exemption (for example, single person discount or student exemption). Apply online and provide supporting evidence.",
+    "Responses": [
+      "You may be eligible for a discount or exemption, such as single person discount or student exemption.",
+      "Apply online for Council Tax discounts/exemptions and provide supporting evidence where required.",
+      "Eligibility depends on who lives at the property—check the council guidance and apply online."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/benefits/council-tax/"
+  },
+  {
+    "Service": "Council Tax",
+    "Title": "Set up, change, or manage Council Tax direct debit",
+    "Keywords": ["direct debit", "payment", "pay", "installments", "monthly", "council tax"],
+    "Answer": "You can pay Council Tax by direct debit, online card payment, or other payment methods.",
+    "Responses": [
+      "You can pay Council Tax by direct debit, online card payment, or other payment methods.",
+      "Direct debit lets you pay monthly—use the council payment service to set it up or change details.",
+      "If you’ve missed a payment, contact the billing team to discuss options and avoid recovery action."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/benefits/council-tax/"
+  },
+  {
+    "Service": "Council Tax",
+    "Title": "Tell the council you have moved home",
+    "Keywords": ["moved", "moving", "change address", "new address", "house move", "council tax"],
+    "Answer": "If you move home, tell the council your old and new address and your move date so your Council Tax is updated.",
+    "Responses": [
+      "If you move home, tell the council your old and new address and your move date so your Council Tax is updated.",
+      "Report your move as soon as possible to avoid incorrect bills for your old or new property.",
+      "If there are overlapping tenancy dates, contact Council Tax to confirm liability dates."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/benefits/council-tax/"
+  },
+  {
+    "Service": "Council Tax",
+    "Title": "Council Tax arrears, reminders, and enforcement",
+    "Keywords": ["arrears", "reminder", "late", "summons", "debt", "enforcement", "council tax"],
+    "Answer": "If you have missed payments, pay what you can quickly and contact the Council Tax team to discuss an arrangement.",
+    "Responses": [
+      "If you’ve missed payments, pay what you can quickly and contact the Council Tax team to discuss an arrangement.",
+      "Missing instalments can lead to reminders and recovery action—act early to avoid escalation.",
+      "If you’re struggling financially, check if you qualify for Council Tax Support and ask about repayment plans."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/benefits/council-tax/"
+  },
+
+  {
+    "Service": "Waste & Bins",
+    "Title": "Find your bin collection day",
+    "Keywords": ["bin day", "collection day", "when is my bin", "waste collection", "recycling", "bins"],
+    "Answer": "Check your bin collection day using the council bin collection lookup by entering your postcode.",
+    "Responses": [
+      "Check your bin collection day using the council bin collection lookup by entering your postcode.",
+      "The postcode lookup shows your next recycling and general waste collection dates.",
+      "If the lookup isn’t working, use the waste services page or contact the waste team for your schedule."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/bins-recycling-and-waste/"
+  },
+  {
+    "Service": "Waste & Bins",
+    "Title": "Report a missed bin collection",
+    "Keywords": ["missed bin", "not collected", "bin not emptied", "report", "waste", "collection"],
+    "Answer": "If your bin was not collected, check it was out on time and placed correctly, then report a missed collection online.",
+    "Responses": [
+      "If your bin was not collected, check it was out on time and placed correctly, then report a missed collection online.",
+      "Before reporting, make sure the bin wasn’t contaminated or overloaded and the lid was closed.",
+      "If the issue happens repeatedly, keep note of dates and contact the waste service team."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/bins-recycling-and-waste/"
+  },
+  {
+    "Service": "Waste & Bins",
+    "Title": "Request a replacement bin",
+    "Keywords": ["replacement bin", "new bin", "damaged bin", "broken bin", "lost bin", "bins"],
+    "Answer": "If your bin is damaged or missing, you can request a replacement online. You may need your address and the bin type.",
+    "Responses": [
+      "If your bin is damaged or missing, you can request a replacement online.",
+      "You may need to provide your address and whether it’s a general waste or recycling bin.",
+      "If you can’t request online, contact the waste team for support."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/bins-recycling-and-waste/"
+  },
+  {
+    "Service": "Waste & Bins",
+    "Title": "What goes in recycling and what does not",
+    "Keywords": ["recycling", "what can i recycle", "plastic", "cardboard", "glass", "bin rules"],
+    "Answer": "Recycling rules vary by area. Common items include paper, cardboard, and some plastics. Avoid contaminated items.",
+    "Responses": [
+      "Recycling rules vary by area—common items include paper, cardboard, and some plastics.",
+      "Avoid putting contaminated items (food-soiled packaging) in recycling as it may not be accepted.",
+      "If you tell me the item (e.g., ‘pizza box’), I can guide what to do based on typical council rules."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/bins-recycling-and-waste/"
+  },
+  {
+    "Service": "Waste & Bins",
+    "Title": "Book a bulky waste collection",
+    "Keywords": ["bulky waste", "large item", "sofa", "fridge", "collection", "removal"],
+    "Answer": "You can book a bulky waste collection for large household items. Fees may apply depending on items and quantity.",
+    "Responses": [
+      "You can book a bulky waste collection for large household items such as sofas or fridges.",
+      "Fees may apply depending on the number/type of items—check the booking details online.",
+      "Ensure items are accessible at the collection point to avoid missed pickup."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/bins-recycling-and-waste/"
+  },
+
+  {
+    "Service": "Benefits & Support",
+    "Title": "Check if you might be eligible for benefits support",
+    "Keywords": ["benefits", "eligible", "eligibility", "support", "financial help", "help"],
+    "Answer": "Eligibility depends on your circumstances (income, savings, household). Use guidance and calculators to understand options.",
+    "Responses": [
+      "Eligibility depends on your circumstances such as income, savings, and household situation.",
+      "You can use benefits calculators and council guidance to check what support may be available.",
+      "If you share general information (no personal data), I can suggest which support pages to check next."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/benefits/"
+  },
+  {
+    "Service": "Benefits & Support",
+    "Title": "Housing Benefit and Council Tax Support guidance",
+    "Keywords": ["housing benefit", "council tax support", "claim", "application", "low income"],
+    "Answer": "You may qualify for Housing Benefit (if eligible) and/or Council Tax Support. Apply online and provide proof of income, rent, and identity.",
+    "Responses": [
+      "You may qualify for Housing Benefit (if eligible) and/or Council Tax Support depending on your circumstances.",
+      "Applications typically require proof of income, rent details, and identity documents.",
+      "If you are on Universal Credit, some support is handled differently—check council signposting first."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/benefits/"
+  },
+  {
+    "Service": "Benefits & Support",
+    "Title": "Report a change in circumstances",
+    "Keywords": ["change of circumstances", "report change", "job", "income", "moved", "benefits"],
+    "Answer": "Report changes (income, job, moving home, household changes) as soon as possible to avoid overpayments or delays.",
+    "Responses": [
+      "You must report changes such as income, employment, moving home, or household changes as soon as possible.",
+      "Reporting quickly helps prevent overpayments and reduces delays in your claim.",
+      "If you receive Universal Credit, report changes in your UC account and also update the council where required."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/benefits/"
+  },
+  {
+    "Service": "Benefits & Support",
+    "Title": "Universal Credit signposting",
+    "Keywords": ["universal credit", "uc", "dwp", "claim", "benefits"],
+    "Answer": "Universal Credit is managed by the DWP. Claims and payments are handled via your Universal Credit online account.",
+    "Responses": [
+      "Universal Credit is managed by the DWP and is claimed through your Universal Credit online account.",
+      "The council can provide local support and signposting, but UC payments are handled by DWP.",
+      "If you need help while waiting for UC, check local hardship support options."
+    ],
+    "NextStepsUrl": "https://www.gov.uk/universal-credit"
+  },
+  {
+    "Service": "Benefits & Support",
+    "Title": "Help with urgent financial hardship",
+    "Keywords": ["hardship", "emergency", "crisis", "food", "urgent help", "support"],
+    "Answer": "If you are experiencing urgent hardship, check local welfare support, food support, and community services signposting.",
+    "Responses": [
+      "If you are experiencing urgent hardship, you may be able to access local welfare or crisis support.",
+      "Support can include signposting to food support and community services depending on need.",
+      "If you are at immediate risk, contact emergency services first, then use council support guidance."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/benefits/"
+  },
+
+  {
+    "Service": "Education",
+    "Title": "Apply for a school place (admissions)",
+    "Keywords": ["school admissions", "apply", "school place", "primary", "secondary", "application"],
+    "Answer": "Apply for a school place via the council admissions portal. Check deadlines and provide required documents.",
+    "Responses": [
+      "You can apply for a school place through the council admissions portal.",
+      "Check deadlines and provide required documents such as proof of address.",
+      "If applying outside normal intake, check in-year admissions guidance."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/education-and-learning/"
+  },
+  {
+    "Service": "Education",
+    "Title": "Check school admissions deadlines",
+    "Keywords": ["deadline", "admissions deadline", "when to apply", "closing date", "school"],
+    "Answer": "Admissions deadlines depend on primary, secondary, or in-year applications. Check the council key dates page.",
+    "Responses": [
+      "Admissions deadlines depend on whether you are applying for primary, secondary, or in-year places.",
+      "The admissions pages list key dates, closing deadlines, and offer dates.",
+      "If you missed the deadline, you may still apply—check late application guidance."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/education-and-learning/"
+  },
+  {
+    "Service": "Education",
+    "Title": "In-year school transfers",
+    "Keywords": ["in-year", "transfer", "move school", "change school", "mid year"],
+    "Answer": "In-year transfers are available if you need to move schools during the year. Places depend on capacity and criteria.",
+    "Responses": [
+      "If you need to move school during the year, apply for an in-year transfer through the council process.",
+      "Availability depends on school capacity and admissions criteria.",
+      "If your child has SEND needs, check SEND guidance alongside the transfer process."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/education-and-learning/"
+  },
+  {
+    "Service": "Education",
+    "Title": "School transport guidance",
+    "Keywords": ["school transport", "bus", "travel", "eligibility", "transport"],
+    "Answer": "School transport support depends on age, distance, and eligibility. Check the council guidance for criteria and applications.",
+    "Responses": [
+      "School transport support depends on factors like distance, age, and eligibility criteria.",
+      "Check the council transport policy to see who qualifies and how to apply.",
+      "Some SEND cases may have different support routes—check the SEND transport guidance."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/education-and-learning/"
+  },
+  {
+    "Service": "Education",
+    "Title": "Special Educational Needs and Disabilities (SEND) support",
+    "Keywords": ["send", "special educational needs", "disability", "ehcp", "support"],
+    "Answer": "Bradford Council provides SEND guidance, including assessment routes and EHCP information.",
+    "Responses": [
+      "Bradford Council provides SEND guidance for children and young people, including EHCP processes.",
+      "EHCP requests usually involve evidence of needs and school involvement—check the council steps and timelines.",
+      "If you already have school reports or support plans, these can support an assessment request."
+    ],
+    "NextStepsUrl": "https://www.bradford.gov.uk/education-and-learning/"
+  },{
+  "Service": "Council Tax",
+  "Title": "How much Council Tax do I need to pay?",
+  "Keywords": ["how much", "amount", "to pay", "bill", "balance", "instalments", "statement", "charge"],
+  "Answer": "How much you need to pay depends on your property band, any discounts/exemptions, and your payment plan. The quickest way is to check your latest Council Tax bill or sign in to the council’s online account to view your balance and instalments.",
+  "Responses": [
+    "Your Council Tax amount depends on your property band and any discounts/exemptions. Check your latest bill or your online account to see the exact amount and instalments.",
+    "To see exactly how much you need to pay, view your latest Council Tax bill or sign in to your online account for your current balance and instalment dates.",
+    "The amount you pay depends on banding and discounts. The most accurate answer is in your Council Tax bill or online account balance."
+  ],
+  "NextStepsUrl": "https://www.bradford.gov.uk/benefits/council-tax/"
+}
+]

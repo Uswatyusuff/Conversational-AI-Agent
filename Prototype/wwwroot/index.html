@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Citizen Support Chatbot Prototype</title>
+
+  <style>
+    /* -----------------------------
+       THEME TOKENS
+    ------------------------------*/
+    :root{
+      --radius: 16px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --shadow: 0 18px 40px rgba(0,0,0,0.35);
+      --border: rgba(255,255,255,0.10);
+      --border2: rgba(255,255,255,0.08);
+      --accent:#5b8cff;
+      --accent2:#22c55e;
+      --danger:#ef4444;
+      --muted:#98a2b3;
+    }
+
+    /* DARK */
+    html[data-theme="dark"]{
+      --bg:#0b1220;
+      --panel:#0f1a2f;
+      --card:#111f3a;
+      --text:#e7eefc;
+      --surface: rgba(255,255,255,0.03);
+      --surface2: rgba(0,0,0,0.12);
+      --userBubble: rgba(91,140,255,0.18);
+      --userBorder: rgba(91,140,255,0.35);
+      --botBubble: rgba(255,255,255,0.03);
+      --link: #7aa6ff;
+
+      --skeletonBase: rgba(255,255,255,0.06);
+      --skeletonShine: rgba(255,255,255,0.14);
+    }
+
+    /* LIGHT */
+    html[data-theme="light"]{
+      --bg:#f6f8fc;
+      --panel:#ffffff;
+      --card:#ffffff;
+      --text:#0b1220;
+      --surface: rgba(15,26,47,0.03);
+      --surface2: rgba(15,26,47,0.04);
+      --border: rgba(15,26,47,0.12);
+      --border2: rgba(15,26,47,0.10);
+      --muted:#5a6476;
+
+      --userBubble: rgba(91,140,255,0.14);
+      --userBorder: rgba(91,140,255,0.30);
+      --botBubble: rgba(15,26,47,0.03);
+      --link: #1f5fff;
+
+      --skeletonBase: rgba(15,26,47,0.06);
+      --skeletonShine: rgba(15,26,47,0.12);
+
+      --shadow: 0 16px 36px rgba(15,26,47,0.10);
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+
+      background:
+        radial-gradient(1200px 800px at 15% 10%, rgba(91,140,255,.18), transparent 60%),
+        radial-gradient(900px 700px at 80% 20%, rgba(34,197,94,.14), transparent 55%),
+        var(--bg);
+
+      transition: background .25s ease, color .25s ease;
+    }
+
+    a{ color: var(--link); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{
+      max-width: 1100px;
+      margin: 22px auto;
+      padding: 0 14px;
+    }
+
+    /* -----------------------------
+       TOP BAR
+    ------------------------------*/
+    .topbar{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:14px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo{
+      width:42px;height:42px;border-radius:12px;
+      background: linear-gradient(135deg, rgba(91,140,255,.9), rgba(34,197,94,.85));
+      box-shadow: var(--shadow);
+    }
+    .title h1{
+      font-size: 18px;
+      margin:0;
+      line-height:1.1;
+      letter-spacing: .2px;
+    }
+    .title p{
+      margin:2px 0 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .top-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .pill{
+      font-size:12px;
+      padding:8px 10px;
+      border:1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      transition: background .2s ease, border .2s ease;
+    }
+
+    .toggle{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 10px;
+      border:1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      cursor:pointer;
+      user-select:none;
+      transition: transform .08s ease, background .2s ease;
+    }
+    .toggle:hover{ background: rgba(91,140,255,0.08); transform: translateY(-1px); }
+    .toggle .label{ font-size:12px; color: var(--muted); }
+    .switch{
+      width: 38px;
+      height: 22px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+    html[data-theme="light"] .switch{
+      background: rgba(15,26,47,0.10);
+    }
+    .knob{
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(91,140,255,.95), rgba(34,197,94,.85));
+      position:absolute;
+      top:50%;
+      transform: translateY(-50%);
+      left: 2px;
+      transition: left .18s ease;
+    }
+    html[data-theme="light"] .knob{ left: 18px; }
+
+    /* -----------------------------
+       LAYOUT
+    ------------------------------*/
+    .grid{
+      display:grid;
+      grid-template-columns: 280px 1fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+      .side{ order: 2; }
+    }
+
+    /* -----------------------------
+       SIDEBAR
+    ------------------------------*/
+    .side{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      transition: background .2s ease, border .2s ease;
+    }
+    .side h2{
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: .2px;
+    }
+    .svc{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .svc button{
+      text-align:left;
+      padding:12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border2);
+      background: var(--surface);
+      color: var(--text);
+      cursor:pointer;
+      transition: transform .08s ease, background .15s ease, border .15s ease;
+    }
+    .svc button:hover{
+      background: rgba(91,140,255,0.08);
+      transform: translateY(-1px);
+    }
+    .svc small{ display:block; color: var(--muted); margin-top:4px; font-size:12px; }
+    .side .note{
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px dashed rgba(127,127,127,0.25);
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.35;
+      background: rgba(0,0,0,0.02);
+    }
+
+    /* -----------------------------
+       CHAT PANEL
+    ------------------------------*/
+    .panel{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 680px;
+      transition: background .2s ease, border .2s ease;
+    }
+    .panel-header{
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border2);
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      background: var(--surface2);
+      transition: background .2s ease, border .2s ease;
+    }
+    .panel-header .meta{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+    .panel-header .meta b{ font-size:14px; }
+    .panel-header .meta span{ color: var(--muted); font-size:12px; }
+    .panel-header .right{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .kbd{
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 7px 9px;
+      border-radius: 10px;
+      border: 1px solid var(--border2);
+      color: var(--muted);
+      background: rgba(127,127,127,0.06);
+    }
+    .btn{
+      padding: 9px 10px;
+      border-radius: 12px;
+      border:1px solid var(--border2);
+      background: rgba(127,127,127,0.06);
+      color: var(--text);
+      cursor:pointer;
+      transition: transform .08s ease, background .15s ease;
+    }
+    .btn:hover{ background: rgba(91,140,255,0.10); transform: translateY(-1px); }
+
+    /* -----------------------------
+       MESSAGES + ANIMATIONS
+    ------------------------------*/
+    .chat{
+      padding: 16px;
+      flex:1;
+      overflow-y:auto;
+      scroll-behavior:smooth;
+    }
+
+    .msg{
+      display:flex;
+      margin: 10px 0;
+      opacity: 0;
+      transform: translateY(6px);
+      animation: popIn .18s ease forwards;
+    }
+    @keyframes popIn{
+      to { opacity:1; transform: translateY(0); }
+    }
+
+    .msg.you{ justify-content:flex-end; }
+
+    .bubble{
+      max-width: 78%;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid var(--border2);
+      background: var(--botBubble);
+      line-height:1.35;
+      font-size: 14px;
+      transition: background .2s ease, border .2s ease;
+    }
+    .you .bubble{
+      background: var(--userBubble);
+      border-color: var(--userBorder);
+    }
+
+    .bubble .meta{
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .tag{
+      display:inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid var(--border2);
+      background: rgba(127,127,127,0.06);
+      color: var(--muted);
+      margin-right: 6px;
+    }
+    .card{
+      margin-top:10px;
+      padding: 10px 10px;
+      border-radius: 14px;
+      border: 1px solid var(--border2);
+      background: rgba(127,127,127,0.06);
+    }
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+    }
+    .chip{
+      font-size: 12.5px;
+      padding: 9px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border2);
+      background: rgba(127,127,127,0.06);
+      color: var(--text);
+      cursor:pointer;
+      transition: transform .08s ease, background .15s ease;
+    }
+    .chip:hover{ background: rgba(91,140,255,0.10); transform: translateY(-1px); }
+
+    /* -----------------------------
+       COMPOSER
+    ------------------------------*/
+    .composer{
+      padding: 12px;
+      border-top: 1px solid var(--border2);
+      display:flex;
+      gap:10px;
+      background: var(--surface2);
+      transition: background .2s ease;
+    }
+    .composer input{
+      flex:1;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border2);
+      background: rgba(127,127,127,0.06);
+      color: var(--text);
+      outline:none;
+      font-size: 14px;
+      transition: background .2s ease, border .2s ease;
+    }
+    .composer input::placeholder{ color: rgba(152,162,179,.85); }
+    .composer button{
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(91,140,255,0.55);
+      background: rgba(91,140,255,0.18);
+      color: var(--text);
+      cursor:pointer;
+      font-weight: 600;
+      transition: transform .08s ease, background .15s ease;
+    }
+    .composer button:hover{ background: rgba(91,140,255,0.24); transform: translateY(-1px); }
+    .composer button:disabled{
+      opacity:.6;
+      cursor:not-allowed;
+      transform:none;
+    }
+
+    /* -----------------------------
+       LOADING SKELETON (bot bubble)
+    ------------------------------*/
+    .skeleton-wrap{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .skeleton-line{
+      height: 12px;
+      border-radius: 999px;
+      background: linear-gradient(
+        90deg,
+        var(--skeletonBase) 0%,
+        var(--skeletonShine) 40%,
+        var(--skeletonBase) 80%
+      );
+      background-size: 240% 100%;
+      animation: shimmer 1.1s linear infinite;
+    }
+    .s1{ width: 72%; }
+    .s2{ width: 92%; }
+    .s3{ width: 55%; }
+
+    @keyframes shimmer{
+      0%{ background-position: 100% 0; }
+      100%{ background-position: -100% 0; }
+    }
+
+    .footer{
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo"></div>
+        <div class="title">
+          <h1>Citizen Support Conversational AI Agent</h1>
+          <p>Bradford Council • Prototype (FAQ retrieval + follow-ups) • Do not share personal data</p>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <div class="pill" id="sessionPill">Session: …</div>
+
+        <div class="toggle" id="themeToggle" title="Toggle Light/Dark">
+          <span class="label" id="themeLabel">Dark</span>
+          <div class="switch"><div class="knob"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- Sidebar -->
+      <aside class="side">
+        <h2>Quick topics</h2>
+        <div class="svc">
+          <button onclick="sendPreset('How do I check my Council Tax balance?')">
+            Council Tax
+            <small>Balances, discounts, payments, moving home</small>
+          </button>
+          <button onclick="sendPreset('When is my bin collection day?')">
+            Waste & Bins
+            <small>Collections, missed bins, replacements, recycling</small>
+          </button>
+          <button onclick="sendPreset('How do I apply for Council Tax Support?')">
+            Benefits & Support
+            <small>Eligibility, support, changes in circumstances</small>
+          </button>
+          <button onclick="sendPreset('How do I apply for a school place?')">
+            School Admissions
+            <small>Admissions, deadlines, in-year transfers</small>
+          </button>
+        </div>
+
+        <div class="note">
+          <b>Prototype note</b><br/>
+          This is a student prototype using FAQ retrieval. It provides general guidance and signposting.
+          For urgent issues, use official council channels.
+        </div>
+      </aside>
+
+      <!-- Chat panel -->
+      <main class="panel">
+        <div class="panel-header">
+          <div class="meta">
+            <b>Chat</b>
+            <span id="statusLine">Ready</span>
+          </div>
+          <div class="right">
+            <span class="kbd">Enter</span>
+            <button class="btn" onclick="resetChat()">Reset</button>
+          </div>
+        </div>
+
+        <div id="chat" class="chat"></div>
+
+        <div class="composer">
+          <input id="msg" placeholder="Ask about Council Tax, Waste/Bins, Benefits, School Admissions…" autocomplete="off"/>
+          <button id="sendBtn" onclick="send()">Send</button>
+        </div>
+      </main>
+    </div>
+
+    <div class="footer">
+      Tip: Try follow-ups like “What about discounts?” after asking a Council Tax question.
+    </div>
+  </div>
+
+<script>
+  const chat = document.getElementById('chat');
+  const statusLine = document.getElementById('statusLine');
+  const sessionPill = document.getElementById('sessionPill');
+  const sendBtn = document.getElementById('sendBtn');
+
+  const themeToggle = document.getElementById('themeToggle');
+  const themeLabel = document.getElementById('themeLabel');
+
+  let lastService = "Unknown";
+  let pendingSkeletonId = null;
+
+  // persistent sessionId
+  let sessionId = localStorage.getItem("sessionId");
+  if(!sessionId){
+    sessionId = crypto.randomUUID();
+    localStorage.setItem("sessionId", sessionId);
+  }
+  sessionPill.textContent = "Session: " + sessionId.slice(0, 8);
+
+  // -----------------------------
+  // Theme switch (Light/Dark)
+  // -----------------------------
+  function applyTheme(theme){
+    document.documentElement.setAttribute("data-theme", theme);
+    themeLabel.textContent = theme === "light" ? "Light" : "Dark";
+    localStorage.setItem("theme", theme);
+  }
+  const savedTheme = localStorage.getItem("theme");
+  applyTheme(savedTheme === "light" ? "light" : "dark");
+
+  themeToggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    applyTheme(current === "dark" ? "light" : "dark");
+  });
+
+  // -----------------------------
+  // Utilities
+  // -----------------------------
+  function escapeHtml(str){
+    return String(str)
+      .replaceAll("&","&amp;")
+      .replaceAll("<","&lt;")
+      .replaceAll(">","&gt;")
+      .replaceAll('"',"&quot;")
+      .replaceAll("'","&#039;");
+  }
+
+  function addMessage(html, who, id=null){
+    const div = document.createElement('div');
+    div.className = "msg " + (who === "you" ? "you" : "bot");
+    if(id) div.dataset.id = id;
+
+    const bubble = document.createElement('div');
+    bubble.className = "bubble";
+    bubble.innerHTML = html;
+
+    div.appendChild(bubble);
+    chat.appendChild(div);
+    chat.scrollTop = chat.scrollHeight;
+    return div;
+  }
+
+  function updateStatus(text){
+    statusLine.textContent = text;
+  }
+
+  // -----------------------------
+  // Skeleton loader (bot bubble)
+  // -----------------------------
+  function showSkeleton(){
+    const id = "sk_" + crypto.randomUUID();
+    pendingSkeletonId = id;
+
+    addMessage(
+      `<div class="skeleton-wrap" aria-label="Loading">
+        <div class="skeleton-line s1"></div>
+        <div class="skeleton-line s2"></div>
+        <div class="skeleton-line s3"></div>
+      </div>`,
+      "bot",
+      id
+    );
+
+    updateStatus("Working…");
+    sendBtn.disabled = true;
+  }
+
+  function replaceSkeletonWithBotReply(data){
+    const node = [...document.querySelectorAll('.msg.bot')].find(x => x.dataset.id === pendingSkeletonId);
+    pendingSkeletonId = null;
+
+    // If skeleton not found, just add message normally
+    if(!node){
+      addBotReply(data);
+      updateStatus("Ready");
+      sendBtn.disabled = false;
+      return;
+    }
+
+    // Build reply HTML
+    lastService = data.service || "Unknown";
+    let header = `<span class="tag">Service</span> <b>${escapeHtml(lastService)}</b>`;
+    let body = `<div style="margin-top:8px">${data.reply || ""}</div>`;
+
+    let next = "";
+    if(data.nextStepsUrl){
+      next = `
+        <div class="card">
+          <b>Next steps</b><br/>
+          <a href="${data.nextStepsUrl}" target="_blank" rel="noopener noreferrer">
+            ${escapeHtml(data.nextStepsUrl)}
+          </a>
+        </div>`;
+    }
+
+    let feedback = `
+      <div class="card">
+        <b>Was this helpful?</b><br/>
+        <div class="chips" style="margin-top:8px">
+          <button class="chip" onclick="feedback('Yes')">Yes</button>
+          <button class="chip" onclick="feedback('No')">No</button>
+        </div>
+      </div>`;
+
+    let chips = `
+      <div class="chips">
+        <button class="chip" onclick="sendPreset('What are the next steps?')">Next steps</button>
+        <button class="chip" onclick="sendPreset('How do I apply?')">How do I apply?</button>
+        <button class="chip" onclick="sendPreset('Who can I contact?')">Contact details</button>
+        <button class="chip" onclick="sendPreset('What if I missed a payment?')">Missed payment</button>
+      </div>`;
+
+    // Replace skeleton bubble HTML in place (keeps animation)
+    const bubble = node.querySelector('.bubble');
+    bubble.innerHTML = header + body + next + feedback + chips;
+
+    updateStatus("Ready");
+    sendBtn.disabled = false;
+  }
+
+  // Normal bot reply (used if no skeleton)
+  function addBotReply(data){
+    lastService = data.service || "Unknown";
+
+    let header = `<span class="tag">Service</span> <b>${escapeHtml(lastService)}</b>`;
+    let body = `<div style="margin-top:8px">${data.reply || ""}</div>`;
+
+    let next = "";
+    if(data.nextStepsUrl){
+      next = `
+        <div class="card">
+          <b>Next steps</b><br/>
+          <a href="${data.nextStepsUrl}" target="_blank" rel="noopener noreferrer">
+            ${escapeHtml(data.nextStepsUrl)}
+          </a>
+        </div>`;
+    }
+
+    let feedback = `
+      <div class="card">
+        <b>Was this helpful?</b><br/>
+        <div class="chips" style="margin-top:8px">
+          <button class="chip" onclick="feedback('Yes')">Yes</button>
+          <button class="chip" onclick="feedback('No')">No</button>
+        </div>
+      </div>`;
+
+    let chips = `
+      <div class="chips">
+        <button class="chip" onclick="sendPreset('What are the next steps?')">Next steps</button>
+        <button class="chip" onclick="sendPreset('How do I apply?')">How do I apply?</button>
+        <button class="chip" onclick="sendPreset('Who can I contact?')">Contact details</button>
+        <button class="chip" onclick="sendPreset('What if I missed a payment?')">Missed payment</button>
+      </div>`;
+
+    addMessage(header + body + next + feedback + chips, "bot");
+  }
+
+  // -----------------------------
+  // Init greeting
+  // -----------------------------
+  addMessage(
+    `<b>Hi!</b> I can help with Bradford Council services (prototype).
+     <div class="meta">Avoid sharing personal data. Try: “When is my bin day?”</div>`,
+    "bot"
+  );
+
+  // -----------------------------
+  // Send chat
+  // -----------------------------
+  async function send(){
+    const input = document.getElementById('msg');
+    const message = input.value.trim();
+    if(!message) return;
+
+    addMessage(escapeHtml(message), "you");
+    input.value = "";
+
+    showSkeleton();
+
+    try{
+      const res = await fetch('/api/chat', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ message, sessionId })
+      });
+
+      const data = await res.json();
+
+      if(!res.ok){
+        // Replace skeleton with error
+        replaceSkeletonWithBotReply({ service: "Error", reply: `<b>Error:</b> ${escapeHtml(data.reply || 'Request failed')}`, nextStepsUrl: "" });
+        return;
+      }
+
+      replaceSkeletonWithBotReply(data);
+
+    }catch(e){
+      replaceSkeletonWithBotReply({ service: "Error", reply: `<b>Error:</b> Could not reach the server.`, nextStepsUrl: "" });
+    }
+  }
+
+  function sendPreset(text){
+    const input = document.getElementById('msg');
+    input.value = text;
+    send();
+  }
+
+  async function feedback(helpful){
+    const comment = prompt("Optional: add a short comment (or press Cancel).") || "";
+
+    await fetch('/api/feedback', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ service: lastService, helpful, comment })
+    });
+
+    addMessage(`Thanks — feedback saved for <b>${escapeHtml(lastService)}</b>.`, "bot");
+  }
+
+  function resetChat(){
+    chat.innerHTML = "";
+    addMessage(
+      `<b>Chat reset.</b> Ask a new question anytime.
+       <div class="meta">Session stays the same unless you clear browser storage.</div>`,
+      "bot"
+    );
+  }
+
+  document.getElementById('msg').addEventListener('keydown', e => {
+    if(e.key === 'Enter') send();
+  });
+</script>
+</body>
+</html>
