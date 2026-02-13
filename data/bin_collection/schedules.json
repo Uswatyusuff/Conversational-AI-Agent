@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "dataset": "Bradford Bin Collection Dummy Schedule",
+    "version": "0.1",
+    "last_updated": "2026-02-10",
+    "note": "Dummy data for MVP testing only"
+  },
+  "districts": [
+    {
+      "postcode_district": "BD1",
+      "area_name": "Bradford City Centre",
+      "collections": [
+        {
+          "bin_type": "General Waste",
+          "collection_day": "Monday",
+          "frequency": "Weekly",
+          "next_collection_date": "2026-02-16"
+        },
+        {
+          "bin_type": "Recycling",
+          "collection_day": "Thursday",
+          "frequency": "Fortnightly",
+          "next_collection_date": "2026-02-20"
+        }
+      ],
+      "missed_collection_policy": "Report missed collections within 48 hours via council website.",
+      "source_url": "https://www.bradford.gov.uk/bins-and-recycling/"
+    },
+
+    {
+      "postcode_district": "BD2",
+      "area_name": "Eccleshill",
+      "collections": [
+        {
+          "bin_type": "General Waste",
+          "collection_day": "Tuesday",
+          "frequency": "Weekly",
+          "next_collection_date": "2026-02-17"
+        },
+        {
+          "bin_type": "Recycling",
+          "collection_day": "Friday",
+          "frequency": "Fortnightly",
+          "next_collection_date": "2026-02-21"
+        }
+      ],
+      "missed_collection_policy": "Report via online form or customer service line.",
+      "source_url": "https://www.bradford.gov.uk/bins-and-recycling/"
+    },
+
+    {
+      "postcode_district": "BD3",
+      "area_name": "Undercliffe",
+      "collections": [
+        {
+          "bin_type": "General Waste",
+          "collection_day": "Wednesday",
+          "frequency": "Weekly",
+          "next_collection_date": "2026-02-18"
+        },
+        {
+          "bin_type": "Recycling",
+          "collection_day": "Monday",
+          "frequency": "Fortnightly",
+          "next_collection_date": "2026-02-16"
+        }
+      ],
+      "missed_collection_policy": "Missed bins can be reported online within 2 working days.",
+      "source_url": "https://www.bradford.gov.uk/bins-and-recycling/"
+    },
+
+    {
+      "postcode_district": "BD4",
+      "area_name": "Holme Wood",
+      "collections": [
+        {
+          "bin_type": "General Waste",
+          "collection_day": "Thursday",
+          "frequency": "Weekly",
+          "next_collection_date": "2026-02-19"
+        },
+        {
+          "bin_type": "Recycling",
+          "collection_day": "Tuesday",
+          "frequency": "Fortnightly",
+          "next_collection_date": "2026-02-17"
+        }
+      ],
+      "missed_collection_policy": "Contact council support if bin not collected by end of day.",
+      "source_url": "https://www.bradford.gov.uk/bins-and-recycling/"
+    },
+
+    {
+      "postcode_district": "BD5",
+      "area_name": "Little Horton",
+      "collections": [
+        {
+          "bin_type": "General Waste",
+          "collection_day": "Friday",
+          "frequency": "Weekly",
+          "next_collection_date": "2026-02-20"
+        },
+        {
+          "bin_type": "Recycling",
+          "collection_day": "Wednesday",
+          "frequency": "Fortnightly",
+          "next_collection_date": "2026-02-18"
+        }
+      ],
+      "missed_collection_policy": "Use council portal to report missed collections.",
+      "source_url": "https://www.bradford.gov.uk/bins-and-recycling/"
+    }
+  ]
+}
