@@ -21,6 +21,10 @@ builder.Services.AddSingleton<ChatScoringService>();
 builder.Services.AddSingleton<IntentService>();
 builder.Services.AddSingleton<ResponseService>();
 builder.Services.AddSingleton<LoggingService>();
+builder.Services.AddSingleton<LlmService>();
+builder.Services.Configure<OpenAiOptions>(
+    builder.Configuration.GetSection("OpenAI"));
+
 
 // Paths
 var dataDir = Path.Combine(builder.Environment.ContentRootPath, "Data");

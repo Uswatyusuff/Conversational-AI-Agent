@@ -11,6 +11,8 @@ public class ChatOrchestrator
     private readonly RetrievalService _retrieval;
     private readonly IConfiguration _config;
 
+    private readonly LlmService _llm;
+
     // Strong service triggers (topic switch override)
     private readonly Dictionary<string, string[]> _strongServiceTriggers = new(StringComparer.OrdinalIgnoreCase)
     {
@@ -41,7 +43,7 @@ public class ChatOrchestrator
         ChatScoringService scoring,
         EmbeddingService embed,
         RetrievalService retrieval,
-        IConfiguration config)
+        IConfiguration config, LlmService llm)
     {
         _repo = repo;
         _memory = memory;
@@ -49,6 +51,7 @@ public class ChatOrchestrator
         _embed = embed;
         _retrieval = retrieval;
         _config = config;
+        _llm = llm;
     }
 
     public async Task<(string reply, string service, string nextStepsUrl, float score)> HandleChatAsync(string sessionId, string message)
@@ -68,7 +71,11 @@ public class ChatOrchestrator
         // Semantic retrieve
         var threshold = _config.GetValue("Retrieval:Threshold", 0.55f);
         var qEmb = await _embed.EmbedAsync(message);
-        var (faq, score) = _retrieval.BestMatch(qEmb);
+        var top = _retrieval.TopK(qEmb, k: 3);
+
+        var best = top.FirstOrDefault();
+        var faq = best.faq;
+        var score = best.score;
 
         // If weak match, use follow-up logic (but allow topic switch)
         if (faq == null || score < threshold)
@@ -102,14 +109,33 @@ public class ChatOrchestrator
         }
 
         // Matched FAQ
-        var finalService = faq.Service ?? "Unknown";
+        var finalService = faq?.Service ?? "Unknown";
         if (finalService != "Unknown")
             _memory.SetLastService(sessionId, finalService);
 
-        var replyText = _scoring.PickReply(faq);
-        var nextUrl = faq.NextStepsUrl ?? "";
+        var candidates = top.Select(x => new LlmFaqCandidate
+        {
+            Service = x.faq.Service ?? "",
+            Title = x.faq.Title ?? "",
+            Answer = x.faq.Answer ?? "",
+            NextStepsUrl = x.faq.NextStepsUrl ?? "",
+            Score = x.score
+        }).ToList();
 
-        return (replyText, finalService, nextUrl, score);
+        var llmResult = await _llm.GenerateReplyAsync(
+            userMessage: message,
+            lastService: lastService,
+            candidates: candidates);
+
+        var safeService = string.IsNullOrWhiteSpace(llmResult.Service)
+            ? finalService
+            : llmResult.Service;
+
+        var safeUrl = candidates.Any(c => c.NextStepsUrl == llmResult.NextStepsUrl)
+            ? llmResult.NextStepsUrl
+            : (faq?.NextStepsUrl ?? "");
+
+        return (llmResult.Reply, safeService, safeUrl, score);
     }
 
     // ---------------- Helpers ----------------
