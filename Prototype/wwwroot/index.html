@@ -532,6 +532,33 @@
   let lastService = "Unknown";
   let pendingSkeletonId = null;
 
+  const SERVICE_BUTTONS = {
+  "Council Tax": [
+    "What are the next steps?",
+    "How do I apply?",
+    "Who can I contact?",
+    "What if I missed a payment?"
+  ],
+  "Waste & Bins": [
+    "When is my bin day?",
+    "How do I report a missed bin?",
+    "How do I request a replacement bin?",
+    "What can I recycle?"
+  ],
+  "Benefits & Support": [
+    "How do I apply for support?",
+    "Am I eligible?",
+    "How do I report a change in circumstances?",
+    "Who can I contact?"
+  ],
+  "Education": [
+    "How do I apply for a school place?",
+    "What are the admissions deadlines?",
+    "How do in-year transfers work?",
+    "What support is available for SEND?"
+  ]
+};
+
   // persistent sessionId
   let sessionId = localStorage.getItem("sessionId");
   if(!sessionId){
@@ -586,6 +613,23 @@
   function updateStatus(text){
     statusLine.textContent = text;
   }
+
+  function buildServiceChips(service){
+  if (!service || service === "Unknown") return "";
+  if (!SERVICE_BUTTONS[service]) return "";
+
+  const buttons = SERVICE_BUTTONS[service];
+
+  return `
+    <div class="chips">
+      ${buttons.map(text => `
+        <button class="chip" onclick="sendPreset('${text.replaceAll("'", "\\'")}')">
+          ${escapeHtml(text)}
+        </button>
+      `).join("")}
+    </div>
+  `;
+}
 
   // -----------------------------
   // Skeleton loader (bot bubble)
@@ -645,13 +689,7 @@
         </div>
       </div>`;
 
-    let chips = `
-      <div class="chips">
-        <button class="chip" onclick="sendPreset('What are the next steps?')">Next steps</button>
-        <button class="chip" onclick="sendPreset('How do I apply?')">How do I apply?</button>
-        <button class="chip" onclick="sendPreset('Who can I contact?')">Contact details</button>
-        <button class="chip" onclick="sendPreset('What if I missed a payment?')">Missed payment</button>
-      </div>`;
+    let chips = buildServiceChips(lastService);
 
     // Replace skeleton bubble HTML in place (keeps animation)
     const bubble = node.querySelector('.bubble');
@@ -688,13 +726,7 @@
         </div>
       </div>`;
 
-    let chips = `
-      <div class="chips">
-        <button class="chip" onclick="sendPreset('What are the next steps?')">Next steps</button>
-        <button class="chip" onclick="sendPreset('How do I apply?')">How do I apply?</button>
-        <button class="chip" onclick="sendPreset('Who can I contact?')">Contact details</button>
-        <button class="chip" onclick="sendPreset('What if I missed a payment?')">Missed payment</button>
-      </div>`;
+    let chips = buildServiceChips(lastService);
 
     addMessage(header + body + next + feedback + chips, "bot");
   }

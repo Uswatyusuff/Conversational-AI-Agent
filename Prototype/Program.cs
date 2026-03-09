@@ -24,6 +24,8 @@ builder.Services.AddSingleton<LoggingService>();
 builder.Services.AddSingleton<LlmService>();
 builder.Services.Configure<OpenAiOptions>(
     builder.Configuration.GetSection("OpenAI"));
+builder.Services.AddSingleton<SupportResourceRepository>();
+builder.Services.AddSingleton<RoutingService>();
 
 
 // Paths
@@ -35,13 +37,13 @@ Directory.CreateDirectory(logsDir);
 var faqPath = Path.Combine(dataDir, "faqs.json");
 var cachePath = Path.Combine(dataDir, "faqs.embeddings.json");
 
-// ✅ Load FAQs ONCE at startup
+// Load FAQs ONCE at startup
 var faqs = LoadFaqs(faqPath);
 
-// ✅ Register repository using the loaded list
+// Register repository using the loaded list
 builder.Services.AddSingleton(new FaqRepository(faqs));
 
-// ✅ Build embeddings cache once (when first resolved)
+// Build embeddings cache once (when first resolved)
 builder.Services.AddSingleton(provider =>
 {
     var embedSvc = provider.GetRequiredService<EmbeddingService>();

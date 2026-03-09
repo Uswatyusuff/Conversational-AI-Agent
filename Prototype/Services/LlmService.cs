@@ -25,18 +25,22 @@ public class LlmService
         _client = new ResponsesClient(apiKey);
     }
 
-    public async Task<LlmReplyResult> GenerateReplyAsync(
+    public async Task<LlmDecisionResult> DecideNextStepAsync(
         string userMessage,
         string lastService,
+        float bestScore,
+        float threshold,
         List<LlmFaqCandidate> candidates,
         CancellationToken ct = default)
     {
         if (candidates == null || candidates.Count == 0)
         {
-            return new LlmReplyResult
+            return new LlmDecisionResult
             {
-                Reply = "I can help with Council Tax, Waste/Bins, Benefits, and School Admissions. Which service do you need?",
+                Action = "clarify",
                 Service = "Unknown",
+                Intent = "",
+                Reply = "I can help with Council Tax, Waste & Bins, Benefits & Support, and School Admissions. What do you need help with?",
                 NextStepsUrl = ""
             };
         }
@@ -45,33 +49,43 @@ public class LlmService
         {
             userMessage,
             lastService,
+            bestScore,
+            threshold,
             faqCandidates = candidates
         };
 
         var prompt = """
 You are a council support assistant.
 
-Your job is to answer the user's question using ONLY the FAQ candidates provided.
-Do not invent policies, links, eligibility rules, deadlines, or contact details.
-Use the FAQ candidates as the source of truth.
+Your job is to decide the best next step for the user's message.
+
+Allowed actions:
+- "answer" = answer directly using the FAQ evidence
+- "clarify" = ask a natural clarification question when evidence is weak, vague, or ambiguous
 
 Rules:
-- Give a short, clear, friendly answer.
-- Prefer the most relevant FAQ candidate.
-- If multiple candidates are relevant, combine them carefully but do not invent new facts.
-- Keep the answer grounded in the provided FAQ text.
-- The service must be one of the provided candidate services.
-- The nextStepsUrl must be one of the provided candidate URLs or empty.
-- Return raw JSON only.
-- Do not use markdown.
-- Do not wrap the JSON in ```json fences.
-- Do not include any explanation before or after the JSON.
-- Use this exact shape:
-  {
-    "Reply": "string",
-    "Service": "string",
-    "NextStepsUrl": "string"
-  }
+- Use only the FAQ candidates provided.
+- Do not invent services, URLs, policies, or facts.
+- If bestScore is below threshold, usually choose "clarify".
+- If clarifying, ask a short natural question that reflects the most likely services/intents.
+- Avoid robotic clarification such as "payment, eligibility, application, contact details" unless that is clearly the best fit.
+- Prefer clarifications grounded in actual FAQ topics.
+- The service must be one of the candidate services or "Unknown".
+- The nextStepsUrl must be one of the candidate URLs or empty.
+- The intent should be a short snake_case label if possible.
+
+Return raw JSON only.
+Do not use markdown.
+Do not wrap the JSON in code fences.
+
+Use this exact shape:
+{
+  "Action": "answer or clarify",
+  "Service": "string",
+  "Intent": "string",
+  "Reply": "string",
+  "NextStepsUrl": "string"
+}
 """;
 
         var input = $"""
@@ -87,38 +101,34 @@ DATA:
         };
 
         options.InputItems.Add(ResponseItem.CreateUserMessageItem(input));
-        Console.WriteLine("LLM: Sending request to OpenAI...");
 
+        Console.WriteLine("LLM: Sending decision request to OpenAI...");
         ResponseResult response = await _client.CreateResponseAsync(options, ct);
+        Console.WriteLine("LLM: Received decision response from OpenAI.");
 
-        Console.WriteLine("LLM: Received response from OpenAI.");
         var text = response.GetOutputText()?.Trim();
 
         if (string.IsNullOrWhiteSpace(text))
-        {
-            Console.WriteLine("LLM: OpenAI returned empty output. Using fallback.");
-            return Fallback(candidates);
-        }
+            return FallbackDecision(bestScore, threshold, candidates);
 
         text = CleanJson(text);
+        Console.WriteLine($"LLM raw output: {text}");
 
         try
         {
-            var result = JsonSerializer.Deserialize<LlmReplyResult>(
+            var result = JsonSerializer.Deserialize<LlmDecisionResult>(
                 text,
                 new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-            if (result == null || string.IsNullOrWhiteSpace(result.Reply)){
-                Console.WriteLine("LLM: Parsed result invalid. Using fallback.");
-                return Fallback(candidates);
-                }
-            Console.WriteLine($"LLM: Parsed reply successfully. Service={result.Service}");
-            return new LlmReplyResult
+            if (result == null || string.IsNullOrWhiteSpace(result.Action) || string.IsNullOrWhiteSpace(result.Reply))
+                return FallbackDecision(bestScore, threshold, candidates);
+
+            return new LlmDecisionResult
             {
+                Action = NormalizeAction(result.Action),
+                Service = string.IsNullOrWhiteSpace(result.Service) ? candidates[0].Service : result.Service,
+                Intent = result.Intent ?? "",
                 Reply = result.Reply,
-                Service = string.IsNullOrWhiteSpace(result.Service)
-                    ? candidates[0].Service
-                    : result.Service,
                 NextStepsUrl = string.IsNullOrWhiteSpace(result.NextStepsUrl)
                     ? candidates[0].NextStepsUrl
                     : result.NextStepsUrl
@@ -126,20 +136,64 @@ DATA:
         }
         catch
         {
-            
-            return Fallback(candidates);
+            return FallbackDecision(bestScore, threshold, candidates);
         }
     }
 
-    private static LlmReplyResult Fallback(List<LlmFaqCandidate> candidates)
+    private static LlmDecisionResult FallbackDecision(
+        float bestScore,
+        float threshold,
+        List<LlmFaqCandidate> candidates)
     {
         var best = candidates[0];
 
-        return new LlmReplyResult
+        if (bestScore >= threshold)
         {
-            Reply = best.Answer,
+            return new LlmDecisionResult
+            {
+                Action = "answer",
+                Service = best.Service,
+                Intent = "",
+                Reply = best.Answer,
+                NextStepsUrl = best.NextStepsUrl
+            };
+        }
+
+        return new LlmDecisionResult
+        {
+            Action = "clarify",
             Service = best.Service,
-            NextStepsUrl = best.NextStepsUrl
+            Intent = "",
+            Reply = BuildClarificationFromCandidates(candidates),
+            NextStepsUrl = ""
+        };
+    }
+
+    private static string BuildClarificationFromCandidates(List<LlmFaqCandidate> candidates)
+    {
+        var service = candidates[0].Service;
+
+        var titles = candidates
+            .Select(c => c.Title)
+            .Where(t => !string.IsNullOrWhiteSpace(t))
+            .Distinct()
+            .Take(3)
+            .ToList();
+
+        if (titles.Count == 0)
+            return $"I can help with {service}. Could you tell me a bit more about what you need?";
+
+        return $"I can help with {service}. Are you asking about {string.Join(", ", titles)}?";
+    }
+
+    private static string NormalizeAction(string action)
+    {
+        var a = (action ?? "").Trim().ToLowerInvariant();
+        return a switch
+        {
+            "answer" => "answer",
+            "clarify" => "clarify",
+            _ => "clarify"
         };
     }
 
