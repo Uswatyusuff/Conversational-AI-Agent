@@ -1,0 +1,27 @@
+
+services:
+  councilchatbot:
+    build:
+      context: ..
+      dockerfile: Infrastructure/Dockerfile
+    container_name: councilchatbot
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      OpenAI__ApiKey: ${OPENAI_API_KEY}
+      OpenAI__ChatModel: gpt-4o-mini
+      EmbeddingService__BaseUrl: http://embeddingservice:8001
+    depends_on:
+      - embeddingservice
+    volumes:
+      - ../Data:/app/Data
+      - ../Logs:/app/Logs
+
+  embeddingservice:
+    build:
+      context: ../EmbeddingService
+    container_name: embeddingservice
+    ports:
+      - "8001:8001"
