@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[10.0.2, )"
             },
+            "Microsoft.Playwright": {
+              "target": "Package",
+              "version": "[1.58.0, )"
+            },
             "OpenAI": {
               "target": "Package",
               "version": "[2.8.0, )"

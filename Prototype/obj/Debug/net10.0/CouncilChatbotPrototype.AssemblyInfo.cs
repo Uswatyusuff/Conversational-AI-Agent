@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CouncilChatbotPrototype")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f143a95a73f7db96bdf1e1e95e9f337bfd3c51b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+10b50d3836eb61bccaeaeddf7950fe2706db98f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("CouncilChatbotPrototype")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CouncilChatbotPrototype")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
