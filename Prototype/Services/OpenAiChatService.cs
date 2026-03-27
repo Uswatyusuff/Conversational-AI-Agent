@@ -25,7 +25,7 @@ public class OpenAiChatService
         var apiKey = _config["OpenAI:ApiKey"];
 
         if (string.IsNullOrWhiteSpace(apiKey))
-            throw new Exception("Missing OpenAI API key");
+            return "The AI service is not configured yet. Please contact the administrator.";
 
         var client = _httpFactory.CreateClient("openai");
 
@@ -59,17 +59,22 @@ public class OpenAiChatService
             text = new { format = new { type = "text" } }
         });
 
-        // ✅ ONE request object (this is critical)
         using var req = new HttpRequestMessage(HttpMethod.Post, "responses");
-        req.Headers.Authorization =
-            new AuthenticationHeaderValue("Bearer", apiKey);
+        req.Headers.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
         req.Content = new StringContent(payload, Encoding.UTF8, "application/json");
 
         using var res = await client.SendAsync(req, ct);
         var json = await res.Content.ReadAsStringAsync(ct);
 
         if (!res.IsSuccessStatusCode)
-            throw new Exception($"OpenAI responses failed ({(int)res.StatusCode}): {json}");
+        {
+            if ((int)res.StatusCode == 429)
+            {
+                return "The AI response service is temporarily unavailable because the API quota has been exceeded. Please try again later.";
+            }
+
+            return $"The AI response service is currently unavailable. Status: {(int)res.StatusCode}.";
+        }
 
         var answer = ExtractOutputText(json);
 

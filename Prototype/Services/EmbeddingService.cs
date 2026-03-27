@@ -20,20 +20,28 @@ public class EmbeddingService
             return Array.Empty<float>();
 
         var baseUrl = _config["EmbeddingService:BaseUrl"] ?? "http://127.0.0.1:8001";
-        var client = _httpFactory.CreateClient();
+        var client = _httpFactory.CreateClient("embedding");
 
         var payload = JsonSerializer.Serialize(new { text });
         using var content = new StringContent(payload, Encoding.UTF8, "application/json");
 
-        var res = await client.PostAsync($"{baseUrl}/embed", content, ct);
-        var json = await res.Content.ReadAsStringAsync(ct);
+        var response = await client.PostAsync($"{baseUrl.TrimEnd('/')}/embed", content, ct);
+        var json = await response.Content.ReadAsStringAsync(ct);
 
-        if (!res.IsSuccessStatusCode)
-            throw new Exception($"Embedding service error: {json}");
+        if (!response.IsSuccessStatusCode)
+            throw new Exception($"Embedding service error ({(int)response.StatusCode}): {json}");
 
         using var doc = JsonDocument.Parse(json);
-        var emb = doc.RootElement.GetProperty("embedding");
 
-        return emb.EnumerateArray().Select(v => (float)v.GetDouble()).ToArray();
+        if (!doc.RootElement.TryGetProperty("embedding", out var embeddingElement) ||
+            embeddingElement.ValueKind != JsonValueKind.Array)
+        {
+            throw new Exception("Embedding service response did not contain a valid 'embedding' array.");
+        }
+
+        return embeddingElement
+            .EnumerateArray()
+            .Select(v => (float)v.GetDouble())
+            .ToArray();
     }
 }

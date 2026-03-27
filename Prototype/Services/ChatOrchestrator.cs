@@ -8,30 +8,38 @@ public class ChatOrchestrator
     private readonly EmbeddingService _embed;
     private readonly RetrievalService _retrieval;
     private readonly OpenAiChatService _openAi;
+    private readonly LangChainClientService _langChain;
     private readonly IConfiguration _config;
 
-    // Strong topic switch triggers
     private readonly Dictionary<string, string[]> _strongServiceTriggers = new(StringComparer.OrdinalIgnoreCase)
     {
-        ["Council Tax"] = new[] { "council tax", "ctax", "tax", "bill", "balance", "arrears", "direct debit", "discount", "exemption" },
-        ["Waste & Bins"] = new[] { "bin", "bins", "waste", "recycling", "missed", "collection", "bulky", "replacement bin" },
-        ["Benefits & Support"] = new[] { "benefit", "benefits", "support", "financial support", "hardship", "council tax support", "housing benefit", "universal credit", "uc", "money help" },
-        ["Education"] = new[] { "school", "admissions", "apply for school", "deadline", "in-year", "transfer", "send", "ehcp", "transport" }
+        ["Council Tax"] = new[]
+        {
+            "council tax", "ctax", "tax", "bill", "balance", "arrears",
+            "direct debit", "discount", "exemption", "council tax payment"
+        },
+        ["Waste & Bins"] = new[]
+        {
+            "bin", "bins", "waste", "recycling", "missed", "collection",
+            "bulky", "replacement bin", "bin collection"
+        },
+        ["Benefits & Support"] = new[]
+        {
+            "benefit", "benefits", "support", "financial support", "hardship",
+            "council tax support", "housing benefit", "universal credit", "uc",
+            "money help", "blue badge", "disabled badge", "disable badge",
+            "mobility support", "parking badge"
+        },
+        ["Education"] = new[]
+        {
+            "school", "schools", "admissions", "apply for school", "deadline",
+            "in-year", "transfer", "send", "ehcp", "transport", "school place"
+        }
     };
 
-    // Follow-up intent labels
-    private readonly Dictionary<string, string[]> _followUpIntents = new(StringComparer.OrdinalIgnoreCase)
-    {
-        ["payment"] = new[] { "pay", "payment", "paying", "missed payment", "owe", "arrears", "direct debit" },
-        ["eligibility"] = new[] { "eligible", "eligibility", "qualify", "can i get", "who can", "discount", "exemption" },
-        ["application"] = new[] { "apply", "application", "how do i apply", "form", "submit" },
-        ["contact"] = new[] { "contact", "phone", "email", "speak to", "call", "talk to someone" }
-    };
-
-    // Generic chatter
     private readonly HashSet<string> _genericMessages = new(StringComparer.OrdinalIgnoreCase)
     {
-        "help","hi","hello","hey","ok","okay","thanks","thank you","please"
+        "help", "hi", "hello", "hey", "ok", "okay", "thanks", "thank you", "please"
     };
 
     public ChatOrchestrator(
@@ -39,114 +47,144 @@ public class ChatOrchestrator
         EmbeddingService embed,
         RetrievalService retrieval,
         OpenAiChatService openAi,
+        LangChainClientService langChain,
         IConfiguration config)
     {
         _memory = memory;
         _embed = embed;
         _retrieval = retrieval;
         _openAi = openAi;
+        _langChain = langChain;
         _config = config;
     }
 
     public async Task<(string reply, string service, string nextStepsUrl, float score)> HandleChatAsync(string sessionId, string message)
     {
-        var lastService = _memory.GetLastService(sessionId) ?? "";
         var normMsg = Normalize(message);
+        var lastService = _memory.GetLastService(sessionId) ?? "";
 
-        // very generic -> ask service
-        var detectedService = DetectService(normMsg, _strongServiceTriggers);
-        if (_genericMessages.Contains(normMsg) && string.IsNullOrWhiteSpace(detectedService))
+        // 1. Generic greetings / vague starter prompts
+        if (_genericMessages.Contains(normMsg))
         {
-            return ("I can help with **Council Tax**, **Waste/Bins**, **Benefits**, and **School Admissions**. Which service do you need?",
-                "Unknown", "", 0);
+            var genericReply =
+                "I can help with **Council Tax**, **Waste/Bins**, **Benefits & Support**, and **School Admissions**. What would you like help with?";
+            SaveConversation(sessionId, message, genericReply, "Unknown");
+            return (genericReply, "Unknown", "", 0);
         }
 
-        // Embed query
+        // 2. Use light service hinting only
+        var detectedService = DetectService(normMsg, _strongServiceTriggers);
+
+        // 3. Embed query
         var qEmb = await _embed.EmbedAsync(message);
+        var threshold = _config.GetValue("Retrieval:Threshold", 0.45f);
 
-        // Threshold
-        var threshold = _config.GetValue("Retrieval:Threshold", 0.50f);
-
-        // Retrieve top chunks
+        // 4. Retrieve candidate chunks
         List<(FaqChunk chunk, float score)> top =
             !string.IsNullOrWhiteSpace(detectedService)
-                ? _retrieval.TopKInService(qEmb, detectedService, 3)
-                : _retrieval.TopK(qEmb, 3);
+                ? _retrieval.TopKInService(qEmb, detectedService, 4)
+                : _retrieval.TopK(qEmb, 4);
 
         var best = top.FirstOrDefault();
-        var second = top.Skip(1).FirstOrDefault();
-
         var bestChunk = best.chunk;
         var bestScore = best.score;
 
-        // If no good match, do follow-up logic
-        if (bestChunk == null || bestScore < threshold)
-        {
-            var contextService =
-                !string.IsNullOrWhiteSpace(detectedService) ? detectedService :
-                !string.IsNullOrWhiteSpace(lastService) ? lastService :
-                "Unknown";
-
-            if (contextService != "Unknown")
-                _memory.SetLastService(sessionId, contextService);
-
-            if (contextService == "Unknown")
-            {
-                return ("Which service is this about: **Council Tax**, **Waste/Bins**, **Benefits**, or **School Admissions**?",
-                    "Unknown", "", bestScore);
-            }
-
-            var followType = DetectFollowUpType(normMsg, _followUpIntents);
-
-            var tailored = followType switch
-            {
-                "payment" => $"Is this about **paying** for **{contextService}** (e.g., instalments, missed payments, direct debit)?",
-                "contact" => $"Do you want **contact details** for **{contextService}**, or should I link you to the official support page?",
-                "application" => $"Are you asking how to **apply** for something under **{contextService}**? Tell me what you’re applying for.",
-                "eligibility" => $"Are you checking **eligibility** for **{contextService}** (who qualifies / what documents are needed)?",
-                _ => $"It looks like a follow-up about **{contextService}**. Can you clarify: **payment**, **eligibility**, **application**, or **contact details**?"
-            };
-
-            return (tailored, contextService, "", bestScore);
-        }
-
-        // Optional disambiguation: if top2 are very close
-        var close = second.chunk != null && Math.Abs(bestScore - second.score) <= 0.03f;
-        if (close)
-        {
-            var reply =
-                $"I found two close matches. Did you mean:\n" +
-                $"- **1)** {best.chunk.Title} ({best.chunk.Service})\n" +
-                $"- **2)** {second.chunk.Title} ({second.chunk.Service})\n\n" +
-                "Reply with **1** or **2**, or rephrase your question.";
-
-            _memory.SetLastService(sessionId, best.chunk.Service);
-            return (reply, best.chunk.Service, "", bestScore);
-        }
-
-        // Matched: store service
-        var finalService = bestChunk.Service ?? "Unknown";
-        if (finalService != "Unknown")
-            _memory.SetLastService(sessionId, finalService);
-
-        // ✅ Use OpenAI to generate a nicer answer from top chunks
+        // 5. Build context even if retrieval is weak
         var context = top
             .Where(t => t.chunk != null)
-            .Select(t => (t.chunk.Title, t.chunk.Text, t.chunk.NextStepsUrl))
+            .Select(t => (
+                title: t.chunk.Title ?? "",
+                text: t.chunk.Text ?? "",
+                nextUrl: t.chunk.NextStepsUrl ?? ""
+            ))
             .ToList();
 
-        var aiReply = await _openAi.GenerateAnswerAsync(message, finalService, context);
+        var history = _memory.GetRecentTurns(sessionId, 6)
+            .Select(t => (role: t.Role ?? "user", message: t.Message ?? ""))
+            .ToList();
 
-        // Use best chunk’s next step URL (or empty)
-        return (aiReply, finalService, bestChunk.NextStepsUrl ?? "", bestScore);
+        // 6. Build service hint for the agent
+        var serviceHint =
+            !string.IsNullOrWhiteSpace(detectedService) ? detectedService :
+            !string.IsNullOrWhiteSpace(lastService) ? lastService :
+            bestChunk?.Service ?? "Unknown";
+
+        // 7. If retrieval is weak, still let the agent try first
+        //    This is important for typo tolerance, vague prompts, and tool-calling
+        if (bestChunk == null || bestScore < threshold)
+        {
+            var weakContextAgentResult = await _langChain.RunAgentAsync(message, serviceHint, context, history);
+
+            var weakReply = weakContextAgentResult.answer;
+            var weakService = string.IsNullOrWhiteSpace(weakContextAgentResult.service)
+                ? serviceHint
+                : weakContextAgentResult.service;
+            var weakNextStepsUrl = weakContextAgentResult.nextStepsUrl ?? "";
+
+            if (!string.IsNullOrWhiteSpace(weakReply) &&
+                !weakReply.Contains("I’m not sure", StringComparison.OrdinalIgnoreCase) &&
+                !weakReply.Contains("not configured", StringComparison.OrdinalIgnoreCase))
+            {
+                SaveConversation(sessionId, message, weakReply, weakService);
+                return (weakReply, weakService, weakNextStepsUrl, bestScore);
+            }
+
+            var clarificationReply =
+                "I’m not fully sure which council service this is about yet. Can you tell me whether it relates to **Council Tax**, **Bins/Waste**, **Benefits & Support**, or **School Admissions**?";
+            SaveConversation(sessionId, message, clarificationReply, "Unknown");
+            return (clarificationReply, "Unknown", "", bestScore);
+        }
+
+        // 8. Strong retrieved service
+        var finalService = string.IsNullOrWhiteSpace(bestChunk.Service) ? "Unknown" : bestChunk.Service;
+        _memory.SetLastService(sessionId, finalService);
+
+        // 9. Let the LangChain agent decide answer / tool use
+        var agentResult = await _langChain.RunAgentAsync(message, finalService, context, history);
+
+        var aiReply = agentResult.answer;
+        var resolvedService = string.IsNullOrWhiteSpace(agentResult.service) ? finalService : agentResult.service;
+        var resolvedNextStepsUrl = string.IsNullOrWhiteSpace(agentResult.nextStepsUrl)
+            ? (bestChunk.NextStepsUrl ?? "")
+            : agentResult.nextStepsUrl;
+
+        // 10. Fallback to direct OpenAI if agent returns nothing
+        if (string.IsNullOrWhiteSpace(aiReply))
+        {
+            aiReply = await _openAi.GenerateAnswerAsync(message, finalService, context);
+        }
+
+        // 11. Final fallback to retrieved text
+        if (string.IsNullOrWhiteSpace(aiReply))
+        {
+            aiReply = bestChunk.Text ?? "Sorry — I could not find a reliable answer from the available council information.";
+        }
+
+        SaveConversation(sessionId, message, aiReply, resolvedService);
+
+        return (aiReply, resolvedService, resolvedNextStepsUrl, bestScore);
     }
 
-    // ---------------- Helpers ----------------
+    private void SaveConversation(string sessionId, string userMessage, string assistantReply, string service)
+    {
+        _memory.AddTurn(sessionId, "user", userMessage);
+        _memory.AddTurn(sessionId, "assistant", assistantReply);
+        _memory.SetLastService(sessionId, service);
+    }
 
     private static string Normalize(string input)
     {
-        if (string.IsNullOrWhiteSpace(input)) return "";
+        if (string.IsNullOrWhiteSpace(input))
+            return "";
+
         input = input.ToLowerInvariant();
+
+        // Simple typo / wording normalization
+        input = input.Replace("badg", "badge");
+        input = input.Replace("disabl", "disabled");
+        input = input.Replace("bin day", "bin collection");
+        input = input.Replace("c tax", "council tax");
+
         var chars = input.Where(c => char.IsLetterOrDigit(c) || char.IsWhiteSpace(c)).ToArray();
         return string.Join(" ", new string(chars).Split(' ', StringSplitOptions.RemoveEmptyEntries));
     }
@@ -155,27 +193,14 @@ public class ChatOrchestrator
     {
         foreach (var kv in triggers)
         {
-            foreach (var t in kv.Value)
+            foreach (var trigger in kv.Value)
             {
-                var tt = Normalize(t);
-                if (!string.IsNullOrWhiteSpace(tt) && normMsg.Contains(tt))
+                var normalizedTrigger = Normalize(trigger);
+                if (!string.IsNullOrWhiteSpace(normalizedTrigger) && normMsg.Contains(normalizedTrigger))
                     return kv.Key;
             }
         }
-        return "";
-    }
 
-    private static string DetectFollowUpType(string normMsg, Dictionary<string, string[]> intents)
-    {
-        foreach (var kv in intents)
-        {
-            foreach (var w in kv.Value)
-            {
-                var ww = Normalize(w);
-                if (!string.IsNullOrWhiteSpace(ww) && normMsg.Contains(ww))
-                    return kv.Key;
-            }
-        }
         return "";
     }
 }
