@@ -29,9 +29,7 @@ public class PostcodeController : ControllerBase
     }
 
     [HttpGet("bin-result")]
-    public async Task<IActionResult> GetBinResult(
-        [FromQuery] string postcode,
-        [FromQuery] string address)
+    public async Task<IActionResult> GetBinResult([FromQuery] string postcode, [FromQuery] string address)
     {
         if (string.IsNullOrWhiteSpace(postcode))
             return BadRequest(new { error = "Postcode is required." });

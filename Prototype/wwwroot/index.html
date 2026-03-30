@@ -519,7 +519,6 @@
       Tip: Try follow-ups like “What about discounts?” after asking a Council Tax question.
     </div>
   </div>
-
 <script>
   const chat = document.getElementById('chat');
   const statusLine = document.getElementById('statusLine');
@@ -531,6 +530,11 @@
 
   let lastService = "Unknown";
   let pendingSkeletonId = null;
+
+  // New flow state
+  let pendingPostcode = null;
+  let awaitingAddressSelection = false;
+  let lastAddresses = [];
 
   // persistent sessionId
   let sessionId = localStorage.getItem("sessionId");
@@ -587,8 +591,23 @@
     statusLine.textContent = text;
   }
 
+  function isUsefulAddress(text){
+    if(!text) return false;
+    const cleaned = text.trim().toLowerCase();
+
+    const excluded = [
+      "close",
+      "view our privacy notice",
+      "privacy notice"
+    ];
+
+    if(excluded.includes(cleaned)) return false;
+
+    return true;
+  }
+
   // -----------------------------
-  // Skeleton loader (bot bubble)
+  // Skeleton loader
   // -----------------------------
   function showSkeleton(){
     const id = "sk_" + crypto.randomUUID();
@@ -608,11 +627,28 @@
     sendBtn.disabled = true;
   }
 
+  function replaceSkeletonWithHtml(html){
+    const node = [...document.querySelectorAll('.msg.bot')].find(x => x.dataset.id === pendingSkeletonId);
+    pendingSkeletonId = null;
+
+    if(!node){
+      addMessage(html, "bot");
+      updateStatus("Ready");
+      sendBtn.disabled = false;
+      return;
+    }
+
+    const bubble = node.querySelector('.bubble');
+    bubble.innerHTML = html;
+
+    updateStatus("Ready");
+    sendBtn.disabled = false;
+  }
+
   function replaceSkeletonWithBotReply(data){
     const node = [...document.querySelectorAll('.msg.bot')].find(x => x.dataset.id === pendingSkeletonId);
     pendingSkeletonId = null;
 
-    // If skeleton not found, just add message normally
     if(!node){
       addBotReply(data);
       updateStatus("Ready");
@@ -620,7 +656,6 @@
       return;
     }
 
-    // Build reply HTML
     lastService = data.service || "Unknown";
     let header = `<span class="tag">Service</span> <b>${escapeHtml(lastService)}</b>`;
     let body = `<div style="margin-top:8px">${data.reply || ""}</div>`;
@@ -653,7 +688,6 @@
         <button class="chip" onclick="sendPreset('What if I missed a payment?')">Missed payment</button>
       </div>`;
 
-    // Replace skeleton bubble HTML in place (keeps animation)
     const bubble = node.querySelector('.bubble');
     bubble.innerHTML = header + body + next + feedback + chips;
 
@@ -661,7 +695,6 @@
     sendBtn.disabled = false;
   }
 
-  // Normal bot reply (used if no skeleton)
   function addBotReply(data){
     lastService = data.service || "Unknown";
 
@@ -700,6 +733,104 @@
   }
 
   // -----------------------------
+  // New postcode/address/bin flow
+  // -----------------------------
+  async function searchPostcode(postcode){
+    showSkeleton();
+
+    try{
+      const res = await fetch(`/api/postcode/search?postcode=${encodeURIComponent(postcode)}`);
+      const data = await res.json();
+
+      if(!res.ok || data.error){
+        replaceSkeletonWithBotReply({
+          service: "Waste & Bins",
+          reply: `<b>Error:</b> ${escapeHtml(data.error || 'Could not look up addresses for that postcode.')}`,
+          nextStepsUrl: ""
+        });
+        return;
+      }
+
+      const addresses = (data.addresses || []).filter(isUsefulAddress);
+      lastAddresses = addresses;
+      pendingPostcode = postcode;
+      awaitingAddressSelection = true;
+      lastService = "Waste & Bins";
+
+      if(addresses.length === 0){
+        replaceSkeletonWithBotReply({
+          service: "Waste & Bins",
+          reply: "I could not find any selectable addresses for that postcode. Please try another postcode.",
+          nextStepsUrl: ""
+        });
+        return;
+      }
+
+      const buttonsHtml = addresses.map((address, index) => `
+        <button class="chip" onclick="selectAddress(${index})">${escapeHtml(address)}</button>
+      `).join("");
+
+      replaceSkeletonWithHtml(`
+        <span class="tag">Service</span> <b>Waste & Bins</b>
+        <div style="margin-top:8px">
+          I found these addresses for <b>${escapeHtml(postcode)}</b>. Please select one:
+        </div>
+        <div class="card">
+          <div class="chips">
+            ${buttonsHtml}
+          </div>
+        </div>
+      `);
+    }catch(e){
+      replaceSkeletonWithBotReply({
+        service: "Waste & Bins",
+        reply: "<b>Error:</b> Could not reach the postcode lookup service.",
+        nextStepsUrl: ""
+      });
+    }
+  }
+
+  async function selectAddress(index){
+    if(!awaitingAddressSelection) return;
+    if(index < 0 || index >= lastAddresses.length) return;
+
+    const address = lastAddresses[index];
+    addMessage(escapeHtml(address), "you");
+
+    showSkeleton();
+
+    try{
+      const res = await fetch(`/api/postcode/bin-result?postcode=${encodeURIComponent(pendingPostcode)}&address=${encodeURIComponent(address)}`);
+      const data = await res.json();
+
+      if(!res.ok){
+        replaceSkeletonWithBotReply({
+          service: "Waste & Bins",
+          reply: "<b>Error:</b> Could not retrieve the collection result.",
+          nextStepsUrl: ""
+        });
+        return;
+      }
+
+      awaitingAddressSelection = false;
+
+      const resultText = data.result || "No collection information found.";
+
+      replaceSkeletonWithHtml(`
+        <span class="tag">Service</span> <b>Waste & Bins</b>
+        <div style="margin-top:8px"><b>Address:</b> ${escapeHtml(address)}</div>
+        <div class="card" style="white-space: pre-wrap; margin-top:10px">${escapeHtml(resultText)}</div>
+      `);
+    }catch(e){
+      replaceSkeletonWithBotReply({
+        service: "Waste & Bins",
+        reply: "<b>Error:</b> Could not reach the bin result service.",
+        nextStepsUrl: ""
+      });
+    }
+  }
+
+  // -----------------------------
   // Init greeting
   // -----------------------------
   addMessage(
@@ -731,15 +862,37 @@
       const data = await res.json();
 
       if(!res.ok){
-        // Replace skeleton with error
-        replaceSkeletonWithBotReply({ service: "Error", reply: `<b>Error:</b> ${escapeHtml(data.reply || 'Request failed')}`, nextStepsUrl: "" });
+        replaceSkeletonWithBotReply({
+          service: "Error",
+          reply: `<b>Error:</b> ${escapeHtml(data.reply || 'Request failed')}`,
+          nextStepsUrl: ""
+        });
+        return;
+      }
+
+      // Special backend signal: POSTCODE_LOOKUP::BD1 1HY
+      if(typeof data.reply === "string" && data.reply.startsWith("POSTCODE_LOOKUP::")){
+        const postcode = data.reply.replace("POSTCODE_LOOKUP::", "").trim();
+
+        // remove existing skeleton first
+        const node = [...document.querySelectorAll('.msg.bot')].find(x => x.dataset.id === pendingSkeletonId);
+        if(node) node.remove();
+        pendingSkeletonId = null;
+        sendBtn.disabled = false;
+        updateStatus("Working…");
+
+        await searchPostcode(postcode);
         return;
       }
 
       replaceSkeletonWithBotReply(data);
 
     }catch(e){
-      replaceSkeletonWithBotReply({ service: "Error", reply: `<b>Error:</b> Could not reach the server.`, nextStepsUrl: "" });
+      replaceSkeletonWithBotReply({
+        service: "Error",
+        reply: `<b>Error:</b> Could not reach the server.`,
+        nextStepsUrl: ""
+      });
     }
   }
 
@@ -763,6 +916,10 @@
 
   function resetChat(){
     chat.innerHTML = "";
+    pendingPostcode = null;
+    awaitingAddressSelection = false;
+    lastAddresses = [];
+
     addMessage(
       `<b>Chat reset.</b> Ask a new question anytime.
        <div class="meta">Session stays the same unless you clear browser storage.</div>`,
@@ -774,5 +931,6 @@
     if(e.key === 'Enter') send();
   });
 </script>
+
 </body>
 </html>

@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using CouncilChatbotPrototype.Models;
 
 namespace CouncilChatbotPrototype.Services;
@@ -21,7 +22,8 @@ public class ChatOrchestrator
         ["Waste & Bins"] = new[]
         {
             "bin", "bins", "waste", "recycling", "missed", "collection",
-            "bulky", "replacement bin", "bin collection"
+            "bulky", "replacement bin", "bin collection", "bin day",
+            "collection day", "waste collection", "recycling collection"
         },
         ["Benefits & Support"] = new[]
         {
@@ -72,14 +74,32 @@ public class ChatOrchestrator
             return (genericReply, "Unknown", "", 0);
         }
 
-        // 2. Use light service hinting only
+        // 2. Special bin collection day flow
+        if (IsBinCollectionDayIntent(normMsg))
+        {
+            var reply = "Please enter your postcode so I can look up the address options for your bin collection day.";
+            SaveConversation(sessionId, message, reply, "Waste & Bins");
+            return (reply, "Waste & Bins", "", 1.0f);
+        }
+
+        // 3. If user enters a postcode after bin/waste flow, send special frontend signal
+        if (LooksLikeUkPostcode(message) &&
+            string.Equals(lastService, "Waste & Bins", StringComparison.OrdinalIgnoreCase))
+        {
+            var postcode = message.Trim().ToUpperInvariant();
+            var reply = $"POSTCODE_LOOKUP::{postcode}";
+            SaveConversation(sessionId, message, reply, "Waste & Bins");
+            return (reply, "Waste & Bins", "", 1.0f);
+        }
+
+        // 4. Use light service hinting only
         var detectedService = DetectService(normMsg, _strongServiceTriggers);
 
-        // 3. Embed query
+        // 5. Embed query
         var qEmb = await _embed.EmbedAsync(message);
         var threshold = _config.GetValue("Retrieval:Threshold", 0.45f);
 
-        // 4. Retrieve candidate chunks
+        // 6. Retrieve candidate chunks
         List<(FaqChunk chunk, float score)> top =
             !string.IsNullOrWhiteSpace(detectedService)
                 ? _retrieval.TopKInService(qEmb, detectedService, 4)
@@ -89,7 +109,7 @@ public class ChatOrchestrator
         var bestChunk = best.chunk;
         var bestScore = best.score;
 
-        // 5. Build context even if retrieval is weak
+        // 7. Build context even if retrieval is weak
         var context = top
             .Where(t => t.chunk != null)
             .Select(t => (
@@ -103,14 +123,13 @@ public class ChatOrchestrator
             .Select(t => (role: t.Role ?? "user", message: t.Message ?? ""))
             .ToList();
 
-        // 6. Build service hint for the agent
+        // 8. Build service hint for the agent
         var serviceHint =
             !string.IsNullOrWhiteSpace(detectedService) ? detectedService :
             !string.IsNullOrWhiteSpace(lastService) ? lastService :
             bestChunk?.Service ?? "Unknown";
 
-        // 7. If retrieval is weak, still let the agent try first
-        //    This is important for typo tolerance, vague prompts, and tool-calling
+        // 9. If retrieval is weak, still let the agent try first
         if (bestChunk == null || bestScore < threshold)
         {
             var weakContextAgentResult = await _langChain.RunAgentAsync(message, serviceHint, context, history);
@@ -135,11 +154,11 @@ public class ChatOrchestrator
             return (clarificationReply, "Unknown", "", bestScore);
         }
 
-        // 8. Strong retrieved service
+        // 10. Strong retrieved service
         var finalService = string.IsNullOrWhiteSpace(bestChunk.Service) ? "Unknown" : bestChunk.Service;
         _memory.SetLastService(sessionId, finalService);
 
-        // 9. Let the LangChain agent decide answer / tool use
+        // 11. Let the LangChain agent decide answer / tool use
         var agentResult = await _langChain.RunAgentAsync(message, finalService, context, history);
 
         var aiReply = agentResult.answer;
@@ -148,13 +167,13 @@ public class ChatOrchestrator
             ? (bestChunk.NextStepsUrl ?? "")
             : agentResult.nextStepsUrl;
 
-        // 10. Fallback to direct OpenAI if agent returns nothing
+        // 12. Fallback to direct OpenAI if agent returns nothing
         if (string.IsNullOrWhiteSpace(aiReply))
         {
             aiReply = await _openAi.GenerateAnswerAsync(message, finalService, context);
         }
 
-        // 11. Final fallback to retrieved text
+        // 13. Final fallback to retrieved text
         if (string.IsNullOrWhiteSpace(aiReply))
         {
             aiReply = bestChunk.Text ?? "Sorry — I could not find a reliable answer from the available council information.";
@@ -202,5 +221,29 @@ public class ChatOrchestrator
         }
 
         return "";
+    }
+
+    private static bool IsBinCollectionDayIntent(string normMsg)
+    {
+        if (string.IsNullOrWhiteSpace(normMsg))
+            return false;
+
+        return normMsg.Contains("bin collection day") ||
+               normMsg.Contains("bin day") ||
+               normMsg.Contains("collection day") ||
+               normMsg.Contains("waste collection") ||
+               normMsg.Contains("recycling collection") ||
+               (normMsg.Contains("bin") && normMsg.Contains("day")) ||
+               (normMsg.Contains("recycling") && normMsg.Contains("day"));
+    }
+
+    private static bool LooksLikeUkPostcode(string input)
+    {
+        if (string.IsNullOrWhiteSpace(input))
+            return false;
+
+        var cleaned = input.Trim().ToUpperInvariant();
+
+        return Regex.IsMatch(cleaned, @"^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$");
     }
 }

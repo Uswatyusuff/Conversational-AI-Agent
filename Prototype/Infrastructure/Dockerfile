@@ -2,10 +2,42 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 
 COPY . .
+
+RUN dotnet restore
+RUN dotnet build -c Release
 RUN dotnet publish -c Release -o /app/publish
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
 WORKDIR /app
+
+RUN apt-get update && apt-get install -y \
+    wget \
+    curl \
+    unzip \
+    gnupg \
+    python3 \
+    python3-pip \
+    libnss3 \
+    libatk-bridge2.0-0 \
+    libx11-xcb1 \
+    libgtk-3-0 \
+    libgbm1 \
+    libasound2t64 \
+    libxshmfence1 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxfixes3 \
+    libxrandr2 \
+    libcups2 \
+    libpango-1.0-0 \
+    libpangocairo-1.0-0 \
+    libatspi2.0-0 \
+    libdrm2 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Chromium browser binaries into Playwright cache
+RUN python3 -m pip install --break-system-packages playwright \
+    && python3 -m playwright install chromium
 
 COPY --from=build /app/publish .
 
