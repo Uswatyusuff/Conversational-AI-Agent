@@ -1,5 +1,6 @@
 using Microsoft.Playwright;
 using CouncilChatbotPrototype.Models;
+using System.Globalization;
 
 namespace CouncilChatbotPrototype.Services;
 
@@ -282,7 +283,10 @@ public class PlaywrightService
         {
             var text = (await SafeGetElementTextAsync(buttons.Nth(i))).Trim();
 
-            if (string.Equals(NormalizeForComparison(text), NormalizeForComparison(selectedAddress), StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(
+                NormalizeForComparison(text),
+                NormalizeForComparison(selectedAddress),
+                StringComparison.OrdinalIgnoreCase))
             {
                 await buttons.Nth(i).ClickAsync();
                 return true;
@@ -296,7 +300,10 @@ public class PlaywrightService
         {
             var text = (await SafeGetElementTextAsync(fallbackElements.Nth(i))).Trim();
 
-            if (string.Equals(NormalizeForComparison(text), NormalizeForComparison(selectedAddress), StringComparison.OrdinalIgnoreCase))
+            if (string.Equals(
+                NormalizeForComparison(text),
+                NormalizeForComparison(selectedAddress),
+                StringComparison.OrdinalIgnoreCase))
             {
                 await fallbackElements.Nth(i).ClickAsync();
                 return true;
@@ -343,20 +350,317 @@ public class PlaywrightService
     }
 
     private async Task<string> ExtractCollectionResultsAsync(IPage page)
+{
+    var bodyText = await SafeGetBodyTextAsync(page);
+
+    if (string.IsNullOrWhiteSpace(bodyText))
+        return "";
+
+    var lines = bodyText
+        .Replace("\r", "")
+        .Split('\n', StringSplitOptions.RemoveEmptyEntries)
+        .Select(x => x.Trim())
+        .Where(x => !string.IsNullOrWhiteSpace(x))
+        .Where(x => !IsIgnoredResultLine(x))
+        .ToList();
+
+    var nextCollectionText = ExtractNextCollectionFromSummary(lines);
+
+    var generalDates = ExtractDatesUnderExactHeading(
+        lines,
+        "General waste",
+        new[] { "Recycling waste", "Garden waste", "Garden waste (subscription only)", "Print/save collection dates" });
+
+    var recyclingDates = ExtractDatesUnderExactHeading(
+        lines,
+        "Recycling waste",
+        new[] { "Garden waste", "Garden waste (subscription only)", "Print/save collection dates" });
+
+    var gardenDates = ExtractDatesUnderExactHeading(
+        lines,
+        "Garden waste (subscription only)",
+        new[] { "Print/save collection dates" });
+
+    var generalEligible = generalDates.Count > 0;
+
+    if (!generalEligible)
+        return "This location is not eligible for bin collection.";
+
+    // Recycling is automatically eligible if general waste is eligible.
+    var recyclingEligible = true;
+
+    // Garden subscription must be detected from the sentence under "Garden waste"
+    var gardenStatusText = ExtractGardenSubscriptionText(lines);
+
+    var gardenSubscribed =
+        gardenStatusText.Contains("currently subscribed", StringComparison.OrdinalIgnoreCase) &&
+        !gardenStatusText.Contains("not currently subscribed", StringComparison.OrdinalIgnoreCase);
+
+    var gardenNotSubscribed =
+        gardenStatusText.Contains("not currently subscribed", StringComparison.OrdinalIgnoreCase);
+
+    // Only show garden dates when the page says subscribed and dates exist
+    var gardenEligible = gardenSubscribed && gardenDates.Count > 0;
+
+    var summary = new List<string>();
+
+    if (!string.IsNullOrWhiteSpace(nextCollectionText))
     {
-        var bodyText = await SafeGetBodyTextAsync(page);
+        summary.Add(nextCollectionText);
+        summary.Add("");
+    }
+    else
+    {
+        var allUpcoming = new List<(DateTime date, string type)>();
+        AddParsedDates(allUpcoming, generalDates, "General waste");
+        AddParsedDates(allUpcoming, recyclingDates, "Recycling waste");
 
-        if (string.IsNullOrWhiteSpace(bodyText))
-            return "";
+        if (gardenEligible)
+            AddParsedDates(allUpcoming, gardenDates, "Garden waste");
 
-        var lines = bodyText
-            .Split('\n', StringSplitOptions.RemoveEmptyEntries)
-            .Select(x => x.Trim())
-            .Where(x => !string.IsNullOrWhiteSpace(x))
-            .Where(x => !IsIgnoredResultLine(x))
+        var nextCollection = allUpcoming
+            .OrderBy(x => x.date)
+            .FirstOrDefault();
+
+        if (nextCollection != default)
+        {
+            summary.Add($"Next collection: {nextCollection.type} on {FormatDate(nextCollection.date)}");
+            summary.Add("");
+        }
+    }
+
+    AppendTopThree(summary, "General waste", generalDates, false);
+    summary.Add("");
+
+    if (recyclingDates.Count > 0)
+    {
+        AppendTopThree(summary, "Recycling waste", recyclingDates, false);
+    }
+    else if (recyclingEligible)
+    {
+        summary.Add("Recycling waste:");
+        summary.Add("- Eligible, but no collection dates could be extracted");
+    }
+    else
+    {
+        summary.Add("Recycling waste: Not eligible");
+    }
+
+    summary.Add("");
+
+    summary.Add($"Garden waste subscription: {GetGardenSubscriptionLabel(gardenSubscribed, gardenNotSubscribed)}");
+    summary.Add("");
+
+    if (gardenEligible)
+    {
+        AppendTopThree(summary, "Garden waste", gardenDates, false);
+    }
+    else
+    {
+        summary.Add("Garden waste: Subscription required");
+    }
+
+    return string.Join(Environment.NewLine, summary).Trim();
+}
+private static string ExtractGardenSubscriptionText(List<string> lines)
+{
+    for (int i = 0; i < lines.Count; i++)
+    {
+        if (lines[i].Equals("Garden waste", StringComparison.OrdinalIgnoreCase))
+        {
+            var collected = new List<string>();
+
+            for (int j = i + 1; j < lines.Count; j++)
+            {
+                var line = lines[j];
+
+                if (line.Equals("General waste", StringComparison.OrdinalIgnoreCase) ||
+                    line.Equals("Recycling waste", StringComparison.OrdinalIgnoreCase) ||
+                    line.StartsWith("Garden waste (subscription only)", StringComparison.OrdinalIgnoreCase))
+                {
+                    break;
+                }
+
+                collected.Add(line);
+            }
+
+            return string.Join(" ", collected);
+        }
+    }
+
+    return "";
+}
+
+private static string GetGardenSubscriptionLabel(bool subscribed, bool notSubscribed)
+{
+    if (subscribed)
+        return "Subscribed";
+
+    if (notSubscribed)
+        return "Not subscribed";
+
+    return "Unknown";
+}
+    private static string ExtractNextCollectionFromSummary(List<string> lines)
+    {
+        for (int i = 0; i < lines.Count; i++)
+        {
+            if (lines[i].Contains("Your next general/recycling collections are", StringComparison.OrdinalIgnoreCase))
+            {
+                for (int j = i + 1; j < Math.Min(i + 6, lines.Count); j++)
+                {
+                    var line = lines[j];
+
+                    if (line.Contains("Recycling waste", StringComparison.OrdinalIgnoreCase))
+                    {
+                        var date = ExtractDateFromMixedLine(line);
+                        if (date.HasValue)
+                            return $"Next collection: Recycling waste on {FormatDate(date.Value)}";
+                    }
+
+                    if (line.Contains("General waste", StringComparison.OrdinalIgnoreCase))
+                    {
+                        var date = ExtractDateFromMixedLine(line);
+                        if (date.HasValue)
+                            return $"Next collection: General waste on {FormatDate(date.Value)}";
+                    }
+                }
+            }
+        }
+
+        return "";
+    }
+
+    private static DateTime? ExtractDateFromMixedLine(string line)
+    {
+        if (string.IsNullOrWhiteSpace(line))
+            return null;
+
+        var words = line.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+        for (int i = 0; i <= words.Length - 4; i++)
+        {
+            var candidate = string.Join(" ", words.Skip(i).Take(4));
+            var parsed = TryParseCollectionDate(candidate);
+
+            if (parsed.HasValue)
+                return parsed;
+        }
+
+        return null;
+    }
+
+    private static List<string> ExtractDatesUnderExactHeading(
+        List<string> lines,
+        string heading,
+        string[] endHeadings)
+    {
+        var startIndex = -1;
+
+        for (int i = 0; i < lines.Count; i++)
+        {
+            if (string.Equals(lines[i], heading, StringComparison.OrdinalIgnoreCase))
+            {
+                startIndex = i;
+                break;
+            }
+        }
+
+        if (startIndex < 0)
+            return new List<string>();
+
+        var endIndex = lines.Count;
+
+        for (int i = startIndex + 1; i < lines.Count; i++)
+        {
+            if (endHeadings.Any(h => string.Equals(lines[i], h, StringComparison.OrdinalIgnoreCase)))
+            {
+                endIndex = i;
+                break;
+            }
+        }
+
+        return lines
+            .Skip(startIndex + 1)
+            .Take(endIndex - startIndex - 1)
+            .Where(LooksLikeCollectionDate)
+            .Distinct(StringComparer.OrdinalIgnoreCase)
             .ToList();
+    }
 
-        return string.Join(Environment.NewLine, lines);
+    private static void AppendTopThree(List<string> summary, string label, List<string> dates, bool notEligible)
+    {
+        if (notEligible || dates.Count == 0)
+        {
+            summary.Add($"{label}: Not eligible");
+            return;
+        }
+
+        summary.Add($"{label}:");
+
+        foreach (var date in GetTopThreeDates(dates))
+        {
+            summary.Add($"- {date}");
+        }
+    }
+
+    private static List<string> GetTopThreeDates(List<string> rawDates)
+    {
+        return rawDates
+            .Select(TryParseCollectionDate)
+            .Where(x => x.HasValue)
+            .Select(x => x!.Value)
+            .Distinct()
+            .OrderBy(x => x)
+            .Take(3)
+            .Select(FormatDate)
+            .ToList();
+    }
+
+    private static void AddParsedDates(List<(DateTime date, string type)> all, List<string> rawDates, string type)
+    {
+        foreach (var raw in rawDates)
+        {
+            var parsed = TryParseCollectionDate(raw);
+            if (parsed.HasValue)
+            {
+                all.Add((parsed.Value, type));
+            }
+        }
+    }
+
+    private static DateTime? TryParseCollectionDate(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+            return null;
+
+        var formats = new[]
+        {
+            "ddd MMM dd yyyy",
+            "ddd MMM d yyyy"
+        };
+
+        if (DateTime.TryParseExact(
+            value.Trim(),
+            formats,
+            CultureInfo.InvariantCulture,
+            DateTimeStyles.None,
+            out var parsed))
+        {
+            return parsed;
+        }
+
+        return null;
+    }
+
+    private static string FormatDate(DateTime date)
+    {
+        return date.ToString("ddd dd MMM yyyy", CultureInfo.InvariantCulture);
+    }
+
+    private static bool LooksLikeCollectionDate(string line)
+    {
+        return TryParseCollectionDate(line).HasValue;
     }
 
     private static bool IsIgnoredButton(string text)
@@ -377,7 +681,9 @@ public class PlaywrightService
             "Close",
             "Show collection dates",
             "Search again",
-            "View our Privacy notice"
+            "Search for another address",
+            "View our Privacy notice",
+            "Save"
         };
 
         return ignored.Any(x => string.Equals(text.Trim(), x, StringComparison.OrdinalIgnoreCase));
@@ -410,11 +716,19 @@ public class PlaywrightService
             "Accessibility",
             "A to Z",
             "Search again",
+            "Search for another address",
             "Show collection dates",
             "View our Privacy notice",
             "Bradford Council sends regular bulletins",
             "You can opt in to receive relevant information",
-            "For security purposes this form will time out after 20 minutes of inactivity"
+            "For security purposes this form will time out after 20 minutes of inactivity",
+            "Save address",
+            "Print/save collection dates",
+            "Print/save with images",
+            "Print/save without images",
+            "For more all information regarding garden waste collections visit our garden waste collections webpage",
+            "Please note that this save feature will save a cookie",
+            "If you wish to save this address select the Save button below"
         };
 
         return ignoredFragments.Any(x => text.Contains(x, StringComparison.OrdinalIgnoreCase));

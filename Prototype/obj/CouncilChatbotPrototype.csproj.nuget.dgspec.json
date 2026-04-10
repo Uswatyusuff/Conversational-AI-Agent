@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/samikhafeez/Documents/GitHub/Conversational-AI-Agent/Prototype/CouncilChatbotPrototype.csproj": {}
+    "/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver6/CouncilChatbotPrototype.csproj": {}
   },
   "projects": {
-    "/Users/samikhafeez/Documents/GitHub/Conversational-AI-Agent/Prototype/CouncilChatbotPrototype.csproj": {
+    "/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver6/CouncilChatbotPrototype.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/samikhafeez/Documents/GitHub/Conversational-AI-Agent/Prototype/CouncilChatbotPrototype.csproj",
+        "projectUniqueName": "/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver6/CouncilChatbotPrototype.csproj",
         "projectName": "CouncilChatbotPrototype",
-        "projectPath": "/Users/samikhafeez/Documents/GitHub/Conversational-AI-Agent/Prototype/CouncilChatbotPrototype.csproj",
+        "projectPath": "/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver6/CouncilChatbotPrototype.csproj",
         "packagesPath": "/Users/samikhafeez/.nuget/packages/",
-        "outputPath": "/Users/samikhafeez/Documents/GitHub/Conversational-AI-Agent/Prototype/obj/",
+        "outputPath": "/Users/samikhafeez/Desktop/CouncilChatbotPrototype ver6/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/samikhafeez/.nuget/NuGet/NuGet.Config"

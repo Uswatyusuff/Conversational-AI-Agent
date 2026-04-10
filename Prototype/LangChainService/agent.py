@@ -1,134 +1,216 @@
-import os
-import re
-from prompts import SYSTEM_PROMPT
-from tools import lookup_addresses_by_postcode, lookup_bin_result, read_council_webpage
-from langchain_openai import ChatOpenAI
+from tools import (
+    rag_search_tool,
+    looks_like_postcode,
+    extract_postcode
+)
 
 
-def build_llm():
-    return ChatOpenAI(
-        model=os.getenv("OPENAI_MODEL", "gpt-4o-mini"),
-        temperature=0.2,
-        api_key=os.getenv("OPENAI_API_KEY")
-    )
+def normalize(text: str) -> str:
+    if not text:
+        return ""
+    return " ".join(text.lower().strip().split())
 
 
-def build_context(context_chunks):
-    if not context_chunks:
-        return "No retrieved context available."
-
-    parts = []
-    for i, c in enumerate(context_chunks, start=1):
-        parts.append(
-            f"[Chunk {i}]\n"
-            f"Title: {c.title}\n"
-            f"Text: {c.text}\n"
-            f"Next URL: {c.nextUrl}"
-        )
-    return "\n\n".join(parts)
-
-
-def build_history(history):
-    if not history:
-        return "No prior history."
-
-    parts = []
-    for h in history:
-        role = getattr(h, "role", "user")
-        msg = getattr(h, "message", "")
-        parts.append(f"{role}: {msg}")
-    return "\n".join(parts)
-
-
-def extract_postcode(text: str) -> str:
-    # Simple UK postcode matcher
-    pattern = r"\b[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}\b"
-    match = re.search(pattern, text.upper())
-    return match.group(0).strip() if match else ""
-
-
-def should_use_address_lookup(question: str) -> bool:
-    q = question.lower()
+def is_collection_date_intent(lower: str) -> bool:
     return (
-        "postcode" in q or
-        "bin collection" in q or
-        "bin day" in q or
-        "address lookup" in q or
-        "find address" in q
+        "bin collection" in lower or
+        "collection day" in lower or
+        "bin day" in lower or
+        "next collection" in lower or
+        "next bin collection" in lower or
+        "recycling collection" in lower or
+        "recycling collection day" in lower or
+        "garden waste collection" in lower or
+        ("when" in lower and "bin" in lower and "collection" in lower) or
+        ("when" in lower and "recycling" in lower and "collection" in lower)
     )
 
 
-def should_use_webpage_reader(question: str) -> bool:
-    q = question.lower()
-    return "read webpage" in q or "check website" in q or "open page" in q
+def is_new_bin_intent(lower: str) -> bool:
+    return any(x in lower for x in [
+        "new bin",
+        "replacement bin",
+        "new recycle bin",
+        "new recycling bin",
+        "recycling container",
+        "replacement container",
+        "new wheeled bin",
+        "new wheeled bins",
+        "replacement recycling container",
+        "replacement recycling bin",
+        "request a new bin",
+        "get a new bin",
+    ])
+
+
+def is_new_bin_cost_intent(lower: str) -> bool:
+    return is_new_bin_intent(lower) and any(x in lower for x in [
+        "cost", "price", "charge", "fee", "how much"
+    ])
+
+
+def is_blue_badge_intent(lower: str) -> bool:
+    return "blue badge" in lower
+
+
+def is_free_school_meals_intent(lower: str) -> bool:
+    return "free school meal" in lower or "free school meals" in lower
+
+
+def is_council_tax_intent(lower: str) -> bool:
+    return "council tax" in lower or "c tax" in lower or "ctax" in lower
+
+
+def is_context_reset_intent(lower: str) -> bool:
+    return any(x in lower for x in [
+        "something else",
+        "something different",
+        "different topic",
+        "another question",
+        "different question",
+        "forget that",
+        "start again",
+        "new question",
+    ])
+
+
+def resolve_service_hint(question: str, existing_hint: str) -> str:
+    lower = normalize(question)
+
+    if is_blue_badge_intent(lower):
+        return "Benefits & Support"
+
+    if is_free_school_meals_intent(lower):
+        return "Benefits & Support"
+
+    if is_council_tax_intent(lower):
+        return "Council Tax"
+
+    if is_collection_date_intent(lower) or is_new_bin_intent(lower):
+        return "Waste & Bins"
+
+    if existing_hint:
+        return existing_hint
+
+    return "Unknown"
 
 
 def run_agent(req):
-    llm = build_llm()
+    question = req.question or ""
+    service_hint = req.service_hint or ""
+    lower = normalize(question)
 
-    question = req.question.strip()
-    service_hint = req.service_hint or "Unknown"
-    context_text = build_context(req.context_chunks)
-    history_text = build_history(req.history)
+    # =========================
+    # 0. CONTEXT RESET LANGUAGE
+    # =========================
+    if is_context_reset_intent(lower):
+        return {
+            "answer": "Of course. What would you like to ask about next?",
+            "service": "Unknown",
+            "action": "answer",
+            "needs_clarification": False,
+            "tool_used": "",
+            "next_steps_url": ""
+        }
 
-    tool_used = ""
-    tool_output = ""
+    # =========================
+    # 1. BIN COLLECTION DATE FLOW ONLY
+    # =========================
+    if is_collection_date_intent(lower):
+        if looks_like_postcode(question):
+            postcode = extract_postcode(question)
+            return {
+                "answer": f"POSTCODE_LOOKUP::{postcode}",
+                "service": "Waste & Bins",
+                "action": "tool",
+                "needs_clarification": False,
+                "tool_used": "postcode_lookup",
+                "next_steps_url": ""
+            }
 
-    # Tool route 1: postcode / address / bin-related
-    postcode = extract_postcode(question)
-    if postcode and should_use_address_lookup(question):
-        tool_used = "lookup_addresses_by_postcode"
-        tool_output = lookup_addresses_by_postcode.invoke(postcode)
+        return {
+            "answer": "Please enter your postcode so I can check your bin collection details.",
+            "service": "Waste & Bins",
+            "action": "clarify",
+            "needs_clarification": True,
+            "tool_used": "",
+            "next_steps_url": ""
+        }
 
-    # Tool route 2: explicit webpage reading
-    elif should_use_webpage_reader(question):
-        # crude URL extraction
-        url_match = re.search(r"https?://\S+", question)
-        if url_match:
-            tool_used = "read_council_webpage"
-            tool_output = read_council_webpage.invoke(url_match.group(0))
+    # =========================
+    # 2. SERVICE HINT RESOLUTION
+    # =========================
+    resolved_service_hint = resolve_service_hint(question, service_hint)
 
-    prompt = f"""
-{SYSTEM_PROMPT}
+    # =========================
+    # 3. TARGETED RAG SEARCH
+    # =========================
+    rag = rag_search_tool(question, resolved_service_hint)
 
-Service hint:
-{service_hint}
+    if rag["answer"]:
+        return {
+            "answer": rag["answer"],
+            "service": rag["service"] or resolved_service_hint,
+            "action": "answer",
+            "needs_clarification": False,
+            "tool_used": "rag",
+            "next_steps_url": rag["nextStepsUrl"]
+        }
 
-Conversation history:
-{history_text}
+    # =========================
+    # 4. SECOND PASS WITHOUT SERVICE HINT
+    # =========================
+    if resolved_service_hint not in ("", "Unknown"):
+        rag = rag_search_tool(question, "")
 
-Retrieved council context:
-{context_text}
+        if rag["answer"]:
+            return {
+                "answer": rag["answer"],
+                "service": rag["service"] or resolved_service_hint,
+                "action": "answer",
+                "needs_clarification": False,
+                "tool_used": "rag",
+                "next_steps_url": rag["nextStepsUrl"]
+            }
 
-Tool used:
-{tool_used if tool_used else "None"}
+    # =========================
+    # 5. SMART FALLBACKS
+    # =========================
+    if is_new_bin_cost_intent(lower):
+        return {
+            "answer": "I could not confirm the current charge for a new bin from the available council content. Please use the official new wheeled bins or recycling containers page for the latest charge.",
+            "service": "Waste & Bins",
+            "action": "fallback",
+            "needs_clarification": False,
+            "tool_used": "",
+            "next_steps_url": ""
+        }
 
-Tool output:
-{tool_output if tool_output else "None"}
+    if is_new_bin_intent(lower):
+        return {
+            "answer": "I could not find a reliable answer for that new bin request. Please try asking whether you want a new bin, a replacement bin, or the cost.",
+            "service": "Waste & Bins",
+            "action": "fallback",
+            "needs_clarification": False,
+            "tool_used": "",
+            "next_steps_url": ""
+        }
 
-User question:
-{question}
-
-Instructions:
-- If the tool output is useful, use it.
-- Otherwise use the retrieved council context.
-- If both are weak, ask one short clarification question.
-- Return plain text only.
-"""
-
-    answer = llm.invoke(prompt).content.strip()
-
-    next_steps_url = ""
-    if req.context_chunks:
-        first_with_url = next((c for c in req.context_chunks if getattr(c, "nextUrl", "")), None)
-        if first_with_url:
-            next_steps_url = first_with_url.nextUrl
+    if is_blue_badge_intent(lower):
+        return {
+            "answer": "I could not find a reliable Blue Badge answer from the current search results. Please try asking specifically about applying, eligibility, or evidence.",
+            "service": "Benefits & Support",
+            "action": "fallback",
+            "needs_clarification": False,
+            "tool_used": "",
+            "next_steps_url": ""
+        }
 
     return {
-        "answer": answer,
-        "service": service_hint,
-        "action": "answer",
+        "answer": "Sorry, I couldn't find a reliable answer. Please try rephrasing your question.",
+        "service": resolved_service_hint or "Unknown",
+        "action": "fallback",
         "needs_clarification": False,
-        "tool_used": tool_used,
-        "next_steps_url": next_steps_url
+        "tool_used": "",
+        "next_steps_url": ""
     }

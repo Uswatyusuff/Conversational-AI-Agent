@@ -1,6 +1,11 @@
 fastapi
-uvicorn[standard]
-langchain
-langchain-openai
+uvicorn
 requests
-pydantic
+beautifulsoup4
+faiss-cpu
+langchain
+langchain-community
+langchain-openai
+tiktoken
+python-dotenv
+playwright

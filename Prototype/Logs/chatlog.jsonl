@@ -281,3 +281,335 @@
 {"ts":"2026-02-20T02:51:54.750661Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for a school place?","matchedService":"Education","score":0.67855704}
 {"ts":"2026-02-20T02:51:58.115863Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for a school place?","matchedService":"Education","score":0.67855704}
 {"ts":"2026-02-23T15:16:21.592295Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I apply for Council Tax Support?","matchedService":"Council Tax","score":0.72109777}
+{"ts":"2026-03-19T05:18:02.6764018Z","sessionId":"379962cc-eac4-492b-8fa1-c169e14f3cf3","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.91778684}
+{"ts":"2026-03-19T05:22:28.3721233Z","sessionId":"379962cc-eac4-492b-8fa1-c169e14f3cf3","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.91778684}
+{"ts":"2026-03-19T05:22:29.6786187Z","sessionId":"379962cc-eac4-492b-8fa1-c169e14f3cf3","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":0.8299785}
+{"ts":"2026-03-19T05:22:31.75924Z","sessionId":"379962cc-eac4-492b-8fa1-c169e14f3cf3","userMessage":"How do I apply for Council Tax Support?","matchedService":"Council Tax","score":0.72109795}
+{"ts":"2026-03-19T05:22:34.3331168Z","sessionId":"379962cc-eac4-492b-8fa1-c169e14f3cf3","userMessage":"How do I apply for a school place?","matchedService":"Education","score":0.67855734}
+{"ts":"2026-03-19T05:22:37.6771505Z","sessionId":"379962cc-eac4-492b-8fa1-c169e14f3cf3","userMessage":"How do I apply for a school place?","matchedService":"Education","score":0.67855734}
+{"ts":"2026-03-19T05:22:53.5546132Z","sessionId":"379962cc-eac4-492b-8fa1-c169e14f3cf3","userMessage":"How do I apply for secondary school place.","matchedService":"Education","score":0.7874658}
+{"ts":"2026-03-19T05:23:23.8312401Z","sessionId":"379962cc-eac4-492b-8fa1-c169e14f3cf3","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":0.8299785}
+{"ts":"2026-03-19T05:27:34.6842742Z","sessionId":"379962cc-eac4-492b-8fa1-c169e14f3cf3","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.91778684}
+{"ts":"2026-03-19T06:53:09.7966394Z","sessionId":"86d73778-96ee-44d1-8747-cf8059e7bfd9","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.91778684}
+{"ts":"2026-03-19T06:53:12.9450146Z","sessionId":"86d73778-96ee-44d1-8747-cf8059e7bfd9","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":0.8299785}
+{"ts":"2026-03-19T06:53:15.3765711Z","sessionId":"86d73778-96ee-44d1-8747-cf8059e7bfd9","userMessage":"How do I apply for Council Tax Support?","matchedService":"Council Tax","score":0.72109795}
+{"ts":"2026-03-19T06:53:18.0962693Z","sessionId":"86d73778-96ee-44d1-8747-cf8059e7bfd9","userMessage":"How do I apply for a school place?","matchedService":"Education","score":0.67855734}
+{"ts":"2026-03-19T06:54:44.6714138Z","sessionId":"86d73778-96ee-44d1-8747-cf8059e7bfd9","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.91778684}
+{"ts":"2026-03-19T06:54:47.143149Z","sessionId":"86d73778-96ee-44d1-8747-cf8059e7bfd9","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":0.8299785}
+{"ts":"2026-03-19T06:55:12.9636342Z","sessionId":"86d73778-96ee-44d1-8747-cf8059e7bfd9","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.91778684}
+{"ts":"2026-03-19T06:55:37.4105917Z","sessionId":"86d73778-96ee-44d1-8747-cf8059e7bfd9","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.91778684}
+{"ts":"2026-03-19T23:25:38.1957944Z","sessionId":"73a33be3-7f1d-44ee-9dfd-248010badda8","userMessage":"Fuck You","matchedService":"Benefits \u0026 Support","score":0.14172873}
+{"ts":"2026-03-19T23:26:51.5903887Z","sessionId":"86d73778-96ee-44d1-8747-cf8059e7bfd9","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.91778684}
+{"ts":"2026-03-19T23:26:58.3050301Z","sessionId":"86d73778-96ee-44d1-8747-cf8059e7bfd9","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":0.8299785}
+{"ts":"2026-03-19T23:27:41.8251724Z","sessionId":"73a33be3-7f1d-44ee-9dfd-248010badda8","userMessage":"Hi","matchedService":"Unknown","score":0}
+{"ts":"2026-03-19T23:27:56.8396613Z","sessionId":"73a33be3-7f1d-44ee-9dfd-248010badda8","userMessage":"I want to know about my takeaway income","matchedService":"Benefits \u0026 Support","score":0.32837173}
+{"ts":"2026-03-19T23:28:02.6523004Z","sessionId":"86d73778-96ee-44d1-8747-cf8059e7bfd9","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.91778684}
+{"ts":"2026-03-19T23:28:05.218431Z","sessionId":"73a33be3-7f1d-44ee-9dfd-248010badda8","userMessage":"How do I apply?","matchedService":"Benefits \u0026 Support","score":0.47138694}
+{"ts":"2026-03-19T23:29:57.7310175Z","sessionId":"2c20eafb-af37-483e-8834-a62a4176ec20","userMessage":"How do I apply for Council Tax Support?","matchedService":"Council Tax","score":0.72109795}
+{"ts":"2026-03-19T23:35:47.3883797Z","sessionId":"e0086ce3-12c7-4601-b34a-ccf7961a8539","userMessage":"Hi","matchedService":"Unknown","score":0}
+{"ts":"2026-03-19T23:35:53.7002297Z","sessionId":"e0086ce3-12c7-4601-b34a-ccf7961a8539","userMessage":"How are you","matchedService":"Unknown","score":0.14520907}
+{"ts":"2026-03-19T23:36:01.4936265Z","sessionId":"e0086ce3-12c7-4601-b34a-ccf7961a8539","userMessage":"How I pay my council tax","matchedService":"Council Tax","score":0.79477155}
+{"ts":"2026-03-19T23:36:08.4363635Z","sessionId":"e0086ce3-12c7-4601-b34a-ccf7961a8539","userMessage":"2","matchedService":"Council Tax","score":0.09299038}
+{"ts":"2026-03-19T23:36:15.7436171Z","sessionId":"e0086ce3-12c7-4601-b34a-ccf7961a8539","userMessage":"How do I apply?","matchedService":"Council Tax","score":0.47138694}
+{"ts":"2026-03-19T23:36:22.6724725Z","sessionId":"e0086ce3-12c7-4601-b34a-ccf7961a8539","userMessage":"What if I missed a payment?","matchedService":"Waste \u0026 Bins","score":0.441049}
+{"ts":"2026-03-21T13:56:14.0747458Z","sessionId":"41dfb7d2-55cd-4c6e-823e-cfac7da54abc","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.91778684}
+{"ts":"2026-03-21T13:57:01.8723366Z","sessionId":"7477807b-a7fa-42be-adf0-76df7c49f7ed","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.91778684}
+{"ts":"2026-03-21T13:57:02.9510708Z","sessionId":"7477807b-a7fa-42be-adf0-76df7c49f7ed","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":0.8299785}
+{"ts":"2026-03-21T13:57:42.4471971Z","sessionId":"86d73778-96ee-44d1-8747-cf8059e7bfd9","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":0.8299785}
+{"ts":"2026-03-23T16:10:37.124175Z","sessionId":"02d3b4d0-8cd3-40c6-9eed-4c146899cb9a","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"2026-04-03T07:02:51.568096Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"2026-04-03T07:03:01.323577Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"bd3 8ap","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"2026-04-03T07:09:11.74092Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"2026-04-03T07:09:28.965366Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.8051774}
+{"ts":"2026-04-03T07:10:11.32523Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"Am I eligible for benefits?","matchedService":"Benefits \u0026 Support","score":0.57561964}
+{"ts":"2026-04-03T07:11:08.156907Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"I want to get admission in school","matchedService":"Education","score":0.6048899}
+{"ts":"2026-04-04T04:29:41.34593Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"2026-04-04T04:30:05.024024Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How to get admission in school?","matchedService":"Education","score":0.5909334}
+{"ts":"2026-04-04T04:31:04.72327Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"what is the last date I can apply?","matchedService":"Education","score":0.44905958}
+{"ts":"2026-04-04T04:31:33.688124Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"can I apply for school as 20 years old?","matchedService":"Education","score":0.5454916}
+{"ts":"2026-04-04T04:32:20.182364Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"which council tax services can you help me with?","matchedService":"Council Tax","score":0.70248157}
+{"ts":"2026-04-04T04:32:41.477458Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"I want help with paying the bill","matchedService":"Council Tax","score":0.39636502}
+{"ts":"2026-04-04T04:33:38.412363Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"I want help regarding a specific query for the council tax what should I do?","matchedService":"Council Tax","score":0.7165662}
+{"ts":"2026-04-04T04:34:38.918086Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"what services can you help me with?","matchedService":"Council Tax","score":0.47398677}
+{"ts":"2026-04-04T04:35:16.211035Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"2026-04-04T04:35:38.65197Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"help me find the bin collection for the bd3 8ap","matchedService":"Waste \u0026 Bins","score":0.5255016}
+{"ts":"2026-04-04T04:37:27.101734Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"I want to find bin collection for 9 maidstone street, Bradford,bd3 8ap","matchedService":"Waste \u0026 Bins","score":0.60979676}
+{"ts":"2026-04-04T04:45:05.020064Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"Help me get admission in school?","matchedService":"Education","score":0.6145481}
+{"ts":"2026-04-04T04:45:35.698289Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"Who is eligible for admission in school?","matchedService":"Education","score":0.49017128}
+{"ts":"2026-04-04T04:45:58.259298Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"Is there any age limit to apply for school?","matchedService":"Education","score":0.49405652}
+{"ts":"2026-04-04T04:46:36.250298Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"What is the highest level of school I can apply for bd3 8ap","matchedService":"Education","score":0.42410788}
+{"ts":"2026-04-04T04:47:35.643085Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"Give me complete information about the school admissions?","matchedService":"Education","score":0.61175704}
+{"ts":"2026-04-04T04:51:55.617582Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"I am concerned about the child health?","matchedService":"Education","score":0.28927812}
+{"ts":"2026-04-04T04:53:05.509964Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How will I get the new recycling bin?","matchedService":"Waste \u0026 Bins","score":0.7034033}
+{"ts":"2026-04-04T04:53:23.501422Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"No I want to get a new recycle bin","matchedService":"Waste \u0026 Bins","score":0.55913407}
+{"ts":"2026-04-04T04:53:44.05486Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"I want to get a new recycle bin how much will it cost","matchedService":"Waste \u0026 Bins","score":0.62167597}
+{"ts":"2026-04-04T05:13:51.945557Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"I want to get a new recycle bin and how much will it cost?","matchedService":"Waste \u0026 Bins","score":0.61599493}
+{"ts":"2026-04-04T05:53:45.83407Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"Help me find the bin collection?","matchedService":"Waste \u0026 Bins","score":0.65897954}
+{"ts":"2026-04-04T05:53:57.407765Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"Find the bin collection for the bd3 8ap","matchedService":"Waste \u0026 Bins","score":0.5195431}
+{"ts":"2026-04-04T05:56:44.496347Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How do I apply for the school admission?","matchedService":"Education","score":0.669016}
+{"ts":"2026-04-05T05:50:26.228567Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"2026-04-05T05:51:08.538029Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How will I get the new Bin?","matchedService":"Waste \u0026 Bins","score":0.6484214}
+{"ts":"2026-04-05T05:51:28.393028Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How much will the new bin cost?","matchedService":"Waste \u0026 Bins","score":0.54430205}
+{"ts":"2026-04-05T05:52:00.235245Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How Do I apply for free school meals?","matchedService":"Education","score":0.45811665}
+{"ts":"2026-04-05T05:52:34.483915Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How do I apply for a Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.25080493}
+{"ts":"2026-04-05T05:59:41.724361Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"2026-04-05T06:00:42.511999Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"2026-04-05T06:01:08.549689Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"I want to get a new recycle bin","matchedService":"Waste \u0026 Bins","score":0.675847}
+{"ts":"2026-04-05T06:01:24.088234Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How much will the new bin cost?","matchedService":"Waste \u0026 Bins","score":0.54430205}
+{"ts":"2026-04-05T06:26:02.785223Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"I want to get a new recycle bin?","matchedService":"Waste \u0026 Bins","score":0.6853915}
+{"ts":"2026-04-05T06:26:19.771674Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How much will the new bin cost?","matchedService":"Waste \u0026 Bins","score":0.54430205}
+{"ts":"2026-04-05T06:42:24.602748Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"I want to get a new recycle bin","matchedService":"Waste \u0026 Bins","score":0.675847}
+{"ts":"2026-04-05T06:42:57.426643Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How much will the new bin cost?","matchedService":"Waste \u0026 Bins","score":0.54430205}
+{"ts":"2026-04-05T06:55:47.672985Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.8051774}
+{"ts":"2026-04-05T06:56:01.313204Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How much council tax should I pay?","matchedService":"Council Tax","score":0.6832538}
+{"ts":"2026-04-05T06:56:31.962479Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How much tax reduction can I get?","matchedService":"Council Tax","score":0.4095651}
+{"ts":"2026-04-05T06:56:58.096864Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"I want to get a new recycle bin","matchedService":"Waste \u0026 Bins","score":0.675847}
+{"ts":"2026-04-05T06:57:24.904729Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How much will the new bin cost?","matchedService":"Waste \u0026 Bins","score":0.54430205}
+{"ts":"2026-04-05T07:02:20.837882Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"Why do I need bin collection?","matchedService":"Waste \u0026 Bins","score":0.5625035}
+{"ts":"2026-04-05T07:02:35.211831Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"Do I need bin collection?","matchedService":"Waste \u0026 Bins","score":0.58866036}
+{"ts":"2026-04-05T07:02:50.649691Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How much benefits can I get?","matchedService":"Benefits \u0026 Support","score":0.508886}
+{"ts":"2026-04-05T07:03:04.364043Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How much does a new bin cost?","matchedService":"Waste \u0026 Bins","score":0.5770627}
+{"ts":"2026-04-05T07:03:25.970831Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How much does a new recycle bin cost?","matchedService":"Waste \u0026 Bins","score":0.543957}
+{"ts":"2026-04-05T07:19:41.552911Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"I want to get a new recycle bin","matchedService":"Waste \u0026 Bins","score":0.675847}
+{"ts":"2026-04-05T07:20:01.61577Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How much will the new bin cost?","matchedService":"Waste \u0026 Bins","score":0.54430205}
+{"ts":"2026-04-05T07:20:35.340849Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"What is the procedure to have a blue badge?","matchedService":"Benefits \u0026 Support","score":0.17335048}
+{"ts":"2026-04-05T07:29:26.964495Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How much tax should I pay?","matchedService":"Council Tax","score":0.3695195}
+{"ts":"2026-04-05T07:30:01.478572Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How to apply for a blue badge?","matchedService":"Benefits \u0026 Support","score":0.24607678}
+{"ts":"2026-04-05T07:30:24.931656Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How do I know If I am eligible for blue badge?","matchedService":"Benefits \u0026 Support","score":0.4549139}
+{"ts":"2026-04-05T07:31:00.052825Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"how much will I need to pay for new recycle bin?","matchedService":"Waste \u0026 Bins","score":0.53521794}
+{"ts":"2026-04-06T01:12:59.377217Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How much benefits can I get altogether?","matchedService":"Benefits \u0026 Support","score":0.50826675}
+{"ts":"2026-04-06T01:13:35.996025Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"2026-04-06T01:13:44.598513Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.8051774}
+{"ts":"2026-04-06T01:17:45.909438Z","sessionId":"82db3fbb-1031-47af-9e6f-9c0299e637eb","userMessage":"bd3 8px","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:19:08.11734Z","sessionId":"[ADDRESS]","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"[ADDRESS]:20:06.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to evade tax what should I do.","matchedService":"Council Tax","score":0.41100234}
+{"ts":"[ADDRESS]:20:16.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Why?","matchedService":"Council Tax","score":0.10920303}
+{"ts":"[ADDRESS]:20:39.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Why can I not evade tax","matchedService":"Council Tax","score":0.40315717}
+{"ts":"[ADDRESS]:21:35.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.8051774}
+{"ts":"[ADDRESS]:21:56.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"[POSTCODE]","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:22:16.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Use same address","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:23:23.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"samik","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:26:31.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I gave you my address tell me when is my next general waste bin collection for that.","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:26:44.27499Z","sessionId":"[ADDRESS]","userMessage":"I want to use the same one.","matchedService":"Waste \u0026 Bins","score":0.24629895}
+{"ts":"[ADDRESS]:37:09.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"samik","matchedService":"Benefits \u0026 Support","score":0.07167016}
+{"ts":"[ADDRESS]:38:14.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.8051774}
+{"ts":"[ADDRESS]:38:20.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"[POSTCODE]","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:38:42.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Use same address","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:38:56.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Use different address","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:42:10.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"[ADDRESS]:42:31.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How to apply for blue badge?","matchedService":"Benefits \u0026 Support","score":0.2565844}
+{"ts":"[ADDRESS]:42:45.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What evidence do I need?","matchedService":"Benefits \u0026 Support","score":0.26032227}
+{"ts":"[ADDRESS]:43:03.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Am I eligible?","matchedService":"Benefits \u0026 Support","score":0.47512278}
+{"ts":"[ADDRESS]:46:08.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"tell me about the bin collection of the address I told you before.","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:11:36.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"When is my general waste bin collection date?","matchedService":"Waste \u0026 Bins","score":0.81051797}
+{"ts":"[ADDRESS]:11:50.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"[POSTCODE]","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:12:17.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Use same address","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:12:18.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Use different address","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:12:19.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Report a missed bin","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:12:42.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to use the different one.","matchedService":"Waste \u0026 Bins","score":0.2267365}
+{"ts":"[ADDRESS]:12:52.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to use different address.","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:13:12.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I would like to use the different address.","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:15:41.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.2639494}
+{"ts":"[ADDRESS]:19:00.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.8051774}
+{"ts":"[ADDRESS]:19:10.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"[POSTCODE]","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:19:28.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Use same address","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:19:49.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Tell me about general waste","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:20:00.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Tell me about recycling","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:20:13.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Use different address","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:20:38.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"tell me about the general waste collection of the previous address","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:20:47.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Use different address","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:20:49.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Tell me about recycling","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:20:50.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Tell me about garden waste","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:20:52.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Tell me about general waste","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:21:10.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Tell me how to apply for the blue badge?","matchedService":"Benefits \u0026 Support","score":0.26124647}
+{"ts":"[ADDRESS]:21:15.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Am I eligible?","matchedService":"Benefits \u0026 Support","score":0.47512278}
+{"ts":"[ADDRESS]:21:20.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What evidence do I need?","matchedService":"Benefits \u0026 Support","score":0.26032227}
+{"ts":"[ADDRESS]:21:24.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply?","matchedService":"Benefits \u0026 Support","score":0.3798138}
+{"ts":"[ADDRESS]:22:16.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much does the new bin cost?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:22:35.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to use the different address.","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:22:55.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"No I just want to ask how much does the new bin cost.","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:23:07.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to check something else","matchedService":"Waste \u0026 Bins","score":0.41813073}
+{"ts":"[ADDRESS]:23:23.45133Z","sessionId":"[ADDRESS]","userMessage":"I want to ask about how much does the new bin cost","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:54:04.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how to apply for blue badge","matchedService":"Benefits \u0026 Support","score":0.25482816}
+{"ts":"[ADDRESS]:11:43.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for blue badge?","matchedService":"Benefits \u0026 Support","score":0.2639494}
+{"ts":"[ADDRESS]:33:16.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how much council tax should I pay?","matchedService":"Council Tax","score":0.6832538}
+{"ts":"[ADDRESS]:33:33.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how to apply for blue badge.","matchedService":"Benefits \u0026 Support","score":0.26517567}
+{"ts":"[ADDRESS]:43:29.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how to apply for blue badge?","matchedService":"Benefits \u0026 Support","score":0.2565844}
+{"ts":"[ADDRESS]:48:12.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how to apply for blue badge?","matchedService":"Benefits \u0026 Support","score":0.2565844}
+{"ts":"[ADDRESS]:48:23.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how to get money","matchedService":"Benefits \u0026 Support","score":0.45729786}
+{"ts":"[ADDRESS]:48:49.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to get information about school admission?","matchedService":"Education","score":0.6299915}
+{"ts":"[ADDRESS]:23:40.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How to apply for the place at school.","matchedService":"Education","score":0.706841}
+{"ts":"[ADDRESS]:54:53.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"New bin cost?","matchedService":"Waste \u0026 Bins","score":0.55410147}
+{"ts":"[ADDRESS]:32:21.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"new bin cost","matchedService":"Waste \u0026 Bins","score":0.5537656}
+{"ts":"[ADDRESS]:33:09.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"bin collection -\u003E postcode -\u003E address -\u003E result -\u003E ask: new bin cost","matchedService":"Waste \u0026 Bins","score":0.5780902}
+{"ts":"[ADDRESS]:33:30.68503Z","sessionId":"[ADDRESS]","userMessage":"I want something ese","matchedService":"Waste \u0026 Bins","score":0.17590255}
+{"ts":"[ADDRESS]:33:37.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want something else","matchedService":"Unknown","score":1}
+{"ts":"[ADDRESS]:33:48.9123Z","sessionId":"[ADDRESS]","userMessage":"new bin cost","matchedService":"Waste \u0026 Bins","score":0.5537656}
+{"ts":"[ADDRESS]:34:13.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to apply for blue badge?","matchedService":"Benefits \u0026 Support","score":0.26648235}
+{"ts":"[ADDRESS]:34:36.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want help on how to apply for blue badge?","matchedService":"Benefits \u0026 Support","score":0.29508007}
+{"ts":"[ADDRESS]:06:18.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"new bin cost","matchedService":"Waste \u0026 Bins","score":0.5537656}
+{"ts":"[ADDRESS]:06:45.43616Z","sessionId":"[ADDRESS]","userMessage":"How much tax should I pay","matchedService":"Council Tax","score":0.356367}
+{"ts":"[ADDRESS]:07:59.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I get a new recycling bin?","matchedService":"Waste \u0026 Bins","score":0.7299699}
+{"ts":"[ADDRESS]:08:11.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much does a new bin cost?","matchedService":"Waste \u0026 Bins","score":0.5770627}
+{"ts":"[ADDRESS]:08:21.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I need a replacement bin","matchedService":"Waste \u0026 Bins","score":0.8259285}
+{"ts":"[ADDRESS]:08:39.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I request a new wheeled bin?","matchedService":"Waste \u0026 Bins","score":0.6443704}
+{"ts":"[ADDRESS]:08:58.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What should I do if my bin is damaged?","matchedService":"Waste \u0026 Bins","score":0.69859266}
+{"ts":"[ADDRESS]:09:18.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.8051774}
+{"ts":"[ADDRESS]:09:31.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What is my next recycling collection day?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:09:40.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"[POSTCODE]","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:10:06.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What about garden waste collection?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:10:20.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"The same","matchedService":"Waste \u0026 Bins","score":0.14015985}
+{"ts":"[ADDRESS]:10:43.18653Z","sessionId":"[ADDRESS]","userMessage":"use the same address.","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:11:02.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What about garden waste collection?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:11:29.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for a Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.25080493}
+{"ts":"[ADDRESS]:11:55.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Am I eligible for a Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.27407858}
+{"ts":"[ADDRESS]:12:33.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What documents do I need for a Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.42710552}
+{"ts":"[ADDRESS]:12:45.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Is there a fee for a Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.20335361}
+{"ts":"[ADDRESS]:13:06.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How can I pay my council tax?","matchedService":"Council Tax","score":0.77520925}
+{"ts":"[ADDRESS]:13:36.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I get a Council Tax reduction?","matchedService":"Council Tax","score":0.7435719}
+{"ts":"[ADDRESS]:14:05.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What happens if I don\u0027t pay Council Tax?","matchedService":"Council Tax","score":0.7917142}
+{"ts":"[ADDRESS]:14:40.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for free school meals?","matchedService":"Benefits \u0026 Support","score":0.45811665}
+{"ts":"[ADDRESS]:14:58.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Am I eligible?","matchedService":"Benefits \u0026 Support","score":0.47512278}
+{"ts":"[ADDRESS]:15:32.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am inquiring about [ADDRESS]","matchedService":"Benefits \u0026 Support","score":0.24084206}
+{"ts":"[ADDRESS]:15:53.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What evidence do I need?","matchedService":"Benefits \u0026 Support","score":0.26032227}
+{"ts":"[ADDRESS]:16:27.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What proof do I need for benefits?","matchedService":"Benefits \u0026 Support","score":0.563929}
+{"ts":"[ADDRESS]:17:50.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how do I apply for the school?","matchedService":"Education","score":0.66592616}
+{"ts":"[ADDRESS]:18:16.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do in-year transfers work?","matchedService":"Education","score":0.5438086}
+{"ts":"[ADDRESS]:20:17.06888Z","sessionId":"[ADDRESS]","userMessage":"When is my next payment due?","matchedService":"Council Tax","score":0.50506073}
+{"ts":"[ADDRESS]:21:00.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I update my details after moving?","matchedService":"Benefits \u0026 Support","score":0.57531124}
+{"ts":"[ADDRESS]:21:35.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for a primary school place?","matchedService":"Education","score":0.7527773}
+{"ts":"[ADDRESS]:22:18.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Am I eligible for housing benefits?","matchedService":"Benefits \u0026 Support","score":0.5974381}
+{"ts":"[ADDRESS]:23:04.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How can I check the status of my planning applications?","matchedService":"Education","score":0.61276424}
+{"ts":"[ADDRESS]:23:44.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I renew my library books online?","matchedService":"Education","score":0.36621436}
+{"ts":"[ADDRESS]:24:23.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for a Blue Badge for a disabled parking?","matchedService":"Benefits \u0026 Support","score":0.25339085}
+{"ts":"[ADDRESS]:24:59.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Who can get Blue badge?","matchedService":"Benefits \u0026 Support","score":0.18899287}
+{"ts":"[ADDRESS]:25:29.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I need to report a missed bin collection.","matchedService":"Waste \u0026 Bins","score":0.8234487}
+{"ts":"[ADDRESS]:27:43.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"what should I do if my bin is missing","matchedService":"Waste \u0026 Bins","score":0.73350435}
+{"ts":"[ADDRESS]:28:02.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Report a missed bin","matchedService":"Waste \u0026 Bins","score":0.77828634}
+{"ts":"[ADDRESS]:32:46.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I need to report a missed bin collection","matchedService":"Waste \u0026 Bins","score":0.8267216}
+{"ts":"[ADDRESS]:32:57.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"report a missed bin","matchedService":"Waste \u0026 Bins","score":0.77828634}
+{"ts":"[ADDRESS]:33:07.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"my bin was not collected","matchedService":"Waste \u0026 Bins","score":0.79718924}
+{"ts":"[ADDRESS]:33:22.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"when is my bin collection","matchedService":"Waste \u0026 Bins","score":0.7995227}
+{"ts":"[ADDRESS]:33:32.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"[POSTCODE]","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:33:59.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"when is my next recycling collection day","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:34:07.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Use different address","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:34:14.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Enter postcode","matchedService":"Waste \u0026 Bins","score":0.26953393}
+{"ts":"[ADDRESS]:34:25.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.8051774}
+{"ts":"[ADDRESS]:34:48.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How can I check the status of my planning applications?","matchedService":"Education","score":0.61276424}
+{"ts":"[ADDRESS]:39:33.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I renew my library books online?","matchedService":"Education","score":0.36621436}
+{"ts":"[ADDRESS]:39:51.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What if I lose library books?","matchedService":"Education","score":0.3210699}
+{"ts":"[ADDRESS]:40:16.35986Z","sessionId":"[ADDRESS]","userMessage":"I want help with planning application","matchedService":"Education","score":0.35687625}
+{"ts":"[ADDRESS]:40:52.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How to contact council","matchedService":"Benefits \u0026 Support","score":0.56545174}
+{"ts":"[ADDRESS]:24:19.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.8051774}
+{"ts":"[ADDRESS]:24:40.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"what is my next recycling collection day?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:24:48.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Enter postcode","matchedService":"Waste \u0026 Bins","score":0.26953393}
+{"ts":"[ADDRESS]:25:02.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"when is my bin day?","matchedService":"Waste \u0026 Bins","score":0.740252}
+{"ts":"[ADDRESS]:25:11.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"[POSTCODE]","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:25:34.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Tell me about recycling","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:25:47.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"what about garden waste?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:26:12.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Report a missed bin","matchedService":"Waste \u0026 Bins","score":0.77828634}
+{"ts":"[ADDRESS]:26:24.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"my bin was not collected","matchedService":"Waste \u0026 Bins","score":0.79718924}
+{"ts":"[ADDRESS]:26:37.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I need a new bin","matchedService":"Waste \u0026 Bins","score":0.687411}
+{"ts":"[ADDRESS]:26:54.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much is a new bin?","matchedService":"Waste \u0026 Bins","score":0.55784416}
+{"ts":"[ADDRESS]:27:08.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much council tax do I pay?","matchedService":"Council Tax","score":0.714873}
+{"ts":"[ADDRESS]:27:49.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"can you explain them?","matchedService":"Council Tax","score":0.05413148}
+{"ts":"[ADDRESS]:28:31.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"can you tell me about the council tax bands","matchedService":"Council Tax","score":0.7128344}
+{"ts":"[ADDRESS]:29:02.00451Z","sessionId":"[ADDRESS]","userMessage":"How can I pay my council tax","matchedService":"Council Tax","score":0.79034245}
+{"ts":"[ADDRESS]:29:30.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I get a council tax discount","matchedService":"Council Tax","score":0.7668315}
+{"ts":"[ADDRESS]:29:56.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What happens if I don\u0027t pay council tax?","matchedService":"Council Tax","score":0.7917142}
+{"ts":"[ADDRESS]:30:17.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for a Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.25080493}
+{"ts":"[ADDRESS]:30:36.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Am I eligible for a Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.27407858}
+{"ts":"[ADDRESS]:30:57.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I get Blue badge if I have adhd","matchedService":"Benefits \u0026 Support","score":0.20517159}
+{"ts":"[ADDRESS]:31:55.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What documents do I need for a Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.42710552}
+{"ts":"[ADDRESS]:32:24.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for a school Place?","matchedService":"Education","score":0.67855704}
+{"ts":"[ADDRESS]:32:42.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What is the deadline for school admission?","matchedService":"Education","score":0.7365168}
+{"ts":"[ADDRESS]:33:27.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What is the last date to apply for school admission?","matchedService":"Education","score":0.6072585}
+{"ts":"[ADDRESS]:33:48.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do in-year transfers work?","matchedService":"Education","score":0.5438086}
+{"ts":"[ADDRESS]:34:23.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How can I check my planning application status?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:34:38.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"View planning applications","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:34:57.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for planning permission?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:35:15.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I renew library books online?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:35:30.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I borrow e-books?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:35:45.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am homeless what should I do?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:36:13.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I get housing support?","matchedService":"Benefits \u0026 Support","score":0.7096386}
+{"ts":"[ADDRESS]:36:31.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.8051774}
+{"ts":"[ADDRESS]:36:45.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for a Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.25080493}
+{"ts":"[ADDRESS]:36:59.81382Z","sessionId":"[ADDRESS]","userMessage":"I need a new bin","matchedService":"Waste \u0026 Bins","score":0.687411}
+{"ts":"[ADDRESS]:37:12.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I pay council tax?","matchedService":"Council Tax","score":0.77308655}
+{"ts":"[ADDRESS]:07:47.17784Z","sessionId":"[ADDRESS]","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"[ADDRESS]:08:06.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to borrow books","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:08:40.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want my bin collected? what should I do?","matchedService":"Waste \u0026 Bins","score":0.70111054}
+{"ts":"[ADDRESS]:38:13.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how much does the new bin cost?","matchedService":"Waste \u0026 Bins","score":0.5466281}
+{"ts":"[ADDRESS]:38:37.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how can I borrow books online?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:39:03.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Council Tax","matchedService":"Council Tax","score":0.7649407}
+{"ts":"[ADDRESS]:53:47.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Do bins days change on Sundays?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:54:04.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Do the bin day change on weekends?","matchedService":"Waste \u0026 Bins","score":0.6155157}
+{"ts":"[ADDRESS]:54:15.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"[POSTCODE]","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:55:51.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Do the bin collection day change?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:56:35.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to ask about the bin collection not the postcode.","matchedService":"Waste \u0026 Bins","score":0.65013605}
+{"ts":"[ADDRESS]:56:44.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to ask something else","matchedService":"Unknown","score":1}
+{"ts":"[ADDRESS]:57:15.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want help with bin collection change?","matchedService":"Waste \u0026 Bins","score":0.65842205}
+{"ts":"[ADDRESS]:57:39.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What if I lose my bin?","matchedService":"Waste \u0026 Bins","score":0.6577473}
+{"ts":"[ADDRESS]:57:57.79799Z","sessionId":"[ADDRESS]","userMessage":"What if I don\u0027t want to pay tax?","matchedService":"Council Tax","score":0.49572062}
+{"ts":"[ADDRESS]:59:01.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much benefits can I get?","matchedService":"Benefits \u0026 Support","score":0.508886}
+{"ts":"[ADDRESS]:59:40.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much benefits do I qualify for?","matchedService":"Benefits \u0026 Support","score":0.49655315}
+{"ts":"[ADDRESS]:59:53.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"can I get benefits?","matchedService":"Benefits \u0026 Support","score":0.5850538}
+{"ts":"[ADDRESS]:00:22.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I apply for benefits?","matchedService":"Benefits \u0026 Support","score":0.55303365}
+{"ts":"[ADDRESS]:00:43.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I get benefits?","matchedService":"Benefits \u0026 Support","score":0.5850538}
+{"ts":"[ADDRESS]:01:03.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to get some benefits what should I do?","matchedService":"Benefits \u0026 Support","score":0.46383846}
+{"ts":"[ADDRESS]:01:20.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much benefits can I get?","matchedService":"Benefits \u0026 Support","score":0.508886}
+{"ts":"[ADDRESS]:02:34.2935Z","sessionId":"[ADDRESS]","userMessage":"How can I check planning application status?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:02:49.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"View planning applications","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:03:05.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I renew library books online?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:03:17.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I borrow e-books?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:03:29.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I get housing support?","matchedService":"Benefits \u0026 Support","score":0.7096386}
+{"ts":"[ADDRESS]:03:42.19899Z","sessionId":"[ADDRESS]","userMessage":"can I get benefits?","matchedService":"Benefits \u0026 Support","score":0.5850538}
+{"ts":"[ADDRESS]:03:52.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much benefits can I get?","matchedService":"Benefits \u0026 Support","score":0.508886}
+{"ts":"[ADDRESS]:04:13.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Is the bin collected on Sundays?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:13:00.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I have my bin collected on Sundays?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:13:05.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"[POSTCODE]","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:13:44.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"can I get benefits?","matchedService":"Benefits \u0026 Support","score":0.5850538}
+{"ts":"[ADDRESS]:13:52.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how can I get benefits?","matchedService":"Benefits \u0026 Support","score":0.50908065}
+{"ts":"[ADDRESS]:14:08.01748Z","sessionId":"[ADDRESS]","userMessage":"How much benefits can I get?","matchedService":"Benefits \u0026 Support","score":0.508886}
+{"ts":"[ADDRESS]:14:22.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much benefits can I apply?","matchedService":"Benefits \u0026 Support","score":0.43984026}
+{"ts":"[ADDRESS]:48:06.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I get benefits?","matchedService":"Benefits \u0026 Support","score":0.5850538}
+{"ts":"[ADDRESS]:48:22.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much benefits am I eligible for?","matchedService":"Benefits \u0026 Support","score":0.502193}
+{"ts":"[ADDRESS]:48:35.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I apply for benefits?","matchedService":"Benefits \u0026 Support","score":0.55303365}
+{"ts":"[ADDRESS]:48:48.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"can I get housing benefits?","matchedService":"Benefits \u0026 Support","score":0.62779886}
+{"ts":"[ADDRESS]:49:09.70536Z","sessionId":"[ADDRESS]","userMessage":"Am I eligible for housing benefits?","matchedService":"Benefits \u0026 Support","score":0.5974381}
+{"ts":"[ADDRESS]:50:28.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:50:31.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"[ADDRESS]:50:49.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how much will I need to pay for new bin.","matchedService":"Waste \u0026 Bins","score":0.58456534}
+{"ts":"[ADDRESS]:53:22.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I get admission in school","matchedService":"Education","score":0.5620945}
+{"ts":"[ADDRESS]:34:52.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How can I go to school","matchedService":"Education","score":0.46398726}
+{"ts":"[ADDRESS]:35:15.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How does the band system work?","matchedService":"Education","score":0.27240494}
+{"ts":"[ADDRESS]:35:34.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"can I get housing benefits?","matchedService":"Benefits \u0026 Support","score":0.62779886}
+{"ts":"[ADDRESS]:35:43.71622Z","sessionId":"[ADDRESS]","userMessage":"Am I eligible?","matchedService":"Benefits \u0026 Support","score":0.47512278}
+{"ts":"[ADDRESS]:36:03.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Am I eligible for housing benefits","matchedService":"Benefits \u0026 Support","score":0.6305618}
+{"ts":"[ADDRESS]:36:19.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how does band system work","matchedService":"Benefits \u0026 Support","score":0.13260333}
+{"ts":"[ADDRESS]:37:08.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how can I check my planning application status","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:37:50.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am homeless what should I o?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:38:08.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I get housing support?","matchedService":"Benefits \u0026 Support","score":0.7096386}
+{"ts":"[ADDRESS]:38:31.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how do I apply for a blue badge?","matchedService":"Benefits \u0026 Support","score":0.25080493}
+{"ts":"[ADDRESS]:39:36.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much council tax do I pay?","matchedService":"Council Tax","score":0.714873}
+{"ts":"[ADDRESS]:39:46.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I pay my council tax?","matchedService":"Council Tax","score":0.7704054}
+{"ts":"[ADDRESS]:39:55.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I get a council tax discount?","matchedService":"Council Tax","score":0.76558316}
+{"ts":"[ADDRESS]:40:12.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"what is property band","matchedService":"Council Tax","score":0.5423828}
+{"ts":"[ADDRESS]:40:33.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"what happens if I don\u0027t pay council tax?","matchedService":"Council Tax","score":0.7917142}
+{"ts":"[ADDRESS]:40:50.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I check my council tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"[ADDRESS]:41:13.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I moved house, what do I do about council tax?","matchedService":"Council Tax","score":0.7528899}
+{"ts":"[ADDRESS]:41:30.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can students get council tax exemption?","matchedService":"Council Tax","score":0.7954415}
+{"ts":"[ADDRESS]:41:46.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for council tax reduction?","matchedService":"Council Tax","score":0.6799153}
+{"ts":"[ADDRESS]:41:59.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"what are the council tax bands?","matchedService":"Council Tax","score":0.7163634}
+{"ts":"[ADDRESS]:42:17.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I pay council tax monthly?","matchedService":"Council Tax","score":0.87171197}
+{"ts":"[ADDRESS]:42:31.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What happens if I cannot afford to pay council tax","matchedService":"Council Tax","score":0.7153704}
+{"ts":"[ADDRESS]:43:01.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"what goes in the recycling bin?","matchedService":"Waste \u0026 Bins","score":0.76712984}
+{"ts":"[ADDRESS]:43:21.87029Z","sessionId":"[ADDRESS]","userMessage":"what goes in general waste bin?","matchedService":"Waste \u0026 Bins","score":0.6800836}
+{"ts":"[ADDRESS]:43:36.41346Z","sessionId":"[ADDRESS]","userMessage":"Tell me about the garden waste?","matchedService":"Waste \u0026 Bins","score":0.629139}
+{"ts":"[ADDRESS]:43:51.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for a school place?","matchedService":"Education","score":0.67855704}
+{"ts":"[ADDRESS]:44:05.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What is the deadline for School admissions?","matchedService":"Education","score":0.73779815}
+{"ts":"[ADDRESS]:44:31.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do in-year transfers work?","matchedService":"Education","score":0.5438086}
+{"ts":"[ADDRESS]:44:50.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for a primary school?","matchedService":"Education","score":0.7308257}
+{"ts":"[ADDRESS]:45:37.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I change my child\u0027s school?","matchedService":"Education","score":0.4943678}
+{"ts":"[ADDRESS]:46:08.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What happens if I miss the application deadline?","matchedService":"Education","score":0.7023008}
+{"ts":"[ADDRESS]:46:40.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"what services are available for international students?","matchedService":"Education","score":0.35690415}

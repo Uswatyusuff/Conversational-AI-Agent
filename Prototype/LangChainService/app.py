@@ -45,15 +45,5 @@ def health():
 
 @app.post("/agent", response_model=AgentResponse)
 def agent_endpoint(req: AgentRequest):
-    if not os.getenv("OPENAI_API_KEY", "").strip():
-        return AgentResponse(
-            answer="The agent service is running, but no OpenAI API key is configured.",
-            service=req.service_hint,
-            action="error",
-            needs_clarification=False,
-            tool_used="",
-            next_steps_url=""
-        )
-
     result = run_agent(req)
     return AgentResponse(**result)

@@ -6,9 +6,6 @@
   <title>Citizen Support Chatbot Prototype</title>
 
   <style>
-    /* -----------------------------
-       THEME TOKENS
-    ------------------------------*/
     :root{
       --radius: 16px;
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -21,7 +18,6 @@
       --muted:#98a2b3;
     }
 
-    /* DARK */
     html[data-theme="dark"]{
       --bg:#0b1220;
       --panel:#0f1a2f;
@@ -38,7 +34,6 @@
       --skeletonShine: rgba(255,255,255,0.14);
     }
 
-    /* LIGHT */
     html[data-theme="light"]{
       --bg:#f6f8fc;
       --panel:#ffffff;
@@ -66,12 +61,10 @@
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
-
       background:
         radial-gradient(1200px 800px at 15% 10%, rgba(91,140,255,.18), transparent 60%),
         radial-gradient(900px 700px at 80% 20%, rgba(34,197,94,.14), transparent 55%),
         var(--bg);
-
       transition: background .25s ease, color .25s ease;
     }
 
@@ -84,9 +77,6 @@
       padding: 0 14px;
     }
 
-    /* -----------------------------
-       TOP BAR
-    ------------------------------*/
     .topbar{
       display:flex;
       gap:14px;
@@ -168,9 +158,6 @@
     }
     html[data-theme="light"] .knob{ left: 18px; }
 
-    /* -----------------------------
-       LAYOUT
-    ------------------------------*/
     .grid{
       display:grid;
       grid-template-columns: 280px 1fr;
@@ -181,9 +168,6 @@
       .side{ order: 2; }
     }
 
-    /* -----------------------------
-       SIDEBAR
-    ------------------------------*/
     .side{
       background: var(--surface);
       border: 1px solid var(--border);
@@ -230,9 +214,6 @@
       background: rgba(0,0,0,0.02);
     }
 
-    /* -----------------------------
-       CHAT PANEL
-    ------------------------------*/
     .panel{
       background: var(--surface);
       border: 1px solid var(--border);
@@ -286,9 +267,6 @@
     }
     .btn:hover{ background: rgba(91,140,255,0.10); transform: translateY(-1px); }
 
-    /* -----------------------------
-       MESSAGES + ANIMATIONS
-    ------------------------------*/
     .chat{
       padding: 16px;
       flex:1;
@@ -364,9 +342,6 @@
     }
     .chip:hover{ background: rgba(91,140,255,0.10); transform: translateY(-1px); }
 
-    /* -----------------------------
-       COMPOSER
-    ------------------------------*/
     .composer{
       padding: 12px;
       border-top: 1px solid var(--border2);
@@ -404,9 +379,6 @@
       transform:none;
     }
 
-    /* -----------------------------
-       LOADING SKELETON (bot bubble)
-    ------------------------------*/
     .skeleton-wrap{
       display:flex;
       flex-direction:column;
@@ -464,7 +436,6 @@
     </div>
 
     <div class="grid">
-      <!-- Sidebar -->
       <aside class="side">
         <h2>Quick topics</h2>
         <div class="svc">
@@ -493,7 +464,6 @@
         </div>
       </aside>
 
-      <!-- Chat panel -->
       <main class="panel">
         <div class="panel-header">
           <div class="meta">
@@ -519,6 +489,7 @@
       Tip: Try follow-ups like “What about discounts?” after asking a Council Tax question.
     </div>
   </div>
+
 <script>
   const chat = document.getElementById('chat');
   const statusLine = document.getElementById('statusLine');
@@ -531,12 +502,10 @@
   let lastService = "Unknown";
   let pendingSkeletonId = null;
 
-  // New flow state
   let pendingPostcode = null;
   let awaitingAddressSelection = false;
   let lastAddresses = [];
 
-  // persistent sessionId
   let sessionId = localStorage.getItem("sessionId");
   if(!sessionId){
     sessionId = crypto.randomUUID();
@@ -544,14 +513,12 @@
   }
   sessionPill.textContent = "Session: " + sessionId.slice(0, 8);
 
-  // -----------------------------
-  // Theme switch (Light/Dark)
-  // -----------------------------
   function applyTheme(theme){
     document.documentElement.setAttribute("data-theme", theme);
     themeLabel.textContent = theme === "light" ? "Light" : "Dark";
     localStorage.setItem("theme", theme);
   }
+
   const savedTheme = localStorage.getItem("theme");
   applyTheme(savedTheme === "light" ? "light" : "dark");
 
@@ -560,9 +527,6 @@
     applyTheme(current === "dark" ? "light" : "dark");
   });
 
-  // -----------------------------
-  // Utilities
-  // -----------------------------
   function escapeHtml(str){
     return String(str)
       .replaceAll("&","&amp;")
@@ -602,13 +566,31 @@
     ];
 
     if(excluded.includes(cleaned)) return false;
-
     return true;
   }
 
-  // -----------------------------
-  // Skeleton loader
-  // -----------------------------
+  function renderSuggestionChips(suggestions){
+  if(!Array.isArray(suggestions) || suggestions.length === 0){
+    return "";
+  }
+
+  const chips = suggestions.map(s => {
+    const safeText = escapeHtml(String(s));
+    const encoded = encodeURIComponent(String(s));
+    return `<button class="chip" onclick="sendSuggestion('${encoded}')">${safeText}</button>`;
+  }).join("");
+
+  return `
+    <div class="chips">
+      ${chips}
+    </div>
+  `;
+}
+  function sendSuggestion(encodedText){
+  const text = decodeURIComponent(encodedText);
+  sendPreset(text);
+}
+
   function showSkeleton(){
     const id = "sk_" + crypto.randomUUID();
     pendingSkeletonId = id;
@@ -645,6 +627,37 @@
     sendBtn.disabled = false;
   }
 
+  function buildBotHtml(data){
+    lastService = data.service || "Unknown";
+
+    let header = `<span class="tag">Service</span> <b>${escapeHtml(lastService)}</b>`;
+    let body = `<div style="margin-top:8px">${data.reply || ""}</div>`;
+
+    let next = "";
+    if(data.nextStepsUrl){
+      next = `
+        <div class="card">
+          <b>Next steps</b><br/>
+          <a href="${data.nextStepsUrl}" target="_blank" rel="noopener noreferrer">
+            ${escapeHtml(data.nextStepsUrl)}
+          </a>
+        </div>`;
+    }
+
+    let feedback = `
+      <div class="card">
+        <b>Was this helpful?</b><br/>
+        <div class="chips" style="margin-top:8px">
+          <button class="chip" onclick="feedback('Yes')">Yes</button>
+          <button class="chip" onclick="feedback('No')">No</button>
+        </div>
+      </div>`;
+
+    const suggestionChips = renderSuggestionChips(data.suggestions || []);
+
+    return header + body + next + feedback + suggestionChips;
+  }
+
   function replaceSkeletonWithBotReply(data){
     const node = [...document.querySelectorAll('.msg.bot')].find(x => x.dataset.id === pendingSkeletonId);
     pendingSkeletonId = null;
@@ -656,97 +669,30 @@
       return;
     }
 
-    lastService = data.service || "Unknown";
-    let header = `<span class="tag">Service</span> <b>${escapeHtml(lastService)}</b>`;
-    let body = `<div style="margin-top:8px">${data.reply || ""}</div>`;
-
-    let next = "";
-    if(data.nextStepsUrl){
-      next = `
-        <div class="card">
-          <b>Next steps</b><br/>
-          <a href="${data.nextStepsUrl}" target="_blank" rel="noopener noreferrer">
-            ${escapeHtml(data.nextStepsUrl)}
-          </a>
-        </div>`;
-    }
-
-    let feedback = `
-      <div class="card">
-        <b>Was this helpful?</b><br/>
-        <div class="chips" style="margin-top:8px">
-          <button class="chip" onclick="feedback('Yes')">Yes</button>
-          <button class="chip" onclick="feedback('No')">No</button>
-        </div>
-      </div>`;
-
-    let chips = `
-      <div class="chips">
-        <button class="chip" onclick="sendPreset('What are the next steps?')">Next steps</button>
-        <button class="chip" onclick="sendPreset('How do I apply?')">How do I apply?</button>
-        <button class="chip" onclick="sendPreset('Who can I contact?')">Contact details</button>
-        <button class="chip" onclick="sendPreset('What if I missed a payment?')">Missed payment</button>
-      </div>`;
-
     const bubble = node.querySelector('.bubble');
-    bubble.innerHTML = header + body + next + feedback + chips;
+    bubble.innerHTML = buildBotHtml(data);
 
     updateStatus("Ready");
     sendBtn.disabled = false;
   }
 
   function addBotReply(data){
-    lastService = data.service || "Unknown";
-
-    let header = `<span class="tag">Service</span> <b>${escapeHtml(lastService)}</b>`;
-    let body = `<div style="margin-top:8px">${data.reply || ""}</div>`;
-
-    let next = "";
-    if(data.nextStepsUrl){
-      next = `
-        <div class="card">
-          <b>Next steps</b><br/>
-          <a href="${data.nextStepsUrl}" target="_blank" rel="noopener noreferrer">
-            ${escapeHtml(data.nextStepsUrl)}
-          </a>
-        </div>`;
-    }
-
-    let feedback = `
-      <div class="card">
-        <b>Was this helpful?</b><br/>
-        <div class="chips" style="margin-top:8px">
-          <button class="chip" onclick="feedback('Yes')">Yes</button>
-          <button class="chip" onclick="feedback('No')">No</button>
-        </div>
-      </div>`;
-
-    let chips = `
-      <div class="chips">
-        <button class="chip" onclick="sendPreset('What are the next steps?')">Next steps</button>
-        <button class="chip" onclick="sendPreset('How do I apply?')">How do I apply?</button>
-        <button class="chip" onclick="sendPreset('Who can I contact?')">Contact details</button>
-        <button class="chip" onclick="sendPreset('What if I missed a payment?')">Missed payment</button>
-      </div>`;
-
-    addMessage(header + body + next + feedback + chips, "bot");
+    addMessage(buildBotHtml(data), "bot");
   }
 
-  // -----------------------------
-  // New postcode/address/bin flow
-  // -----------------------------
   async function searchPostcode(postcode){
     showSkeleton();
 
     try{
-      const res = await fetch(`/api/postcode/search?postcode=${encodeURIComponent(postcode)}`);
+      const res = await fetch(`/api/postcode/search?postcode=${encodeURIComponent(postcode)}&sessionId=${encodeURIComponent(sessionId)}`);
       const data = await res.json();
 
       if(!res.ok || data.error){
         replaceSkeletonWithBotReply({
           service: "Waste & Bins",
           reply: `<b>Error:</b> ${escapeHtml(data.error || 'Could not look up addresses for that postcode.')}`,
-          nextStepsUrl: ""
+          nextStepsUrl: "",
+          suggestions: ["Try another postcode", "When is my bin collection?"]
         });
         return;
       }
@@ -761,7 +707,8 @@
         replaceSkeletonWithBotReply({
           service: "Waste & Bins",
           reply: "I could not find any selectable addresses for that postcode. Please try another postcode.",
-          nextStepsUrl: ""
+          nextStepsUrl: "",
+          suggestions: ["Try another postcode", "Report a missed bin"]
         });
         return;
       }
@@ -785,7 +732,8 @@
       replaceSkeletonWithBotReply({
         service: "Waste & Bins",
         reply: "<b>Error:</b> Could not reach the postcode lookup service.",
-        nextStepsUrl: ""
+        nextStepsUrl: "",
+        suggestions: ["Try again", "Enter a different postcode"]
       });
     }
   }
@@ -795,19 +743,20 @@
     if(index < 0 || index >= lastAddresses.length) return;
 
     const address = lastAddresses[index];
-    addMessage(escapeHtml(address), "you");
+    addMessage("[ADDRESS_SELECTED]", "you");
 
     showSkeleton();
 
     try{
-      const res = await fetch(`/api/postcode/bin-result?postcode=${encodeURIComponent(pendingPostcode)}&address=${encodeURIComponent(address)}`);
+      const res = await fetch(`/api/postcode/bin-result?postcode=${encodeURIComponent(pendingPostcode)}&address=${encodeURIComponent(address)}&sessionId=${encodeURIComponent(sessionId)}`);
       const data = await res.json();
 
       if(!res.ok){
         replaceSkeletonWithBotReply({
           service: "Waste & Bins",
           reply: "<b>Error:</b> Could not retrieve the collection result.",
-          nextStepsUrl: ""
+          nextStepsUrl: "",
+          suggestions: ["Try again", "Use different address"]
         });
         return;
       }
@@ -820,34 +769,34 @@
         <span class="tag">Service</span> <b>Waste & Bins</b>
         <div style="margin-top:8px"><b>Address:</b> ${escapeHtml(address)}</div>
         <div class="card" style="white-space: pre-wrap; margin-top:10px">${escapeHtml(resultText)}</div>
+        <div class="chips">
+          <button class="chip" onclick="sendPreset('Use same address')">Use same address</button>
+          <button class="chip" onclick="sendPreset('Use different address')">Use different address</button>
+          <button class="chip" onclick="sendPreset('Report a missed bin')">Report a missed bin</button>
+        </div>
       `);
     }catch(e){
       replaceSkeletonWithBotReply({
         service: "Waste & Bins",
         reply: "<b>Error:</b> Could not reach the bin result service.",
-        nextStepsUrl: ""
+        nextStepsUrl: "",
+        suggestions: ["Try again", "Use different address"]
       });
     }
   }
 
-  // -----------------------------
-  // Init greeting
-  // -----------------------------
   addMessage(
     `<b>Hi!</b> I can help with Bradford Council services (prototype).
      <div class="meta">Avoid sharing personal data. Try: “When is my bin day?”</div>`,
     "bot"
   );
 
-  // -----------------------------
-  // Send chat
-  // -----------------------------
   async function send(){
     const input = document.getElementById('msg');
     const message = input.value.trim();
     if(!message) return;
 
-    addMessage(escapeHtml(message), "you");
+    addMessage(safeUserBubbleText(message), "you");
     input.value = "";
 
     showSkeleton();
@@ -865,16 +814,15 @@
         replaceSkeletonWithBotReply({
           service: "Error",
           reply: `<b>Error:</b> ${escapeHtml(data.reply || 'Request failed')}`,
-          nextStepsUrl: ""
+          nextStepsUrl: "",
+          suggestions: []
         });
         return;
       }
 
-      // Special backend signal: POSTCODE_LOOKUP::BD1 1HY
       if(typeof data.reply === "string" && data.reply.startsWith("POSTCODE_LOOKUP::")){
         const postcode = data.reply.replace("POSTCODE_LOOKUP::", "").trim();
 
-        // remove existing skeleton first
         const node = [...document.querySelectorAll('.msg.bot')].find(x => x.dataset.id === pendingSkeletonId);
         if(node) node.remove();
         pendingSkeletonId = null;
@@ -891,7 +839,8 @@
       replaceSkeletonWithBotReply({
         service: "Error",
         reply: `<b>Error:</b> Could not reach the server.`,
-        nextStepsUrl: ""
+        nextStepsUrl: "",
+        suggestions: []
       });
     }
   }
@@ -908,7 +857,7 @@
     await fetch('/api/feedback', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ service: lastService, helpful, comment })
+      body: JSON.stringify({ service: lastService, helpful, comment, sessionId })
     });
 
     addMessage(`Thanks — feedback saved for <b>${escapeHtml(lastService)}</b>.`, "bot");
@@ -919,6 +868,7 @@
     pendingPostcode = null;
     awaitingAddressSelection = false;
     lastAddresses = [];
+    lastService = "Unknown";
 
     addMessage(
       `<b>Chat reset.</b> Ask a new question anytime.
@@ -930,6 +880,33 @@
   document.getElementById('msg').addEventListener('keydown', e => {
     if(e.key === 'Enter') send();
   });
+  function maskSensitiveText(input){
+  if(!input) return "";
+
+  let output = String(input);
+
+  // Email
+  output = output.replace(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi, "[EMAIL]");
+
+  // UK phone
+  output = output.replace(/\b(?:\+44|0)\d[\d\s]{8,}\b/gi, "[PHONE]");
+
+  // UK postcode
+  output = output.replace(/\b[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}\b/gi, "[POSTCODE]");
+
+  // Very simple "my name is ..." masking
+  output = output.replace(/\b(my name is|i am|i'm)\s+[a-z][a-z\s'-]*/gi, "$1 [NAME]");
+
+  return output;
+}
+
+function safeUserBubbleText(input){
+  return escapeHtml(maskSensitiveText(input));
+}
+function sendSuggestion(encoded){
+  const text = decodeURIComponent(encoded);
+  sendPreset(text);
+}
 </script>
 
 </body>

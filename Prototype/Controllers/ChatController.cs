@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Text.RegularExpressions;
 using CouncilChatbotPrototype.Services;
 using CouncilChatbotPrototype.Models;
 
@@ -24,7 +25,13 @@ public class ChatController : ControllerBase
         if (string.IsNullOrWhiteSpace(sessionId)) sessionId = "default";
 
         if (string.IsNullOrWhiteSpace(message))
-            return BadRequest(new { reply = "Please type a question.", service = "Unknown", nextStepsUrl = "" });
+            return BadRequest(new
+            {
+                reply = "Please type a question.",
+                service = "Unknown",
+                nextStepsUrl = "",
+                suggestions = new List<string>()
+            });
 
         var result = await _chat.HandleChatAsync(sessionId, message);
 
@@ -32,12 +39,18 @@ public class ChatController : ControllerBase
         {
             ts = DateTime.UtcNow,
             sessionId,
-            userMessage = message,
+            userMessage = SanitizeForLog(message),
             matchedService = result.service,
             score = result.score
         });
 
-        return Ok(new { reply = result.reply, service = result.service, nextStepsUrl = result.nextStepsUrl });
+        return Ok(new
+        {
+            reply = result.reply,
+            service = result.service,
+            nextStepsUrl = result.nextStepsUrl,
+            suggestions = result.suggestions
+        });
     }
 
     [HttpPost("/api/feedback")]
@@ -48,10 +61,38 @@ public class ChatController : ControllerBase
             ts = DateTime.UtcNow,
             service = body?.Service ?? "Unknown",
             helpful = body?.Helpful ?? "Unknown",
-            comment = body?.Comment ?? "",
+            comment = SanitizeForLog(body?.Comment ?? ""),
             sessionId = body?.SessionId
         });
 
         return Ok(new { status = "saved" });
+    }
+
+    private static string SanitizeForLog(string input)
+    {
+        if (string.IsNullOrWhiteSpace(input))
+            return "";
+
+        var output = input;
+
+        output = Regex.Replace(
+            output,
+            @"\b[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}\b",
+            "[POSTCODE]",
+            RegexOptions.IgnoreCase);
+
+        output = Regex.Replace(
+            output,
+            @"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b",
+            "[EMAIL]",
+            RegexOptions.IgnoreCase);
+
+        output = Regex.Replace(
+            output,
+            @"\b(?:\+44|0)\d[\d\s]{8,}\b",
+            "[PHONE]",
+            RegexOptions.IgnoreCase);
+
+        return output;
     }
 }
