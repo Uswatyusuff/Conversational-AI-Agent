@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-accent="blue">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Feedback Dashboard – Bradford Council AI Chatbot</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    /* ── Layout ────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg, #0f1117);
+      color: var(--text, #e8eaf0);
+    }
+
+    .db-header {
+      background: var(--surface, #1a1d27);
+      border-bottom: 1px solid var(--border, #2a2d3e);
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .db-header img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+    .db-header h1 {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    .db-header .back-link {
+      margin-left: auto;
+      font-size: 0.85rem;
+      color: var(--accent, #4f8ef7);
+      text-decoration: none;
+    }
+    .db-header .back-link:hover { text-decoration: underline; }
+
+    .db-body {
+      max-width: 1100px;
+      margin: 32px auto;
+      padding: 0 24px 60px;
+    }
+
+    /* ── Status bar ────────────────────────────────────────── */
+    .status-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      font-size: 0.82rem;
+      color: var(--text-muted, #888);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+    .refresh-btn {
+      margin-left: auto;
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border, #2a2d3e);
+      background: transparent;
+      color: var(--text, #e8eaf0);
+      cursor: pointer;
+      font-size: 0.82rem;
+      transition: background 0.15s;
+    }
+    .refresh-btn:hover { background: var(--surface, #1a1d27); }
+
+    /* ── KPI cards ─────────────────────────────────────────── */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .kpi-card {
+      background: var(--surface, #1a1d27);
+      border: 1px solid var(--border, #2a2d3e);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .kpi-card .kpi-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--text-muted, #888);
+      margin-bottom: 8px;
+    }
+    .kpi-card .kpi-value {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .kpi-card .kpi-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted, #888);
+      margin-top: 6px;
+    }
+    .kpi-card.positive .kpi-value { color: #22c55e; }
+    .kpi-card.negative  .kpi-value { color: #ef4444; }
+    .kpi-card.neutral   .kpi-value { color: var(--accent, #4f8ef7); }
+
+    /* ── Satisfaction gauge ────────────────────────────────── */
+    .gauge-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 10px;
+    }
+    .gauge-bar-bg {
+      flex: 1;
+      height: 10px;
+      background: var(--border, #2a2d3e);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .gauge-bar-fill {
+      height: 100%;
+      border-radius: 5px;
+      background: linear-gradient(90deg, #ef4444, #f59e0b, #22c55e);
+      background-size: 200% 100%;
+      transition: width 0.6s ease;
+    }
+    .gauge-pct {
+      font-size: 0.85rem;
+      font-weight: 600;
+      min-width: 40px;
+      text-align: right;
+    }
+
+    /* ── Section headings ──────────────────────────────────── */
+    .section-heading {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 16px;
+      color: var(--text, #e8eaf0);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-heading .badge {
+      background: var(--border, #2a2d3e);
+      border-radius: 20px;
+      padding: 2px 10px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted, #888);
+    }
+
+    /* ── Per-service table ─────────────────────────────────── */
+    .service-table-wrap {
+      background: var(--surface, #1a1d27);
+      border: 1px solid var(--border, #2a2d3e);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .service-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    .service-table thead th {
+      background: var(--bg, #0f1117);
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted, #888);
+      border-bottom: 1px solid var(--border, #2a2d3e);
+    }
+    .service-table tbody td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border, #2a2d3e);
+      vertical-align: middle;
+    }
+    .service-table tbody tr:last-child td { border-bottom: none; }
+    .service-table tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+    .bar-cell { min-width: 120px; }
+    .mini-bar-bg {
+      height: 8px;
+      background: var(--border, #2a2d3e);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .mini-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--accent, #4f8ef7);
+      transition: width 0.5s ease;
+    }
+    .mini-bar-fill.good   { background: #22c55e; }
+    .mini-bar-fill.medium { background: #f59e0b; }
+    .mini-bar-fill.low    { background: #ef4444; }
+
+    .pill {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .pill.green  { background: rgba(34,197,94,0.15);  color: #22c55e; }
+    .pill.amber  { background: rgba(245,158,11,0.15); color: #f59e0b; }
+    .pill.red    { background: rgba(239,68,68,0.15);  color: #ef4444; }
+
+    /* ── Comments feed ─────────────────────────────────────── */
+    .comments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 14px;
+    }
+    .comment-card {
+      background: var(--surface, #1a1d27);
+      border: 1px solid var(--border, #2a2d3e);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .comment-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .comment-service {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent, #4f8ef7);
+      background: rgba(79,142,247,0.1);
+      border-radius: 20px;
+      padding: 2px 10px;
+    }
+    .comment-sentiment {
+      font-size: 1rem;
+    }
+    .comment-text {
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: var(--text, #e8eaf0);
+    }
+    .comment-ts {
+      font-size: 0.72rem;
+      color: var(--text-muted, #888);
+      margin-top: 10px;
+    }
+
+    /* ── Empty / loading states ────────────────────────────── */
+    .empty-state {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--text-muted, #888);
+      font-size: 0.9rem;
+    }
+    .empty-state .emoji { font-size: 2.5rem; margin-bottom: 12px; }
+
+    .skeleton {
+      background: linear-gradient(90deg,
+        var(--border, #2a2d3e) 25%,
+        var(--surface, #1a1d27) 50%,
+        var(--border, #2a2d3e) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s infinite;
+      border-radius: 6px;
+      height: 18px;
+    }
+    @keyframes shimmer {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* ── Error banner ──────────────────────────────────────── */
+    .error-banner {
+      background: rgba(239,68,68,0.12);
+      border: 1px solid rgba(239,68,68,0.3);
+      border-radius: 8px;
+      padding: 14px 18px;
+      color: #ef4444;
+      font-size: 0.875rem;
+      margin-bottom: 24px;
+      display: none;
+    }
+
+    @media (max-width: 640px) {
+      .kpi-grid { grid-template-columns: 1fr 1fr; }
+      .comments-grid { grid-template-columns: 1fr; }
+      .service-table thead th:nth-child(4),
+      .service-table tbody td:nth-child(4) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="db-header" role="banner">
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+      <rect width="36" height="36" rx="8" fill="#4f8ef7"/>
+      <path d="M10 26V14l8-6 8 6v12" stroke="#fff" stroke-width="2" fill="none"/>
+      <rect x="15" y="19" width="6" height="7" rx="1" fill="#fff"/>
+    </svg>
+    <div>
+      <h1>Feedback Dashboard</h1>
+      <div style="font-size:0.78rem;color:var(--text-muted,#888)">Bradford Council AI Chatbot</div>
+    </div>
+    <a href="/" class="back-link" aria-label="Back to chatbot">← Back to chatbot</a>
+  </header>
+
+  <main class="db-body" id="main">
+
+    <div class="status-bar" role="status" aria-live="polite">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span id="statusText">Loading data…</span>
+      <button class="refresh-btn" id="refreshBtn" onclick="loadData()" aria-label="Refresh dashboard">
+        ↻ Refresh
+      </button>
+    </div>
+
+    <div class="error-banner" id="errorBanner" role="alert">
+      ⚠ Could not load feedback data. Make sure the chatbot server is running.
+    </div>
+
+    <!-- KPI cards -->
+    <div class="kpi-grid" id="kpiGrid" aria-label="Key performance indicators">
+      <div class="kpi-card neutral">
+        <div class="kpi-label">Total responses</div>
+        <div class="kpi-value" id="kpiTotal"><div class="skeleton" style="width:60px"></div></div>
+        <div class="kpi-sub">all time</div>
+      </div>
+      <div class="kpi-card positive">
+        <div class="kpi-label">Helpful</div>
+        <div class="kpi-value" id="kpiHelpful"><div class="skeleton" style="width:50px"></div></div>
+        <div class="kpi-sub" id="kpiHelpfulSub">thumbs up</div>
+      </div>
+      <div class="kpi-card negative">
+        <div class="kpi-label">Not helpful</div>
+        <div class="kpi-value" id="kpiNotHelpful"><div class="skeleton" style="width:50px"></div></div>
+        <div class="kpi-sub" id="kpiNotHelpfulSub">thumbs down</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Satisfaction rate</div>
+        <div class="kpi-value" id="kpiRate"><div class="skeleton" style="width:70px"></div></div>
+        <div class="gauge-wrap" id="gaugeWrap" style="display:none">
+          <div class="gauge-bar-bg"><div class="gauge-bar-fill" id="gaugeBar" style="width:0%"></div></div>
+          <span class="gauge-pct" id="gaugePct">0%</span>
+        </div>
+      </div>
+      <div class="kpi-card neutral">
+        <div class="kpi-label">Services rated</div>
+        <div class="kpi-value" id="kpiServices"><div class="skeleton" style="width:40px"></div></div>
+        <div class="kpi-sub">distinct topics</div>
+      </div>
+    </div>
+
+    <!-- Per-service table -->
+    <h2 class="section-heading">
+      Satisfaction by service
+      <span class="badge" id="serviceCount">–</span>
+    </h2>
+    <div class="service-table-wrap">
+      <table class="service-table" aria-label="Satisfaction by service">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th style="text-align:right">Responses</th>
+            <th style="text-align:right">Satisfaction</th>
+            <th class="bar-cell">Progress</th>
+            <th style="text-align:center">Status</th>
+          </tr>
+        </thead>
+        <tbody id="serviceTableBody">
+          <tr><td colspan="5"><div class="skeleton" style="margin:12px 16px;height:14px"></div></td></tr>
+          <tr><td colspan="5"><div class="skeleton" style="margin:12px 16px;height:14px;width:80%"></div></td></tr>
+          <tr><td colspan="5"><div class="skeleton" style="margin:12px 16px;height:14px;width:65%"></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Comments feed -->
+    <h2 class="section-heading">
+      Recent comments
+      <span class="badge" id="commentCount">–</span>
+    </h2>
+    <div class="comments-grid" id="commentsGrid">
+      <div class="comment-card"><div class="skeleton" style="height:80px"></div></div>
+      <div class="comment-card"><div class="skeleton" style="height:80px"></div></div>
+      <div class="comment-card"><div class="skeleton" style="height:80px"></div></div>
+    </div>
+
+  </main>
+
+  <script>
+    // ── Helpers ────────────────────────────────────────────────
+    function statusClass(rate) {
+      if (rate >= 75) return 'good';
+      if (rate >= 50) return 'medium';
+      return 'low';
+    }
+    function statusPill(rate) {
+      if (rate >= 75) return `<span class="pill green">Good</span>`;
+      if (rate >= 50) return `<span class="pill amber">Fair</span>`;
+      return `<span class="pill red">Low</span>`;
+    }
+    function formatDate(ts) {
+      if (!ts) return '';
+      try {
+        const d = new Date(ts);
+        return d.toLocaleString('en-GB', {
+          day: '2-digit', month: 'short', year: 'numeric',
+          hour: '2-digit', minute: '2-digit'
+        });
+      } catch { return ts; }
+    }
+    function escHtml(s) {
+      return String(s || '')
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    // ── Load & render ──────────────────────────────────────────
+    let lastUpdated = null;
+
+    async function loadData() {
+      document.getElementById('statusText').textContent = 'Refreshing…';
+      document.getElementById('errorBanner').style.display = 'none';
+
+      try {
+        const res = await fetch('/api/feedback/summary', { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+
+        renderKPIs(data);
+        renderServiceTable(data.byService || []);
+        renderComments(data.comments || []);
+
+        lastUpdated = new Date();
+        document.getElementById('statusText').textContent =
+          `Last updated ${lastUpdated.toLocaleTimeString('en-GB')} · auto-refreshes every 60 s`;
+      } catch (err) {
+        console.error('Dashboard load error:', err);
+        document.getElementById('errorBanner').style.display = 'block';
+        document.getElementById('statusText').textContent = 'Error loading data';
+      }
+    }
+
+    function renderKPIs(data) {
+      const total      = data.total      ?? 0;
+      const helpful    = data.helpful    ?? 0;
+      const notHelpful = data.notHelpful ?? 0;
+      const rate       = data.satisfactionRate ?? 0;
+      const services   = (data.byService || []).length;
+
+      document.getElementById('kpiTotal').textContent      = total.toLocaleString();
+      document.getElementById('kpiHelpful').textContent    = helpful.toLocaleString();
+      document.getElementById('kpiNotHelpful').textContent = notHelpful.toLocaleString();
+      document.getElementById('kpiRate').textContent       = `${rate}%`;
+      document.getElementById('kpiServices').textContent   = services;
+
+      document.getElementById('kpiHelpfulSub').textContent =
+        total > 0 ? `${((helpful / total) * 100).toFixed(0)}% of total` : 'thumbs up';
+      document.getElementById('kpiNotHelpfulSub').textContent =
+        total > 0 ? `${((notHelpful / total) * 100).toFixed(0)}% of total` : 'thumbs down';
+
+      // Gauge
+      const gaugeBar  = document.getElementById('gaugeBar');
+      const gaugePct  = document.getElementById('gaugePct');
+      const gaugeWrap = document.getElementById('gaugeWrap');
+      gaugeBar.style.width = `${Math.min(rate, 100)}%`;
+      gaugePct.textContent  = `${rate}%`;
+      gaugeWrap.style.display = total > 0 ? 'flex' : 'none';
+      document.getElementById('kpiRate').style.display = total > 0 ? 'none' : '';
+    }
+
+    function renderServiceTable(byService) {
+      const tbody = document.getElementById('serviceTableBody');
+      document.getElementById('serviceCount').textContent = byService.length;
+
+      if (!byService.length) {
+        tbody.innerHTML = `<tr><td colspan="5">
+          <div class="empty-state"><div class="emoji">📊</div>No service data yet.</div>
+        </td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = byService.map(row => {
+        const rate = row.satisfactionRate ?? 0;
+        const cls  = statusClass(rate);
+        return `
+          <tr>
+            <td><strong>${escHtml(row.service)}</strong></td>
+            <td style="text-align:right">${(row.total ?? 0).toLocaleString()}</td>
+            <td style="text-align:right">${rate}%</td>
+            <td class="bar-cell">
+              <div class="mini-bar-bg">
+                <div class="mini-bar-fill ${cls}" style="width:${Math.min(rate,100)}%"></div>
+              </div>
+            </td>
+            <td style="text-align:center">${statusPill(rate)}</td>
+          </tr>`;
+      }).join('');
+    }
+
+    function renderComments(comments) {
+      const grid = document.getElementById('commentsGrid');
+      document.getElementById('commentCount').textContent = comments.length;
+
+      if (!comments.length) {
+        grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1">
+          <div class="emoji">💬</div>No comments submitted yet.
+        </div>`;
+        return;
+      }
+
+      grid.innerHTML = comments.map(c => {
+        const sentiment = c.helpful ? '👍' : '👎';
+        const sentiment_label = c.helpful ? 'Helpful' : 'Not helpful';
+        return `
+          <article class="comment-card" aria-label="Comment: ${sentiment_label}">
+            <div class="comment-card-top">
+              <span class="comment-service">${escHtml(c.service || 'General')}</span>
+              <span class="comment-sentiment" title="${sentiment_label}" aria-label="${sentiment_label}">${sentiment}</span>
+            </div>
+            <p class="comment-text">${escHtml(c.comment)}</p>
+            ${c.ts ? `<div class="comment-ts">${escHtml(formatDate(c.ts))}</div>` : ''}
+          </article>`;
+      }).join('');
+    }
+
+    // ── Boot ───────────────────────────────────────────────────
+    loadData();
+    setInterval(loadData, 60_000); // auto-refresh every 60 seconds
+  </script>
+</body>
+</html>

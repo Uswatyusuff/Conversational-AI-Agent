@@ -1,0 +1,23 @@
+Metric,Value
+Total tests,21
+Routing passed,20
+Response quality passed,20
+URL relevance passed,19
+Suggestion relevance passed,20
+Final passed,19
+Routing accuracy %,95.24
+Response quality accuracy %,95.24
+URL relevance accuracy %,90.48
+Suggestion relevance accuracy %,95.24
+Final accuracy %,90.48
+Target met,Yes
+
+Section,Routing Passed,Response Passed,Final Passed,Total,Routing Accuracy %,Response Accuracy %,Final Accuracy %
+Council Tax,3,3,3,3,100.00,100.00,100.00
+Waste & Bins,3,3,3,3,100.00,100.00,100.00
+Benefits & Support,2,2,1,3,66.67,66.67,33.33
+Education,3,3,3,3,100.00,100.00,100.00
+Planning,2,2,2,2,100.00,100.00,100.00
+Libraries,2,2,2,2,100.00,100.00,100.00
+Housing,3,3,3,3,100.00,100.00,100.00
+Contact Us,2,2,2,2,100.00,100.00,100.00

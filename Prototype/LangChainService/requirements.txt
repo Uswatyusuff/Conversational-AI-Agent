@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+requests
+beautifulsoup4
+faiss-cpu
+langchain
+langchain-community
+langchain-openai
+langchain-text-splitters
+openai
+tiktoken
+python-dotenv
+playwright
