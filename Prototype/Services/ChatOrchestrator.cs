@@ -64,8 +64,21 @@ public class ChatOrchestrator
         },
         ["Contact Us"] = new[]
         {
-            "contact us", "contact the council", "telephone", "phone number",
-            "email alerts", "call the council", "contact details"
+            "contact us", "contact the council", "contact council", "contact",
+            "telephone", "phone number", "customer service number", "customer service",
+            "customer services", "call the council", "contact details",
+            "email", "email the council", "council email",
+            "opening hours", "opening times", "office hours",
+            "complaint", "complaints", "make a complaint",
+            "feedback", "give feedback",
+            "social media", "facebook", "twitter", "x",
+            "post", "postal address", "by post",
+            "send documents", "send paperwork",
+            "visit the council", "in person", "council office", "office",
+            "departments", "contact department",
+            "support", "contact support",
+            "online chat", "web chat", "live chat",
+            "emergency contact"
         },
 
         // ── New services ──────────────────────────────────────────────────────
@@ -801,6 +814,116 @@ if (string.Equals(routingService, "Housing", StringComparison.OrdinalIgnoreCase)
             return (binGuideReply, "Waste & Bins", "https://www.bradford.gov.uk/recycling-and-waste/wheeled-bins-and-recycling-containers/what-goes-in-your-bins/", 1.0f, binGuideSuggestions);
         }
 
+                if (IsContactIntent(normMsg))
+        {
+            string reply;
+            var suggestions = new List<string>();
+            var nextUrl = "https://www.bradford.gov.uk/contact-us/";
+
+            if (normMsg.Contains("phone number") || normMsg.Contains("telephone") || normMsg.Contains("customer service"))
+            {
+                reply = "You can contact Bradford Council through the council contact page, which includes the main phone contact details and service contact options.";
+                suggestions.AddRange(new[]
+                {
+                    "Email the council",
+                    "Opening hours",
+                    "Visit the council in person",
+                    "Make a complaint"
+                });
+            }
+            else if (normMsg.Contains("email"))
+            {
+                reply = "You can use the council contact page to find the appropriate online or email contact option for your enquiry.";
+                suggestions.AddRange(new[]
+                {
+                    "Council phone number",
+                    "Send documents to the council",
+                    "Make a complaint",
+                    "Contact a department"
+                });
+            }
+            else if (normMsg.Contains("opening hours") || normMsg.Contains("opening times") || normMsg.Contains("office hours"))
+            {
+                reply = "Council opening hours and service contact arrangements are listed on the Bradford Council contact page. Some services may have different hours, so it is best to check the relevant contact details there.";
+                suggestions.AddRange(new[]
+                {
+                    "Council phone number",
+                    "Visit the council in person",
+                    "Where is the council office?",
+                    "Contact a department"
+                });
+            }
+            else if (normMsg.Contains("complaint") || normMsg.Contains("feedback"))
+            {
+                reply = "You can use Bradford Council’s contact and complaints information to make a complaint or provide feedback about a council service.";
+                suggestions.AddRange(new[]
+                {
+                    "Make a complaint",
+                    "Give feedback",
+                    "Council phone number",
+                    "Contact the council"
+                });
+            }
+            else if (normMsg.Contains("social media"))
+            {
+                reply = "Bradford Council contact channels and updates are listed through the council website. Check the contact page and official site links for the latest communication options.";
+                suggestions.AddRange(new[]
+                {
+                    "Sign up for email alerts",
+                    "Contact the council",
+                    "Council phone number",
+                    "Opening hours"
+                });
+            }
+            else if (normMsg.Contains("post") || normMsg.Contains("postal") || normMsg.Contains("send documents"))
+            {
+                reply = "Use the Bradford Council contact page to find the correct postal or document submission details for your enquiry, as these can vary by service.";
+                suggestions.AddRange(new[]
+                {
+                    "Send documents to the council",
+                    "Email the council",
+                    "Contact a department",
+                    "Council phone number"
+                });
+            }
+            else if (normMsg.Contains("in person") || normMsg.Contains("visit the council") || normMsg.Contains("council office"))
+            {
+                reply = "You can check Bradford Council contact information for office locations, visiting details, and the best service point for your enquiry.";
+                suggestions.AddRange(new[]
+                {
+                    "Where is the council office?",
+                    "Opening hours",
+                    "Council phone number",
+                    "Find council office"
+                });
+            }
+            else if (normMsg.Contains("online chat") || normMsg.Contains("live chat"))
+            {
+                reply = "Check the Bradford Council contact page to see which contact options are currently available for your enquiry, including any online support channels.";
+                suggestions.AddRange(new[]
+                {
+                    "Contact the council",
+                    "Council phone number",
+                    "Email the council",
+                    "Opening hours"
+                });
+            }
+            else
+            {
+                reply = "You can contact Bradford Council through the council contact page for phone, online, post, complaints, and service-specific contact details.";
+                suggestions.AddRange(new[]
+                {
+                    "Council phone number",
+                    "Email the council",
+                    "Opening hours",
+                    "Make a complaint"
+                });
+            }
+
+            SaveConversation(sessionId, message, reply, "Contact Us", "contact", suggestions);
+            return (reply, "Contact Us", nextUrl, 1.0f, suggestions);
+        }
+
         // ─────────────────────────────────────────────────────────────────────────
         // detect detectedService AFTER new service checks so new services take priority
 
@@ -1002,19 +1125,48 @@ if (string.Equals(routingService, "Housing", StringComparison.OrdinalIgnoreCase)
     }
 
     private static string DetectService(string normMsg, Dictionary<string, string[]> triggers)
+{
+    if (string.IsNullOrWhiteSpace(normMsg))
+        return "";
+
+    var scores = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+
+    foreach (var kv in triggers)
     {
-        foreach (var kv in triggers)
+        var service = kv.Key;
+        var score = 0;
+
+        foreach (var trigger in kv.Value)
         {
-            foreach (var trigger in kv.Value)
-            {
-                var normalizedTrigger = Normalize(trigger);
-                if (!string.IsNullOrWhiteSpace(normalizedTrigger) && normMsg.Contains(normalizedTrigger))
-                    return kv.Key;
-            }
+            var normalizedTrigger = Normalize(trigger);
+            if (string.IsNullOrWhiteSpace(normalizedTrigger))
+                continue;
+
+            if (!normMsg.Contains(normalizedTrigger))
+                continue;
+
+            var wordCount = normalizedTrigger
+                .Split(' ', StringSplitOptions.RemoveEmptyEntries)
+                .Length;
+
+            // multi-word triggers are usually stronger signals
+            score += wordCount >= 3 ? 4 :
+                     wordCount == 2 ? 3 : 1;
         }
 
-        return "";
+        if (score > 0)
+            scores[service] = score;
     }
+
+    if (scores.Count == 0)
+        return "";
+
+    return scores
+        .OrderByDescending(x => x.Value)
+        .ThenBy(x => x.Key, StringComparer.OrdinalIgnoreCase)
+        .First()
+        .Key;
+}
 
     private static string DetectIntent(string normMsg, string service)
 {
@@ -1647,19 +1799,19 @@ private static bool IsEnterPostcodeIntent(string normMsg)
 
         // General waste (black/grey bin)
         return (
-            "🗑️ **General Waste Bin (Black/Grey) — What Goes In:**\n\n" +
+            "**General Waste Bin (Black/Grey) — What Goes In:**\n\n" +
             "This bin is for waste that cannot be recycled or composted, such as:\n\n" +
-            "✅ Nappies and hygiene products\n" +
-            "✅ Polystyrene\n" +
-            "✅ Ceramics and Pyrex\n" +
-            "✅ Plastic bags and wrapping\n" +
-            "✅ Broken glass (wrapped carefully)\n\n" +
-            "❌ **Do NOT put in:**\n" +
-            "❌ Recycling (paper, glass, plastic, cans → blue bin)\n" +
-            "❌ Garden waste → garden waste subscription bin\n" +
-            "❌ Electrical items → take to recycling centre\n" +
-            "❌ Medicines or sharps → take to a pharmacy\n\n" +
-            "🔗 https://www.bradford.gov.uk/recycling-and-waste/wheeled-bins-and-recycling-containers/what-goes-in-your-bins/",
+            "Nappies and hygiene products\n" +
+            "Polystyrene\n" +
+            "Ceramics and Pyrex\n" +
+            "Plastic bags and wrapping\n" +
+            "Broken glass (wrapped carefully)\n\n" +
+            "**Do NOT put in:**\n" +
+            "Recycling (paper, glass, plastic, cans → blue bin)\n" +
+            "Garden waste → garden waste subscription bin\n" +
+            "Electrical items → take to recycling centre\n" +
+            "Medicines or sharps → take to a pharmacy\n\n" +
+            "https://www.bradford.gov.uk/recycling-and-waste/wheeled-bins-and-recycling-containers/what-goes-in-your-bins/",
             new List<string> { "What goes in my blue recycling bin?", "What goes in my garden waste bin?", "Find recycling centre", "Report a missed bin" }
         );
     }
@@ -1701,7 +1853,30 @@ private static bool IsEnterPostcodeIntent(string normMsg)
         sb.AppendLine("🔗 Admissions: https://www.bradford.gov.uk/education-and-skills/school-admissions/apply-for-a-place-at-one-of-bradford-districts-schools/");
         return sb.ToString();
     }
+    private static bool IsContactIntent(string msg)
+    {
+        if (string.IsNullOrWhiteSpace(msg))
+            return false;
 
-    // ── Also update BuildSuggestions to handle new services ──────────────────────
-    // (override the default case and add new service cases via an extension below)
+        return msg.Contains("contact") ||
+            msg.Contains("phone number") ||
+            msg.Contains("telephone") ||
+            msg.Contains("customer service") ||
+            msg.Contains("email") ||
+            msg.Contains("opening hours") ||
+            msg.Contains("opening times") ||
+            msg.Contains("complaint") ||
+            msg.Contains("feedback") ||
+            msg.Contains("social media") ||
+            msg.Contains("post") ||
+            msg.Contains("postal") ||
+            msg.Contains("send documents") ||
+            msg.Contains("in person") ||
+            msg.Contains("visit the council") ||
+            msg.Contains("council office") ||
+            msg.Contains("online chat") ||
+            msg.Contains("live chat") ||
+            msg.Contains("departments") ||
+            msg.Contains("emergency contact");
+    }
 }

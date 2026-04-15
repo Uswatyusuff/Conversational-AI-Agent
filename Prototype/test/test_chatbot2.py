@@ -1,243 +1,15 @@
 import csv
+import json
 import time
+import uuid
 import requests
+from pathlib import Path
 from collections import defaultdict
 
 TARGET_ACCURACY = 85.0
 BASE_URL = "http://localhost:5000/api/chat"
 SESSION_ID = "automated-test-session"
-
-TEST_CASES = [
-    # Council Tax
-    {
-        "section": "Council Tax",
-        "question": "How much council tax do I pay?",
-        "expected_service": "Council Tax",
-        "must_include_any": ["band", "amount", "council tax", "bill"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["council-tax"],
-        "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
-        "allow_generic": False,
-    },
-    {
-        "section": "Council Tax",
-        "question": "How do I pay my council tax?",
-        "expected_service": "Council Tax",
-        "must_include_any": ["pay", "online", "bill", "direct debit"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["council-tax", "pay"],
-        "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
-        "allow_generic": False,
-    },
-    {
-        "section": "Council Tax",
-        "question": "Can I get a council tax discount?",
-        "expected_service": "Council Tax",
-        "must_include_any": ["discount", "reduction", "apply", "eligible"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["council-tax", "discount", "reduce"],
-        "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
-        "allow_generic": False,
-    },
-
-    # Waste & Bins
-    {
-        "section": "Waste & Bins",
-        "question": "When is my bin collection?",
-        "expected_service": "Waste & Bins",
-        "must_include_any": ["postcode", "collection", "bin"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["bins", "waste", "recycling"],
-        "expected_suggestion_keywords": ["bin", "missed", "postcode", "address"],
-        "allow_generic": False,
-    },
-    {
-        "section": "Waste & Bins",
-        "question": "Report a missed bin",
-        "expected_service": "Waste & Bins",
-        "must_include_any": ["missed bin", "report", "form", "call"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["missed-bin", "bins", "waste"],
-        "expected_suggestion_keywords": ["bin", "missed", "postcode", "address"],
-        "allow_generic": False,
-    },
-    {
-        "section": "Waste & Bins",
-        "question": "How much is a new bin?",
-        "expected_service": "Waste & Bins",
-        "must_include_any": ["£", "cost", "new bin", "charge"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["bins", "containers", "waste"],
-        "expected_suggestion_keywords": ["bin", "missed", "postcode", "address"],
-        "allow_generic": False,
-    },
-
-    # Benefits & Support
-    {
-        "section": "Benefits & Support",
-        "question": "How much benefits can I get?",
-        "expected_service": "Benefits & Support",
-        "must_include_any": ["depends", "eligibility", "income", "circumstances", "universal credit", "housing benefit"],
-        "bad_phrases": [
-            "context does not specify exact amounts",
-            "context does not specify",
-            "not clearly specify",
-        ],
-        "expected_url_keywords": ["benefits", "welfare"],
-        "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
-        "allow_generic": False,
-    },
-    {
-        "section": "Benefits & Support",
-        "question": "How do I apply for benefits?",
-        "expected_service": "Benefits & Support",
-        "must_include_any": ["apply", "universal credit", "housing benefit", "visit", "contact"],
-        "bad_phrases": ["context does not clearly specify"],
-        "expected_url_keywords": ["benefits"],
-        "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
-        "allow_generic": False,
-    },
-    {
-        "section": "Benefits & Support",
-        "question": "I need help paying bills",
-        "expected_service": "Benefits & Support",
-        "must_include_any": ["support", "advice", "help", "benefit", "debt", "bills"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["benefits", "money-advice", "welfare"],
-        "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
-        "allow_generic": False,
-    },
-
-    # Education
-    {
-        "section": "Education",
-        "question": "How do I apply for a school place?",
-        "expected_service": "Education",
-        "must_include_any": ["apply", "school place", "admissions", "email", "form"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["education", "school-admissions"],
-        "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
-        "allow_generic": False,
-    },
-    {
-        "section": "Education",
-        "question": "How do in-year transfers work?",
-        "expected_service": "Education",
-        "must_include_any": ["in-year", "transfer", "term", "school"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["education", "school-admissions", "in-year"],
-        "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
-        "allow_generic": False,
-    },
-    {
-        "section": "Education",
-        "question": "How do I track my application?",
-        "expected_service": "Education",
-        "must_include_any": ["track", "application", "account", "offer", "online"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["education", "school-admissions"],
-        "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
-        "allow_generic": False,
-    },
-
-    # Planning
-    {
-        "section": "Planning",
-        "question": "How can I check my planning application status?",
-        "expected_service": "Planning",
-        "must_include_any": ["planning", "application", "status", "online", "track"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["planning"],
-        "expected_suggestion_keywords": ["planning", "application", "permission"],
-        "allow_generic": False,
-    },
-    {
-        "section": "Planning",
-        "question": "How do I apply for planning permission?",
-        "expected_service": "Planning",
-        "must_include_any": ["apply", "planning permission", "online", "application"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["planning"],
-        "expected_suggestion_keywords": ["planning", "application", "permission"],
-        "allow_generic": False,
-    },
-
-    # Libraries
-    {
-        "section": "Libraries",
-        "question": "How do I renew library books online?",
-        "expected_service": "Libraries",
-        "must_include_any": ["renew", "online", "library account", "log in"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["libraries"],
-        "expected_suggestion_keywords": ["library", "e-books", "join"],
-        "allow_generic": False,
-    },
-    {
-        "section": "Libraries",
-        "question": "Can I borrow e-books?",
-        "expected_service": "Libraries",
-        "must_include_any": ["e-books", "borrow", "library card", "digital"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["libraries"],
-        "expected_suggestion_keywords": ["library", "e-books", "join"],
-        "allow_generic": False,
-    },
-
-    # Housing
-    {
-        "section": "Housing",
-        "question": "I am homeless, what should I do?",
-        "expected_service": "Housing",
-        "must_include_any": ["homeless", "housing", "advice", "contact", "help"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["housing", "homeless"],
-        "expected_suggestion_keywords": ["housing", "homeless", "home"],
-        "allow_generic": False,
-    },
-    {
-        "section": "Housing",
-        "question": "How do I apply for council housing?",
-        "expected_service": "Housing",
-        "must_include_any": ["apply", "housing", "contact", "service"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["housing"],
-        "expected_suggestion_keywords": ["housing", "homeless", "home"],
-        "allow_generic": False,
-    },
-    {
-        "section": "Housing",
-        "question": "Can I get temporary accommodation?",
-        "expected_service": "Housing",
-        "must_include_any": ["temporary accommodation", "housing", "eligible", "support"],
-        "bad_phrases": ["context does not specify"],
-        "expected_url_keywords": ["housing"],
-        "expected_suggestion_keywords": ["housing", "homeless", "home"],
-        "allow_generic": False,
-    },
-
-    # Contact Us
-    {
-        "section": "Contact Us",
-        "question": "How can I contact the council?",
-        "expected_service": "Contact Us",
-        "must_include_any": ["contact", "council", "phone", "email", "social"],
-        "bad_phrases": ["context does not provide"],
-        "expected_url_keywords": ["contact"],
-        "expected_suggestion_keywords": ["contact", "phone", "email", "alerts"],
-        "allow_generic": True,
-    },
-    {
-        "section": "Contact Us",
-        "question": "How do I sign up for email alerts?",
-        "expected_service": "Contact Us",
-        "must_include_any": ["email alerts", "email address", "sign up", "subscribe"],
-        "bad_phrases": ["context does not provide"],
-        "expected_url_keywords": ["email-alerts", "contact"],
-        "expected_suggestion_keywords": ["contact", "phone", "alerts"],
-        "allow_generic": False,
-    },
-]
+TESTS_FOLDER = Path(__file__).parent / "Test-Data"
 
 GENERIC_BAD_PHRASES = [
     "context does not specify",
@@ -263,6 +35,46 @@ SECTION_KEYWORDS = {
 }
 
 
+def load_test_cases(folder: Path) -> list[dict]:
+    all_cases = []
+
+    if not folder.exists():
+        raise FileNotFoundError(f"Test folder not found: {folder}")
+
+    json_files = sorted(folder.glob("*.json"))
+
+    if not json_files:
+        raise FileNotFoundError(f"No JSON test files found in: {folder}")
+
+    for file_path in json_files:
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        if not isinstance(data, list):
+            raise ValueError(f"{file_path} must contain a JSON array of test cases")
+
+        for i, case in enumerate(data, start=1):
+            if not isinstance(case, dict):
+                raise ValueError(f"{file_path} item #{i} is not a JSON object")
+
+            required_fields = ["section", "question", "expected_service"]
+            missing = [field for field in required_fields if field not in case]
+            if missing:
+                raise ValueError(
+                    f"{file_path} item #{i} is missing required fields: {', '.join(missing)}"
+                )
+
+            case.setdefault("must_include_any", [])
+            case.setdefault("bad_phrases", [])
+            case.setdefault("expected_url_keywords", [])
+            case.setdefault("expected_suggestion_keywords", [])
+            case.setdefault("allow_generic", True)
+
+            all_cases.append(case)
+
+    return all_cases
+
+
 def call_chat_api(question: str, session_id: str) -> dict:
     payload = {
         "message": question,
@@ -286,10 +98,16 @@ def text_contains_any(text: str, phrases: list[str]) -> bool:
     return any(phrase.lower() in text_lower for phrase in phrases)
 
 
-def grade_service(actual: str, expected: str) -> tuple[str, str]:
+def grade_service(actual: str, expected) -> tuple[str, str]:
     actual_clean = (actual or "").strip().lower()
-    expected_clean = (expected or "").strip().lower()
 
+    if isinstance(expected, list):
+        expected_clean = [(e or "").strip().lower() for e in expected]
+        if actual_clean in expected_clean:
+            return "PASS", "Service matched one of the expected sections."
+        return "FAIL", f"Expected service one of {expected}, got '{actual}'."
+
+    expected_clean = (expected or "").strip().lower()
     if actual_clean == expected_clean:
         return "PASS", "Service matched expected section."
     return "FAIL", f"Expected service '{expected}', got '{actual}'."
@@ -495,16 +313,19 @@ def write_summary_csv(summary, path="test_summary.csv"):
 
 
 def main():
+    test_cases = load_test_cases(TESTS_FOLDER)
     results = []
 
-    print(f"Running {len(TEST_CASES)} tests against {BASE_URL}\n")
+    print(f"Loaded {len(test_cases)} tests from {TESTS_FOLDER}")
+    print(f"Running {len(test_cases)} tests against {BASE_URL}\n")
 
-    for i, test in enumerate(TEST_CASES, start=1):
+    for i, test in enumerate(test_cases, start=1):
         question = test["question"]
         expected_service = test["expected_service"]
+        session_id = f"test-{i}-{uuid.uuid4()}"
 
         try:
-            data = call_chat_api(question, SESSION_ID)
+            data = call_chat_api(question, session_id)
 
             actual_service = data.get("service", "")
             reply = data.get("reply", "") or data.get("answer", "")
@@ -526,7 +347,7 @@ def main():
                 "test_no": i,
                 "section": test["section"],
                 "question": question,
-                "expected_service": expected_service,
+                "expected_service": json.dumps(expected_service) if isinstance(expected_service, list) else expected_service,
                 "actual_service": actual_service,
                 "service_result": service_result,
                 "service_reason": service_reason,
@@ -544,7 +365,7 @@ def main():
             }
 
             print(
-                f"[{i}/{len(TEST_CASES)}] "
+                f"[{i}/{len(test_cases)}] "
                 f"FINAL={final_result} | "
                 f"SERVICE={service_result} | "
                 f"RESPONSE={response_result} | "
@@ -554,9 +375,9 @@ def main():
         except Exception as ex:
             row = {
                 "test_no": i,
-                "section": test["section"],
-                "question": question,
-                "expected_service": expected_service,
+                "section": test.get("section", ""),
+                "question": test.get("question", ""),
+                "expected_service": json.dumps(expected_service) if isinstance(expected_service, list) else expected_service,
                 "actual_service": "ERROR",
                 "service_result": "ERROR",
                 "service_reason": str(ex),
@@ -573,7 +394,7 @@ def main():
                 "suggestions": "",
             }
 
-            print(f"[{i}/{len(TEST_CASES)}] ERROR | {question} -> {ex}")
+            print(f"[{i}/{len(test_cases)}] ERROR | {question} -> {ex}")
 
         results.append(row)
         time.sleep(0.4)
