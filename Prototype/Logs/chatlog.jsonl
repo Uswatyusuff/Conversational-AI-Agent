@@ -1530,3 +1530,445 @@
 {"ts":"[ADDRESS]:42:51.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get temporary accommodation?","matchedService":"Housing","score":1}
 {"ts":"[ADDRESS]:42:53.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How can I contact the council?","matchedService":"Contact Us","score":0}
 {"ts":"[ADDRESS]:43:10.46179Z","sessionId":"automated-test-session","userMessage":"How do I sign up for email alerts?","matchedService":"Contact Us","score":0}
+{"ts":"[ADDRESS]:36:24.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"hi","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:45:51.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Hello?","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:46:03.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can you help me find cultural texts?","matchedService":"Benefits \u0026 Support","score":0.17326675}
+{"ts":"[ADDRESS]:46:14.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I mean console techs.","matchedService":"Benefits \u0026 Support","score":0.07522683}
+{"ts":"[ADDRESS]:46:24.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I mean council tax.","matchedService":"Council Tax","score":0.7239993}
+{"ts":"[ADDRESS]:18:03.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Bye.","matchedService":"Benefits \u0026 Support","score":0.14262871}
+{"ts":"[ADDRESS]:18:21.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Hello.","matchedService":"Benefits \u0026 Support","score":0.10140542}
+{"ts":"[ADDRESS]:19:52.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"hi how are you","matchedService":"Benefits \u0026 Support","score":0.09297902}
+{"ts":"[ADDRESS]:20:01.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"bye","matchedService":"Benefits \u0026 Support","score":0.14659418}
+{"ts":"[ADDRESS]:09:41.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply for Council Tax Support?","matchedService":"Council Tax","score":0.72109777}
+{"ts":"[ADDRESS]:09:48.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"hi","matchedService":"Council Tax","score":0.08184309}
+{"ts":"[ADDRESS]:10:08.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How are you?","matchedService":"Contact Us","score":0.13039556}
+{"ts":"[ADDRESS]:10:14.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Hi.","matchedService":"Contact Us","score":0}
+{"ts":"[ADDRESS]:10:21.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"goodbye","matchedService":"Contact Us","score":0}
+{"ts":"[ADDRESS]:34:22.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"hi","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:34:29.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how are you","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:34:36.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"goodbye","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:34:48.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Idk","matchedService":"Benefits \u0026 Support","score":0.077903405}
+{"ts":"[ADDRESS]:35:05.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"sdfsadf","matchedService":"Benefits \u0026 Support","score":0.16033383}
+{"ts":"[ADDRESS]:00:59.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"When is my bin collection day?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:01:50.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"[ADDRESS]:08:28.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"[ADDRESS]:14:53.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Hello.","matchedService":"Council Tax","score":0.026385091}
+{"ts":"[ADDRESS]:15:04.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Help me with the council tax.","matchedService":"Council Tax","score":0.76148885}
+{"ts":"[ADDRESS]:15:15.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can you help me with payment?","matchedService":"Council Tax","score":0.4402947}
+{"ts":"[ADDRESS]:15:23.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I have lost a lot of money.","matchedService":"Council Tax","score":0.44999954}
+{"ts":"[ADDRESS]:15:45.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How can I get suppor","matchedService":"Council Tax","score":0.16964953}
+{"ts":"[ADDRESS]:16:01.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How can I get support?","matchedService":"Benefits \u0026 Support","score":0.5727234}
+{"ts":"[ADDRESS]:16:27.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am looking to check eligibility","matchedService":"Benefits \u0026 Support","score":0.52172786}
+{"ts":"[ADDRESS]:16:39.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Am I eligible?","matchedService":"Benefits \u0026 Support","score":0.47512278}
+{"ts":"[ADDRESS]:17:03.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Am I eligible for benefits?","matchedService":"Benefits \u0026 Support","score":0.57561964}
+{"ts":"[ADDRESS]:19:27.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"hello","matchedService":"Benefits \u0026 Support","score":0.08173329}
+{"ts":"[ADDRESS]:32:53.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"hi","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:33:03.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want help with council tax","matchedService":"Council Tax","score":0.73535496}
+{"ts":"[ADDRESS]:33:30.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want support with bill","matchedService":"Council Tax","score":0.35198593}
+{"ts":"[ADDRESS]:33:58.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to know whether I qualify for Council tax support","matchedService":"Council Tax","score":0.79758894}
+{"ts":"[ADDRESS]:34:15.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Am I eligible for benefits if I am disabled","matchedService":"Benefits \u0026 Support","score":0.51667}
+{"ts":"[ADDRESS]:34:36.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am asking about the council tax support","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:35:05.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want help with council tax support","matchedService":"Council Tax","score":0.73973626}
+{"ts":"[ADDRESS]:35:18.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am homeless","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:41:43.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How can I check my planning application status?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:42:04.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Am I eligible for support if I am disabled","matchedService":"Benefits \u0026 Support","score":0.56328064}
+{"ts":"[ADDRESS]:42:20.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"can I get benefits?","matchedService":"Benefits \u0026 Support","score":0.5850538}
+{"ts":"[ADDRESS]:42:29.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"hi","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:42:42.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am homeless","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:43:00.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am homeless. I want help","matchedService":"Housing","score":1}
+{"ts":"[ADDRESS]:43:25.24583Z","sessionId":"[ADDRESS]","userMessage":"I want to pay council tax","matchedService":"Council Tax","score":0.7829532}
+{"ts":"[ADDRESS]:43:36.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Payment help","matchedService":"Council Tax","score":0.37197357}
+{"ts":"[ADDRESS]:43:45.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Pay online","matchedService":"Council Tax","score":0.49916592}
+{"ts":"[ADDRESS]:43:55.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Set up direct debit","matchedService":"Council Tax","score":0.63523465}
+{"ts":"[ADDRESS]:54:27.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I renew library books online?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:54:41.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want help with renewing books.","matchedService":"Libraries","score":0.3474825}
+{"ts":"[ADDRESS]:54:57.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to renew books","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:55:12.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want e-books","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:55:23.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Hello.","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:55:33.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to renew e-books","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:55:45.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I missed my bin collection","matchedService":"Waste \u0026 Bins","score":0.7022403}
+{"ts":"[ADDRESS]:55:56.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I have missed my bin collection.","matchedService":"Waste \u0026 Bins","score":0.7036191}
+{"ts":"[ADDRESS]:56:06.89759Z","sessionId":"[ADDRESS]","userMessage":"How do I report a missed bin?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:56:23.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I have missed my bin.","matchedService":"Waste \u0026 Bins","score":0.6642524}
+{"ts":"[ADDRESS]:56:39.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I missed my bin collection.","matchedService":"Waste \u0026 Bins","score":0.6952}
+{"ts":"[ADDRESS]:56:48.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"my bin was not collected","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:56:59.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much does a new bin cost","matchedService":"Waste \u0026 Bins","score":0.55990076}
+{"ts":"[ADDRESS]:57:21.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much for a replacement bin","matchedService":"Waste \u0026 Bins","score":0.67711717}
+{"ts":"[ADDRESS]:57:37.23855Z","sessionId":"[ADDRESS]","userMessage":"What happens if I become homeless","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:57:49.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am homeless","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:58:28.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How much council tax do I pay?","matchedService":"Council Tax","score":0.714873}
+{"ts":"[ADDRESS]:58:30.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I pay my council tax?","matchedService":"Council Tax","score":0.7704054}
+{"ts":"[ADDRESS]:58:33.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get a council tax discount?","matchedService":"Council Tax","score":0.76558316}
+{"ts":"[ADDRESS]:58:36.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What happens if I don\u2019t pay council tax?","matchedService":"Council Tax","score":0.7906842}
+{"ts":"[ADDRESS]:58:38.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I check my council tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"[ADDRESS]:58:41.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I pay council tax monthly?","matchedService":"Council Tax","score":0.87171197}
+{"ts":"[ADDRESS]:58:43.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What are council tax bands?","matchedService":"Council Tax","score":0.7217855}
+{"ts":"[ADDRESS]:58:45.[ADDRESS]","sessionId":"automated-test-session","userMessage":"I moved house, what happens to my council tax?","matchedService":"Council Tax","score":0.73430157}
+{"ts":"[ADDRESS]:58:47.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can students get council tax discount?","matchedService":"Council Tax","score":0.6757723}
+{"ts":"[ADDRESS]:58:50.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I set up direct debit?","matchedService":"Council Tax","score":0.6703065}
+{"ts":"[ADDRESS]:58:52.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get council tax reduction?","matchedService":"Council Tax","score":0.7520488}
+{"ts":"[ADDRESS]:58:54.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is band D council tax?","matchedService":"Council Tax","score":0.68647}
+{"ts":"[ADDRESS]:58:57.[ADDRESS]","sessionId":"automated-test-session","userMessage":"I cannot afford council tax, what can I do?","matchedService":"Council Tax","score":0.71042234}
+{"ts":"[ADDRESS]:58:59.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I contact council tax team?","matchedService":"Council Tax","score":0.7161894}
+{"ts":"[ADDRESS]:59:01.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What happens if I miss a payment?","matchedService":"Council Tax","score":0.57511395}
+{"ts":"[ADDRESS]:59:03.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I appeal my council tax band?","matchedService":"Council Tax","score":0.8608816}
+{"ts":"[ADDRESS]:59:06.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Do I pay council tax if I live alone?","matchedService":"Council Tax","score":0.7428162}
+{"ts":"[ADDRESS]:59:06.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What discounts are available?","matchedService":"Council Tax","score":0.38122004}
+{"ts":"[ADDRESS]:59:08.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I update my council tax details?","matchedService":"Council Tax","score":0.83891433}
+{"ts":"[ADDRESS]:59:11.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I pay council tax online?","matchedService":"Council Tax","score":0.8487649}
+{"ts":"[ADDRESS]:59:11.[ADDRESS]","sessionId":"automated-test-session","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.8051774}
+{"ts":"[ADDRESS]:59:11.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What day is my bin collected?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:59:12.[ADDRESS]","sessionId":"automated-test-session","userMessage":"My bin was not collected","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:59:12.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Report a missed bin","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:59:14.[ADDRESS]","sessionId":"automated-test-session","userMessage":"I need a new bin","matchedService":"Waste \u0026 Bins","score":0.687411}
+{"ts":"[ADDRESS]:59:17.56229Z","sessionId":"automated-test-session","userMessage":"How much is a new bin?","matchedService":"Waste \u0026 Bins","score":0.55784416}
+{"ts":"[ADDRESS]:59:17.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What goes in recycling bin?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:59:18.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What goes in general waste?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:59:21.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Tell me about garden waste","matchedService":"Waste \u0026 Bins","score":0.7009861}
+{"ts":"[ADDRESS]:59:21.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Do you collect bins on Sundays?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:59:49.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I change my bin collection day?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:59:52.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What time should I put my bin out?","matchedService":"Waste \u0026 Bins","score":0.86901975}
+{"ts":"[ADDRESS]:59:55.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I get a replacement bin?","matchedService":"Waste \u0026 Bins","score":0.85321593}
+{"ts":"[ADDRESS]:59:57.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What if my bin is damaged?","matchedService":"Waste \u0026 Bins","score":0.64394677}
+{"ts":"[ADDRESS]:00:00.1594Z","sessionId":"automated-test-session","userMessage":"How do I report missed recycling?","matchedService":"Waste \u0026 Bins","score":0.63797176}
+{"ts":"[ADDRESS]:00:02.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Do you collect bulky waste?","matchedService":"Waste \u0026 Bins","score":0.63684005}
+{"ts":"[ADDRESS]:00:03.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I book bulky waste collection?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:00:06.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What bins do I need?","matchedService":"Waste \u0026 Bins","score":0.5759313}
+{"ts":"[ADDRESS]:00:08.76304Z","sessionId":"automated-test-session","userMessage":"How do I recycle electronics?","matchedService":"Waste \u0026 Bins","score":0.614301}
+{"ts":"[ADDRESS]:00:09.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What happens if I miss collection day?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:00:11.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get benefits?","matchedService":"Benefits \u0026 Support","score":0.5850538}
+{"ts":"[ADDRESS]:00:14.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for benefits?","matchedService":"Benefits \u0026 Support","score":0.56320244}
+{"ts":"[ADDRESS]:00:16.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Am I eligible for benefits?","matchedService":"Benefits \u0026 Support","score":0.57561964}
+{"ts":"[ADDRESS]:00:18.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How much benefits can I get?","matchedService":"Benefits \u0026 Support","score":0.508886}
+{"ts":"[ADDRESS]:00:21.45673Z","sessionId":"automated-test-session","userMessage":"What documents do I need for benefits?","matchedService":"Benefits \u0026 Support","score":0.7815774}
+{"ts":"[ADDRESS]:00:21.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for a Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.25080493}
+{"ts":"[ADDRESS]:00:22.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Am I eligible for a Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.27407858}
+{"ts":"[ADDRESS]:00:22.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What evidence do I need for Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.2444449}
+{"ts":"[ADDRESS]:00:25.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get support if I\u2019m unemployed?","matchedService":"Benefits \u0026 Support","score":0.59963965}
+{"ts":"[ADDRESS]:00:28.83286Z","sessionId":"automated-test-session","userMessage":"What financial support is available?","matchedService":"Benefits \u0026 Support","score":0.62420636}
+{"ts":"[ADDRESS]:00:51.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for housing benefit?","matchedService":"Benefits \u0026 Support","score":0.7637378}
+{"ts":"[ADDRESS]:00:55.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is universal credit?","matchedService":"Benefits \u0026 Support","score":0.61853653}
+{"ts":"[ADDRESS]:00:58.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get hardship support?","matchedService":"Benefits \u0026 Support","score":0.639693}
+{"ts":"[ADDRESS]:00:58.63597Z","sessionId":"automated-test-session","userMessage":"I need help paying bills","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:01:08.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for council tax support?","matchedService":"Council Tax","score":0.72109777}
+{"ts":"[ADDRESS]:01:09.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What help is available for disabled people?","matchedService":"Council Tax","score":0.5703861}
+{"ts":"[ADDRESS]:01:09.47255Z","sessionId":"automated-test-session","userMessage":"Can I get mobility support?","matchedService":"Benefits \u0026 Support","score":0.42002633}
+{"ts":"[ADDRESS]:01:11.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What benefits can I claim?","matchedService":"Benefits \u0026 Support","score":0.49420443}
+{"ts":"[ADDRESS]:01:12.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How long does application take?","matchedService":"Benefits \u0026 Support","score":0.36851078}
+{"ts":"[ADDRESS]:01:12.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Who can help me apply?","matchedService":"Benefits \u0026 Support","score":0.418445}
+{"ts":"[ADDRESS]:01:15.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for a school place?","matchedService":"Education","score":0.67855704}
+{"ts":"[ADDRESS]:01:20.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is the deadline for school admissions?","matchedService":"Schools \u0026 Education","score":0.73779815}
+{"ts":"[ADDRESS]:01:23.30779Z","sessionId":"automated-test-session","userMessage":"How do in-year transfers work?","matchedService":"Education","score":0.5438086}
+{"ts":"[ADDRESS]:01:26.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I change my child\u2019s school?","matchedService":"Education","score":0.49234343}
+{"ts":"[ADDRESS]:01:29.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for primary school?","matchedService":"Education","score":0.7244778}
+{"ts":"[ADDRESS]:01:32.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for secondary school?","matchedService":"Education","score":0.7428495}
+{"ts":"[ADDRESS]:01:35.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I appeal a school decision?","matchedService":"Education","score":0.7666894}
+{"ts":"[ADDRESS]:01:37.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What documents are needed for school admission?","matchedService":"Education","score":0.7092857}
+{"ts":"[ADDRESS]:01:40.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I contact admissions team?","matchedService":"Education","score":0.6777774}
+{"ts":"[ADDRESS]:01:42.[ADDRESS]","sessionId":"automated-test-session","userMessage":"When do school applications open?","matchedService":"Education","score":0.57271695}
+{"ts":"[ADDRESS]:08:07.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply late?","matchedService":"Benefits \u0026 Support","score":0.26516873}
+{"ts":"[ADDRESS]:08:07.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What happens after applying?","matchedService":"Benefits \u0026 Support","score":0.3173607}
+{"ts":"[ADDRESS]:08:09.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I choose multiple schools?","matchedService":"Education","score":0.5049612}
+{"ts":"[ADDRESS]:08:12.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How are school places allocated?","matchedService":"Education","score":0.48773238}
+{"ts":"[ADDRESS]:08:14.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What if I miss the deadline?","matchedService":"Education","score":0.5482898}
+{"ts":"[ADDRESS]:08:16.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Do I need proof of address?","matchedService":"Education","score":0.53887415}
+{"ts":"[ADDRESS]:08:19.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for school transport?","matchedService":"Education","score":0.7889249}
+{"ts":"[ADDRESS]:08:21.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I transfer mid-year?","matchedService":"Education","score":0.5606772}
+{"ts":"[ADDRESS]:08:23.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is EHCP?","matchedService":"Education","score":0.74194753}
+{"ts":"[ADDRESS]:08:26.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I track my application?","matchedService":"Education","score":0.57286966}
+{"ts":"[ADDRESS]:08:26.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How can I check my planning application status?","matchedService":"Planning","score":1}
+{"ts":"[ADDRESS]:08:27.[ADDRESS]","sessionId":"automated-test-session","userMessage":"View planning applications","matchedService":"Planning","score":1}
+{"ts":"[ADDRESS]:08:27.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for planning permission?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:08:27.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I object to a planning application?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:08:28.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I comment on a planning application?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:08:28.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Do I need planning permission?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:08:29.21293Z","sessionId":"automated-test-session","userMessage":"What is planning permission?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:08:29.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How long does a planning application take?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:08:30.05306Z","sessionId":"automated-test-session","userMessage":"Can I track my planning application online?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:08:30.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What documents do I need for a planning application?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:09:06.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I submit a planning application?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:09:07.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I appeal a planning decision?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:09:07.85199Z","sessionId":"automated-test-session","userMessage":"What is building control?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:09:08.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I contact the planning team?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:09:08.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Are there fees for planning permission?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:09:09.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I extend my house without permission?","matchedService":"Planning","score":0.3204643}
+{"ts":"[ADDRESS]:09:09.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is permitted development?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:09:09.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can neighbours comment on my planning application?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:09:10.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I view historical planning applications?","matchedService":"Planning","score":1}
+{"ts":"[ADDRESS]:09:10.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What happens after planning permission is approved?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:09:11.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I renew library books online?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:09:11.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I borrow e-books?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:09:12.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I join the library?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:09:12.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How many books can I borrow?","matchedService":"Libraries","score":0.28310615}
+{"ts":"[ADDRESS]:09:12.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I reserve a book?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:09:13.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is the borrowing limit?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:09:13.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I get a library card?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:09:14.18339Z","sessionId":"automated-test-session","userMessage":"Can I use the digital library?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:09:14.60879Z","sessionId":"automated-test-session","userMessage":"How do I access audiobooks?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:09:15.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I renew overdue books?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:10:07.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What happens if I don\u2019t return library books?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:10:07.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Are there fines for overdue books?","matchedService":"Libraries","score":0.35153496}
+{"ts":"[ADDRESS]:10:07.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I reset my library account password?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:10:08.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Where is my nearest library?","matchedService":"Location","score":1}
+{"ts":"[ADDRESS]:10:08.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What are library opening hours?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:10:09.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I print at the library?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:10:09.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Do libraries have study spaces?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:10:10.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can children join the library?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:10:10.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I borrow digital books?","matchedService":"Libraries","score":0.34949785}
+{"ts":"[ADDRESS]:10:10.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I borrow magazines online?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:10:13.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I get housing support?","matchedService":"Benefits \u0026 Support","score":0.7096386}
+{"ts":"[ADDRESS]:10:13.[ADDRESS]","sessionId":"automated-test-session","userMessage":"I am homeless, what should I do?","matchedService":"Housing","score":1}
+{"ts":"[ADDRESS]:10:16.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get help with rent?","matchedService":"Benefits \u0026 Support","score":0.71470034}
+{"ts":"[ADDRESS]:10:17.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for council housing?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:10:17.[ADDRESS]","sessionId":"automated-test-session","userMessage":"I am at risk of eviction","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:10:22.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What support is available for tenants?","matchedService":"Housing","score":0.61654305}
+{"ts":"[ADDRESS]:10:23.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I find a home?","matchedService":"Housing","score":1}
+{"ts":"[ADDRESS]:10:23.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I apply for emergency housing?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:10:26.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What documents do I need for housing support?","matchedService":"Benefits \u0026 Support","score":0.6237172}
+{"ts":"[ADDRESS]:10:26.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How long does a housing application take?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:11:07.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get temporary accommodation?","matchedService":"Housing","score":1}
+{"ts":"[ADDRESS]:11:07.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Who do I contact for housing help?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:11:10.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is housing benefit?","matchedService":"Benefits \u0026 Support","score":0.59004843}
+{"ts":"[ADDRESS]:11:13.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get rent support?","matchedService":"Benefits \u0026 Support","score":0.74520713}
+{"ts":"[ADDRESS]:11:13.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What happens if I lose my home?","matchedService":"Benefits \u0026 Support","score":0.3922751}
+{"ts":"[ADDRESS]:11:14.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I report landlord issues?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:11:19.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I transfer my housing?","matchedService":"Education","score":0.47334725}
+{"ts":"[ADDRESS]:11:19.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is priority housing?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:11:20.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can families get housing help?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:11:22.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is supported housing?","matchedService":"Benefits \u0026 Support","score":0.5041776}
+{"ts":"[ADDRESS]:11:23.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How can I contact the council?","matchedService":"Contact Us","score":0}
+{"ts":"[ADDRESS]:11:23.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is the council phone number?","matchedService":"Contact Us","score":0}
+{"ts":"[ADDRESS]:11:23.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I email the council?","matchedService":"Contact Us","score":0}
+{"ts":"[ADDRESS]:11:24.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What are the council opening hours?","matchedService":"Contact Us","score":0.49238208}
+{"ts":"[ADDRESS]:11:24.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Where is the council office?","matchedService":"Contact Us","score":0}
+{"ts":"[ADDRESS]:11:25.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I make a complaint?","matchedService":"Contact Us","score":0.44993058}
+{"ts":"[ADDRESS]:11:27.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I give feedback to the council?","matchedService":"Education","score":0.63233596}
+{"ts":"[ADDRESS]:11:31.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I visit the council in person?","matchedService":"Council Tax","score":0.58285224}
+{"ts":"[ADDRESS]:11:32.35614Z","sessionId":"automated-test-session","userMessage":"What is the customer service number?","matchedService":"Council Tax","score":0.31553024}
+{"ts":"[ADDRESS]:11:35.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I contact support?","matchedService":"Benefits \u0026 Support","score":0.4571158}
+{"ts":"[ADDRESS]:12:07.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Is there an online chat available?","matchedService":"Benefits \u0026 Support","score":0.23742698}
+{"ts":"[ADDRESS]:12:07.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I book an appointment with the council?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:12:07.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What departments can I contact?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:12:08.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Is there an emergency contact number?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:12:08.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I contact the council via social media?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:12:09.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I get updates from the council?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:12:09.62395Z","sessionId":"automated-test-session","userMessage":"How do I sign up for email alerts?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:12:10.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I contact the council by post?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:12:10.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Where do I send documents to the council?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:12:10.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Who handles complaints in the council?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:33.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How much council tax do I pay?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:34.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I pay my council tax?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:34.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get a council tax discount?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:35.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What happens if I don\u2019t pay council tax?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:35.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I check my council tax balance?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:35.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I pay council tax monthly?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:36.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What are council tax bands?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:36.[ADDRESS]","sessionId":"automated-test-session","userMessage":"I moved house, what happens to my council tax?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:37.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can students get council tax discount?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:37.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I set up direct debit?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:37.96533Z","sessionId":"automated-test-session","userMessage":"Can I get council tax reduction?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:38.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is band D council tax?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:38.[ADDRESS]","sessionId":"automated-test-session","userMessage":"I cannot afford council tax, what can I do?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:39.19425Z","sessionId":"automated-test-session","userMessage":"How do I contact council tax team?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:39.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What happens if I miss a payment?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:40.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I appeal my council tax band?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:40.42383Z","sessionId":"automated-test-session","userMessage":"Do I pay council tax if I live alone?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:40.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What discounts are available?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:41.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I update my council tax details?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:26:41.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I pay council tax online?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:27:33.[ADDRESS]","sessionId":"automated-test-session","userMessage":"When is my bin collection?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:27:34.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What day is my bin collected?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:27:34.[ADDRESS]","sessionId":"automated-test-session","userMessage":"My bin was not collected","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:27:35.14066Z","sessionId":"automated-test-session","userMessage":"Report a missed bin","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:27:38.[ADDRESS]","sessionId":"automated-test-session","userMessage":"I need a new bin","matchedService":"Waste \u0026 Bins","score":0.687411}
+{"ts":"[ADDRESS]:27:40.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How much is a new bin?","matchedService":"Waste \u0026 Bins","score":0.55784416}
+{"ts":"[ADDRESS]:27:40.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What goes in recycling bin?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:27:40.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What goes in general waste?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:27:43.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Tell me about garden waste","matchedService":"Waste \u0026 Bins","score":0.7009861}
+{"ts":"[ADDRESS]:27:44.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Do you collect bins on Sundays?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:27:44.67173Z","sessionId":"automated-test-session","userMessage":"Can I change my bin collection day?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:27:46.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What time should I put my bin out?","matchedService":"Waste \u0026 Bins","score":0.86901975}
+{"ts":"[ADDRESS]:27:48.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I get a replacement bin?","matchedService":"Waste \u0026 Bins","score":0.85321593}
+{"ts":"[ADDRESS]:27:50.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What if my bin is damaged?","matchedService":"Waste \u0026 Bins","score":0.64394677}
+{"ts":"[ADDRESS]:27:52.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I report missed recycling?","matchedService":"Waste \u0026 Bins","score":0.63797176}
+{"ts":"[ADDRESS]:27:54.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Do you collect bulky waste?","matchedService":"Waste \u0026 Bins","score":0.63684005}
+{"ts":"[ADDRESS]:27:55.17908Z","sessionId":"automated-test-session","userMessage":"How do I book bulky waste collection?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:27:57.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What bins do I need?","matchedService":"Waste \u0026 Bins","score":0.5759313}
+{"ts":"[ADDRESS]:27:59.47413Z","sessionId":"automated-test-session","userMessage":"How do I recycle electronics?","matchedService":"Waste \u0026 Bins","score":0.614301}
+{"ts":"[ADDRESS]:27:59.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What happens if I miss collection day?","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:28:37.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get benefits?","matchedService":"Benefits \u0026 Support","score":0.5850538}
+{"ts":"[ADDRESS]:28:40.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for benefits?","matchedService":"Benefits \u0026 Support","score":0.56320244}
+{"ts":"[ADDRESS]:28:42.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Am I eligible for benefits?","matchedService":"Benefits \u0026 Support","score":0.57561964}
+{"ts":"[ADDRESS]:28:45.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How much benefits can I get?","matchedService":"Benefits \u0026 Support","score":0.508886}
+{"ts":"[ADDRESS]:28:47.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What documents do I need for benefits?","matchedService":"Benefits \u0026 Support","score":0.7815774}
+{"ts":"[ADDRESS]:28:47.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for a Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.25080493}
+{"ts":"[ADDRESS]:28:48.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Am I eligible for a Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.27407858}
+{"ts":"[ADDRESS]:28:48.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What evidence do I need for Blue Badge?","matchedService":"Benefits \u0026 Support","score":0.2444449}
+{"ts":"[ADDRESS]:28:51.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get support if I\u2019m unemployed?","matchedService":"Benefits \u0026 Support","score":0.59963965}
+{"ts":"[ADDRESS]:28:54.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What financial support is available?","matchedService":"Benefits \u0026 Support","score":0.62420636}
+{"ts":"[ADDRESS]:28:56.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for housing benefit?","matchedService":"Benefits \u0026 Support","score":0.7637378}
+{"ts":"[ADDRESS]:28:58.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is universal credit?","matchedService":"Benefits \u0026 Support","score":0.61853653}
+{"ts":"[ADDRESS]:29:00.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get hardship support?","matchedService":"Benefits \u0026 Support","score":0.639693}
+{"ts":"[ADDRESS]:29:01.[ADDRESS]","sessionId":"automated-test-session","userMessage":"I need help paying bills","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:29:03.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for council tax support?","matchedService":"Council Tax","score":0.72109777}
+{"ts":"[ADDRESS]:29:03.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What help is available for disabled people?","matchedService":"Council Tax","score":0.5703861}
+{"ts":"[ADDRESS]:29:04.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get mobility support?","matchedService":"Benefits \u0026 Support","score":0.42002633}
+{"ts":"[ADDRESS]:29:06.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What benefits can I claim?","matchedService":"Benefits \u0026 Support","score":0.49420443}
+{"ts":"[ADDRESS]:29:07.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How long does application take?","matchedService":"Benefits \u0026 Support","score":0.36851078}
+{"ts":"[ADDRESS]:29:07.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Who can help me apply?","matchedService":"Benefits \u0026 Support","score":0.418445}
+{"ts":"[ADDRESS]:29:36.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for a school place?","matchedService":"Education","score":0.67855704}
+{"ts":"[ADDRESS]:29:39.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is the deadline for school admissions?","matchedService":"Schools \u0026 Education","score":0.73779815}
+{"ts":"[ADDRESS]:29:42.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do in-year transfers work?","matchedService":"Education","score":0.5438086}
+{"ts":"[ADDRESS]:29:44.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I change my child\u2019s school?","matchedService":"Education","score":0.49234343}
+{"ts":"[ADDRESS]:29:47.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for primary school?","matchedService":"Education","score":0.7244778}
+{"ts":"[ADDRESS]:29:49.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for secondary school?","matchedService":"Education","score":0.7428495}
+{"ts":"[ADDRESS]:29:52.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I appeal a school decision?","matchedService":"Education","score":0.7666894}
+{"ts":"[ADDRESS]:29:54.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What documents are needed for school admission?","matchedService":"Education","score":0.7092857}
+{"ts":"[ADDRESS]:29:56.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I contact admissions team?","matchedService":"Education","score":0.6777774}
+{"ts":"[ADDRESS]:29:58.[ADDRESS]","sessionId":"automated-test-session","userMessage":"When do school applications open?","matchedService":"Education","score":0.57271695}
+{"ts":"[ADDRESS]:29:59.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply late?","matchedService":"Benefits \u0026 Support","score":0.26516873}
+{"ts":"[ADDRESS]:29:59.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What happens after applying?","matchedService":"Benefits \u0026 Support","score":0.3173607}
+{"ts":"[ADDRESS]:30:01.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I choose multiple schools?","matchedService":"Education","score":0.5049612}
+{"ts":"[ADDRESS]:30:03.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How are school places allocated?","matchedService":"Education","score":0.48773238}
+{"ts":"[ADDRESS]:30:06.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What if I miss the deadline?","matchedService":"Education","score":0.5482898}
+{"ts":"[ADDRESS]:30:08.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Do I need proof of address?","matchedService":"Education","score":0.53887415}
+{"ts":"[ADDRESS]:30:11.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for school transport?","matchedService":"Education","score":0.7889249}
+{"ts":"[ADDRESS]:30:13.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I transfer mid-year?","matchedService":"Education","score":0.5606772}
+{"ts":"[ADDRESS]:30:15.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is EHCP?","matchedService":"Education","score":0.74194753}
+{"ts":"[ADDRESS]:30:17.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I track my application?","matchedService":"Education","score":0.57286966}
+{"ts":"[ADDRESS]:30:34.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How can I check my planning application status?","matchedService":"Planning","score":1}
+{"ts":"[ADDRESS]:30:34.[ADDRESS]","sessionId":"automated-test-session","userMessage":"View planning applications","matchedService":"Planning","score":1}
+{"ts":"[ADDRESS]:30:35.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for planning permission?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:35.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I object to a planning application?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:35.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I comment on a planning application?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:36.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Do I need planning permission?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:36.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is planning permission?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:37.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How long does a planning application take?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:37.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I track my planning application online?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:38.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What documents do I need for a planning application?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:38.44344Z","sessionId":"automated-test-session","userMessage":"How do I submit a planning application?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:38.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I appeal a planning decision?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:39.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is building control?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:39.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I contact the planning team?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:40.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Are there fees for planning permission?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:40.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I extend my house without permission?","matchedService":"Planning","score":0.3204643}
+{"ts":"[ADDRESS]:30:40.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is permitted development?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:41.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can neighbours comment on my planning application?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:30:41.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I view historical planning applications?","matchedService":"Planning","score":1}
+{"ts":"[ADDRESS]:30:42.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What happens after planning permission is approved?","matchedService":"Planning","score":0}
+{"ts":"[ADDRESS]:31:34.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I renew library books online?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:34.70097Z","sessionId":"automated-test-session","userMessage":"Can I borrow e-books?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:35.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I join the library?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:35.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How many books can I borrow?","matchedService":"Libraries","score":0.28310615}
+{"ts":"[ADDRESS]:31:35.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I reserve a book?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:36.40009Z","sessionId":"automated-test-session","userMessage":"What is the borrowing limit?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:36.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I get a library card?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:37.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I use the digital library?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:37.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I access audiobooks?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:38.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I renew overdue books?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:38.53524Z","sessionId":"automated-test-session","userMessage":"What happens if I don\u2019t return library books?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:38.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Are there fines for overdue books?","matchedService":"Libraries","score":0.35153496}
+{"ts":"[ADDRESS]:31:39.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I reset my library account password?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:39.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Where is my nearest library?","matchedService":"Location","score":1}
+{"ts":"[ADDRESS]:31:40.21426Z","sessionId":"automated-test-session","userMessage":"What are library opening hours?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:40.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I print at the library?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:41.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Do libraries have study spaces?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:41.48679Z","sessionId":"automated-test-session","userMessage":"Can children join the library?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:31:41.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I borrow digital books?","matchedService":"Libraries","score":0.34949785}
+{"ts":"[ADDRESS]:31:42.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I borrow magazines online?","matchedService":"Libraries","score":0}
+{"ts":"[ADDRESS]:32:36.36422Z","sessionId":"automated-test-session","userMessage":"How do I get housing support?","matchedService":"Benefits \u0026 Support","score":0.7096386}
+{"ts":"[ADDRESS]:32:36.[ADDRESS]","sessionId":"automated-test-session","userMessage":"I am homeless, what should I do?","matchedService":"Housing","score":1}
+{"ts":"[ADDRESS]:32:39.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get help with rent?","matchedService":"Benefits \u0026 Support","score":0.71470034}
+{"ts":"[ADDRESS]:32:39.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I apply for council housing?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:32:39.[ADDRESS]","sessionId":"automated-test-session","userMessage":"I am at risk of eviction","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:32:42.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What support is available for tenants?","matchedService":"Benefits \u0026 Support","score":0.61654305}
+{"ts":"[ADDRESS]:32:42.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I find a home?","matchedService":"Housing","score":1}
+{"ts":"[ADDRESS]:32:43.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I apply for emergency housing?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:32:45.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What documents do I need for housing support?","matchedService":"Benefits \u0026 Support","score":0.6237172}
+{"ts":"[ADDRESS]:32:46.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How long does a housing application take?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:32:46.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get temporary accommodation?","matchedService":"Housing","score":1}
+{"ts":"[ADDRESS]:32:46.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Who do I contact for housing help?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:36:28.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I get rent support?","matchedService":"Benefits \u0026 Support","score":0.74520713}
+{"ts":"[ADDRESS]:36:28.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What happens if I lose my home?","matchedService":"Benefits \u0026 Support","score":0.3922751}
+{"ts":"[ADDRESS]:36:29.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I report landlord issues?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:36:34.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I transfer my housing?","matchedService":"Education","score":0.47334725}
+{"ts":"[ADDRESS]:36:34.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is priority housing?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:36:35.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can families get housing help?","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:36:37.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is supported housing?","matchedService":"Benefits \u0026 Support","score":0.5041776}
+{"ts":"[ADDRESS]:36:38.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How can I contact the council?","matchedService":"Contact Us","score":0}
+{"ts":"[ADDRESS]:36:38.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is the council phone number?","matchedService":"Contact Us","score":0}
+{"ts":"[ADDRESS]:36:39.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I email the council?","matchedService":"Contact Us","score":0}
+{"ts":"[ADDRESS]:36:39.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What are the council opening hours?","matchedService":"Contact Us","score":0.49238208}
+{"ts":"[ADDRESS]:36:40.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Where is the council office?","matchedService":"Contact Us","score":0}
+{"ts":"[ADDRESS]:36:40.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I make a complaint?","matchedService":"Contact Us","score":0.44993058}
+{"ts":"[ADDRESS]:36:42.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I give feedback to the council?","matchedService":"Education","score":0.63233596}
+{"ts":"[ADDRESS]:36:45.21296Z","sessionId":"automated-test-session","userMessage":"Can I visit the council in person?","matchedService":"Council Tax","score":0.58285224}
+{"ts":"[ADDRESS]:36:45.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What is the customer service number?","matchedService":"Council Tax","score":0.31553024}
+{"ts":"[ADDRESS]:36:47.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I contact support?","matchedService":"Benefits \u0026 Support","score":0.4571158}
+{"ts":"[ADDRESS]:36:48.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Is there an online chat available?","matchedService":"Benefits \u0026 Support","score":0.23742698}
+{"ts":"[ADDRESS]:36:48.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I book an appointment with the council?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:36:49.[ADDRESS]","sessionId":"automated-test-session","userMessage":"What departments can I contact?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:37:25.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Is there an emergency contact number?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:37:26.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Can I contact the council via social media?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:37:26.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I get updates from the council?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:37:27.[ADDRESS]","sessionId":"automated-test-session","userMessage":"How do I sign up for email alerts?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:37:27.62661Z","sessionId":"automated-test-session","userMessage":"Can I contact the council by post?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:37:28.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Where do I send documents to the council?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:37:28.[ADDRESS]","sessionId":"automated-test-session","userMessage":"Who handles complaints in the council?","matchedService":"Appointment","score":1}
+{"ts":"[ADDRESS]:38:35.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want help with council tax","matchedService":"Council Tax","score":0.73535496}
+{"ts":"[ADDRESS]:38:55.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How much council tax should I pay?","matchedService":"Council Tax","score":0.6832538}
+{"ts":"[ADDRESS]:39:10.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What if I don\u0027t pay council tax","matchedService":"Council Tax","score":0.7628888}
+{"ts":"[ADDRESS]:40:51.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"report a missed bin","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:40:57.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want help","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:41:04.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am in danger","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:41:13.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am homeless","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:41:23.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"when is my bin collection.","matchedService":"Waste \u0026 Bins","score":0.80000556}
+{"ts":"[ADDRESS]:41:35.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I missed my bin","matchedService":"Waste \u0026 Bins","score":0.6394807}
+{"ts":"[ADDRESS]:41:44.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"My bin was not collected.","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:41:51.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how much for a new bin","matchedService":"Waste \u0026 Bins","score":0.5573032}
+{"ts":"[ADDRESS]:42:06.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can I get council discount?","matchedService":"Council Tax","score":0.68478155}
+{"ts":"[ADDRESS]:42:37.66078Z","sessionId":"[ADDRESS]","userMessage":"I mean can I get a council tax discount?","matchedService":"Council Tax","score":0.7394948}
+{"ts":"[ADDRESS]:42:54.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I mean about applying for a discount","matchedService":"Council Tax","score":0.43358475}
+{"ts":"[ADDRESS]:43:25.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"what if I don\u0027t pay taxes","matchedService":"Council Tax","score":0.5120442}
+{"ts":"[ADDRESS]:43:44.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to calculate my council tax","matchedService":"Council Tax","score":1}
+{"ts":"[ADDRESS]:43:56.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Band D","matchedService":"Council Tax","score":1}
+{"ts":"[ADDRESS]:44:00.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"[ADDRESS]","matchedService":"Council Tax","score":1}
+{"ts":"[ADDRESS]:44:46.3057Z","sessionId":"[ADDRESS]","userMessage":"Which schools are near my area","matchedService":"Schools \u0026 Education","score":0.59686357}
+{"ts":"[ADDRESS]:44:58.32344Z","sessionId":"[ADDRESS]","userMessage":"I am asking about applying for school","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:49:25.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am homeless","matchedService":"Housing","score":1}
+{"ts":"[ADDRESS]:49:31.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"i want help","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:49:41.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am samik","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:50:02.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I want to find a school near me","matchedService":"Location","score":1}
+{"ts":"[ADDRESS]:50:09.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"[POSTCODE]","matchedService":"Location","score":1}
+{"ts":"[ADDRESS]:50:45.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"[POSTCODE]","matchedService":"Location","score":0}
+{"ts":"[ADDRESS]:51:35.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Am I eligible for blue badge","matchedService":"Benefits \u0026 Support","score":0.30974254}
+{"ts":"[ADDRESS]:52:01.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"am I eligible if I have ADHD","matchedService":"Benefits \u0026 Support","score":0.34530836}
+{"ts":"[ADDRESS]:02:14.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am dead","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:02:28.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I mean I am dying","matchedService":"General","score":0.1429588}
+{"ts":"[ADDRESS]:02:36.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am homeless","matchedService":"Housing","score":1}
+{"ts":"[ADDRESS]:02:43.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am in danger","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:02:55.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I am at risk of eviction","matchedService":"Housing","score":1}
+{"ts":"[ADDRESS]:03:10.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I rent privately","matchedService":"Housing","score":0}
+{"ts":"[ADDRESS]:03:20.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How can I find a home?","matchedService":"Housing","score":1}
+{"ts":"[ADDRESS]:03:38.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Housing Benefit help","matchedService":"Benefits \u0026 Support","score":0.69338685}
+{"ts":"[ADDRESS]:03:45.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I apply?","matchedService":"Benefits \u0026 Support","score":0.3798138}
+{"ts":"[ADDRESS]:04:08.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how do I apply for housing benefits?","matchedService":"Benefits \u0026 Support","score":0.75540847}
+{"ts":"[ADDRESS]:04:16.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"What evidence do I need?","matchedService":"Benefits \u0026 Support","score":0.26032227}
+{"ts":"[ADDRESS]:04:26.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Am I eligible?","matchedService":"Benefits \u0026 Support","score":0.47512278}
+{"ts":"[ADDRESS]:27:50.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Bye.","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:28:22.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Great collection.","matchedService":"Waste \u0026 Bins","score":0.26637855}
+{"ts":"[ADDRESS]:28:39.16191Z","sessionId":"[ADDRESS]","userMessage":"Ooh.","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:28:59.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I\u0027ll make a surprise.","matchedService":"Waste \u0026 Bins","score":0.093413725}
+{"ts":"[ADDRESS]:29:07.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"hello","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:29:29.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"When, sorry, when is my next spin collection?","matchedService":"Waste \u0026 Bins","score":0.4117981}
+{"ts":"[ADDRESS]:30:01.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Use same address","matchedService":"Waste \u0026 Bins","score":0.15223329}
+{"ts":"[ADDRESS]:30:12.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"[ADDRESS]:33:00.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"How do I check my Council Tax balance?","matchedService":"Council Tax","score":0.9177865}
+{"ts":"[ADDRESS]:38:57.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Let\u0027s talk to each other. Hi.","matchedService":"Council Tax","score":0.22673818}
+{"ts":"[ADDRESS]:39:19.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Hello!","matchedService":"Unknown","score":0}
+{"ts":"[ADDRESS]:39:36.6717Z","sessionId":"[ADDRESS]","userMessage":"When is my bean collection?","matchedService":"Waste \u0026 Bins","score":0.44074175}
+{"ts":"[ADDRESS]:40:16.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"When is my bin collection?","matchedService":"Waste \u0026 Bins","score":0.8051774}
+{"ts":"[ADDRESS]:40:37.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"[POSTCODE]","matchedService":"Waste \u0026 Bins","score":1}
+{"ts":"[ADDRESS]:52:48.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"how much does the replacement bin cost","matchedService":"Waste \u0026 Bins","score":0.6495627}
+{"ts":"[ADDRESS]:53:37.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"I lost my bin what should I do?","matchedService":"Waste \u0026 Bins","score":0.74361134}
+{"ts":"[ADDRESS]:54:13.[ADDRESS]","sessionId":"[ADDRESS]","userMessage":"Can i get help with rent?","matchedService":"Benefits \u0026 Support","score":0.71470034}

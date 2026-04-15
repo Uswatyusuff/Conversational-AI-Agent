@@ -3,7 +3,11 @@ using CouncilChatbotPrototype.Models;
 using CouncilChatbotPrototype.Services;
 using Microsoft.AspNetCore.RateLimiting;
 using System.Threading.RateLimiting;
+using DotNetEnv;
+
 var builder = WebApplication.CreateBuilder(args);
+
+Env.Load(); // loads variables from .env into environment
 
 builder.Services.AddControllers();
 
@@ -119,9 +123,13 @@ static List<FaqItem> LoadFaqs(string path)
 
 static string FingerprintFaqs(List<FaqItem> faqs)
 {
-    return string.Join("||", faqs.Select(f =>
+    var raw = string.Join("||", faqs.Select(f =>
         $"{f.Service}::{f.Title}::{f.Answer}::{f.NextStepsUrl}"
-    )).GetHashCode().ToString();
+    ));
+
+    using var sha = System.Security.Cryptography.SHA256.Create();
+    var bytes = sha.ComputeHash(System.Text.Encoding.UTF8.GetBytes(raw));
+    return Convert.ToHexString(bytes);
 }
 
 static async Task<List<FaqChunk>> LoadOrCreateChunkEmbeddings(
