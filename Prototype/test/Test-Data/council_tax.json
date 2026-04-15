@@ -1,0 +1,202 @@
+[
+  {
+    "section": "Council Tax",
+    "question": "How much council tax do I pay?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["band", "amount", "council tax", "bill"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "How do I pay my council tax?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["pay", "online", "bill", "direct debit"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "pay"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "Can I get a council tax discount?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["discount", "reduction", "apply", "eligible"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "discount", "reduce"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "What happens if I don’t pay council tax?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["payment", "arrears", "council tax", "contact", "pay"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "How do I check my council tax balance?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["balance", "council tax", "account", "bill"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "Can I pay council tax monthly?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["monthly", "payment", "pay", "direct debit"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "pay"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "What are council tax bands?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["band", "bands", "property", "council tax"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "band"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "I moved house, what happens to my council tax?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["moved", "house", "council tax", "tell us", "update"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "moving", "change"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "Can students get council tax discount?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["student", "discount", "exemption", "council tax"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "student", "discount"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "How do I set up direct debit?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["direct debit", "pay", "payment", "online"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "pay", "direct"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "Can I get council tax reduction?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["reduction", "discount", "apply", "eligible"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "reduce", "discount"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "What is band D council tax?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["band d", "band", "council tax", "charge"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "band"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "I cannot afford council tax, what can I do?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["afford", "support", "contact", "payment", "council tax"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "support", "discount"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "How do I contact council tax team?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["contact", "council tax", "team", "phone", "email"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "contact"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "What happens if I miss a payment?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["miss", "payment", "arrears", "contact", "council tax"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "pay"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "Can I appeal my council tax band?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["appeal", "band", "council tax", "valuation"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "band", "appeal"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "Do I pay council tax if I live alone?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["live alone", "single person", "discount", "council tax"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "discount"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "What discounts are available?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["discount", "reduction", "council tax", "eligible"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "discount"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "How do I update my council tax details?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["update", "details", "council tax", "change", "tell us"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "change", "update"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Council Tax",
+    "question": "Can I pay council tax online?",
+    "expected_service": "Council Tax",
+    "must_include_any": ["pay", "online", "council tax", "payment"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["council-tax", "pay"],
+    "expected_suggestion_keywords": ["council tax", "discount", "moved home"],
+    "allow_generic": false
+  }
+]

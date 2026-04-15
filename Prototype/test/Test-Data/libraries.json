@@ -1,0 +1,202 @@
+[
+  {
+    "section": "Libraries",
+    "question": "How do I renew library books online?",
+    "expected_service": "Libraries",
+    "must_include_any": ["renew", "online", "library account", "log in", "books"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries"],
+    "expected_suggestion_keywords": ["library", "e-books", "join"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "Can I borrow e-books?",
+    "expected_service": "Libraries",
+    "must_include_any": ["e-books", "borrow", "library card", "digital"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries"],
+    "expected_suggestion_keywords": ["library", "e-books", "join"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "How do I join the library?",
+    "expected_service": "Libraries",
+    "must_include_any": ["join", "library", "card", "register"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries"],
+    "expected_suggestion_keywords": ["library", "e-books", "join"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "How many books can I borrow?",
+    "expected_service": "Libraries",
+    "must_include_any": ["books", "borrow", "limit", "library"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries"],
+    "expected_suggestion_keywords": ["library", "books", "join"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "Can I reserve a book?",
+    "expected_service": "Libraries",
+    "must_include_any": ["reserve", "book", "library", "request"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries"],
+    "expected_suggestion_keywords": ["library", "books", "join"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "What is the borrowing limit?",
+    "expected_service": "Libraries",
+    "must_include_any": ["borrowing limit", "books", "library", "borrow"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries"],
+    "expected_suggestion_keywords": ["library", "books", "join"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "How do I get a library card?",
+    "expected_service": "Libraries",
+    "must_include_any": ["library card", "join", "register", "card"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries"],
+    "expected_suggestion_keywords": ["library", "join", "e-books"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "Can I use the digital library?",
+    "expected_service": "Libraries",
+    "must_include_any": ["digital library", "online", "library", "access"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries", "digital"],
+    "expected_suggestion_keywords": ["library", "e-books", "join"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "How do I access audiobooks?",
+    "expected_service": "Libraries",
+    "must_include_any": ["audiobooks", "digital", "library", "access"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries", "digital"],
+    "expected_suggestion_keywords": ["library", "e-books", "join"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "Can I renew overdue books?",
+    "expected_service": "Libraries",
+    "must_include_any": ["renew", "overdue", "books", "library"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries"],
+    "expected_suggestion_keywords": ["library", "books", "renew"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "What happens if I don’t return library books?",
+    "expected_service": "Libraries",
+    "must_include_any": ["return", "library books", "overdue", "fine"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries"],
+    "expected_suggestion_keywords": ["library", "books", "renew"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "Are there fines for overdue books?",
+    "expected_service": "Libraries",
+    "must_include_any": ["fines", "overdue", "books", "library"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries"],
+    "expected_suggestion_keywords": ["library", "books", "renew"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "How do I reset my library account password?",
+    "expected_service": "Libraries",
+    "must_include_any": ["reset", "password", "library account", "log in"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries", "account"],
+    "expected_suggestion_keywords": ["library", "join", "e-books"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "Where is my nearest library?",
+    "expected_service": "Libraries",
+    "must_include_any": ["nearest library", "location", "library", "branch"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries", "locations"],
+    "expected_suggestion_keywords": ["library", "join", "books"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "What are library opening hours?",
+    "expected_service": "Libraries",
+    "must_include_any": ["opening hours", "library", "times", "open"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries", "hours"],
+    "expected_suggestion_keywords": ["library", "join", "books"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "Can I print at the library?",
+    "expected_service": "Libraries",
+    "must_include_any": ["print", "library", "printing", "services"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries", "services"],
+    "expected_suggestion_keywords": ["library", "join", "books"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "Do libraries have study spaces?",
+    "expected_service": "Libraries",
+    "must_include_any": ["study spaces", "library", "spaces", "rooms"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries", "services"],
+    "expected_suggestion_keywords": ["library", "join", "books"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "Can children join the library?",
+    "expected_service": "Libraries",
+    "must_include_any": ["children", "join", "library", "card"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries", "join"],
+    "expected_suggestion_keywords": ["library", "join", "books"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "How do I borrow digital books?",
+    "expected_service": "Libraries",
+    "must_include_any": ["digital books", "borrow", "e-books", "library"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries", "digital"],
+    "expected_suggestion_keywords": ["library", "e-books", "join"],
+    "allow_generic": false
+  },
+  {
+    "section": "Libraries",
+    "question": "Can I borrow magazines online?",
+    "expected_service": "Libraries",
+    "must_include_any": ["magazines", "online", "digital", "borrow"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["libraries", "digital"],
+    "expected_suggestion_keywords": ["library", "e-books", "join"],
+    "allow_generic": false
+  }
+]

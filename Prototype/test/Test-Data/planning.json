@@ -1,0 +1,202 @@
+[
+  {
+    "section": "Planning",
+    "question": "How can I check my planning application status?",
+    "expected_service": "Planning",
+    "must_include_any": ["planning", "application", "status", "track", "online"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "application", "permission"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "View planning applications",
+    "expected_service": "Planning",
+    "must_include_any": ["planning", "applications", "view", "search"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "application", "permission"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "How do I apply for planning permission?",
+    "expected_service": "Planning",
+    "must_include_any": ["apply", "planning permission", "application", "online"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "application", "permission"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "Can I object to a planning application?",
+    "expected_service": "Planning",
+    "must_include_any": ["object", "planning application", "comment", "submit"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "application", "comment"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "How do I comment on a planning application?",
+    "expected_service": "Planning",
+    "must_include_any": ["comment", "planning application", "submit", "online"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "application", "comment"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "Do I need planning permission?",
+    "expected_service": "Planning",
+    "must_include_any": ["planning permission", "need", "development", "property"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "permission", "application"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "What is planning permission?",
+    "expected_service": "Planning",
+    "must_include_any": ["planning permission", "development", "property", "permission"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "permission", "application"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "How long does a planning application take?",
+    "expected_service": "Planning",
+    "must_include_any": ["planning application", "time", "weeks", "decision"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "application", "permission"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "Can I track my planning application online?",
+    "expected_service": "Planning",
+    "must_include_any": ["track", "planning application", "status", "online"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "application", "status"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "What documents do I need for a planning application?",
+    "expected_service": "Planning",
+    "must_include_any": ["documents", "planning application", "plans", "drawings"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "application", "permission"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "How do I submit a planning application?",
+    "expected_service": "Planning",
+    "must_include_any": ["submit", "planning application", "apply", "online"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "application", "permission"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "Can I appeal a planning decision?",
+    "expected_service": "Planning",
+    "must_include_any": ["appeal", "planning decision", "decision", "application"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "appeal", "application"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "What is building control?",
+    "expected_service": "Planning",
+    "must_include_any": ["building control", "building", "regulations", "inspection"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning", "building"],
+    "expected_suggestion_keywords": ["planning", "building", "permission"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "How do I contact the planning team?",
+    "expected_service": "Planning",
+    "must_include_any": ["contact", "planning team", "phone", "email"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning", "contact"],
+    "expected_suggestion_keywords": ["planning", "application", "permission"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "Are there fees for planning permission?",
+    "expected_service": "Planning",
+    "must_include_any": ["fees", "planning permission", "cost", "charge"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "permission", "application"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "Can I extend my house without permission?",
+    "expected_service": "Planning",
+    "must_include_any": ["extend", "house", "permission", "development"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning", "development"],
+    "expected_suggestion_keywords": ["planning", "permission", "application"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "What is permitted development?",
+    "expected_service": "Planning",
+    "must_include_any": ["permitted development", "planning", "permission"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning", "development"],
+    "expected_suggestion_keywords": ["planning", "permission", "application"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "Can neighbours comment on my planning application?",
+    "expected_service": "Planning",
+    "must_include_any": ["neighbours", "comment", "planning application", "objection"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "comment", "application"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "How do I view historical planning applications?",
+    "expected_service": "Planning",
+    "must_include_any": ["historical", "planning applications", "search", "view"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "application", "search"],
+    "allow_generic": false
+  },
+  {
+    "section": "Planning",
+    "question": "What happens after planning permission is approved?",
+    "expected_service": "Planning",
+    "must_include_any": ["approved", "planning permission", "next", "conditions"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["planning"],
+    "expected_suggestion_keywords": ["planning", "permission", "application"],
+    "allow_generic": false
+  }
+]

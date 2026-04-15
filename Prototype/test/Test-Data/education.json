@@ -1,0 +1,202 @@
+[
+  {
+    "section": "Education",
+    "question": "How do I apply for a school place?",
+    "expected_service": "Education",
+    "must_include_any": ["apply", "school place", "admissions", "form", "online"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "What is the deadline for school admissions?",
+    "expected_service": "Education",
+    "must_include_any": ["deadline", "school admissions", "application", "date"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "How do in-year transfers work?",
+    "expected_service": "Education",
+    "must_include_any": ["in-year", "transfer", "school", "application"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions", "in-year"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "Can I change my child’s school?",
+    "expected_service": "Education",
+    "must_include_any": ["school", "transfer", "child", "application"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions", "transfer"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "How do I apply for primary school?",
+    "expected_service": "Education",
+    "must_include_any": ["apply", "primary school", "admissions", "application"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions", "primary"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "How do I apply for secondary school?",
+    "expected_service": "Education",
+    "must_include_any": ["apply", "secondary school", "admissions", "application"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions", "secondary"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "Can I appeal a school decision?",
+    "expected_service": "Education",
+    "must_include_any": ["appeal", "school", "decision", "admissions"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions", "appeal"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "What documents are needed for school admission?",
+    "expected_service": "Education",
+    "must_include_any": ["documents", "proof", "address", "admission"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "How do I contact admissions team?",
+    "expected_service": "Education",
+    "must_include_any": ["contact", "admissions team", "email", "phone"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions", "contact"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "When do school applications open?",
+    "expected_service": "Education",
+    "must_include_any": ["school applications", "open", "admissions", "apply"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "How do I apply late?",
+    "expected_service": "Education",
+    "must_include_any": ["late", "application", "apply", "school"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "What happens after applying?",
+    "expected_service": "Education",
+    "must_include_any": ["application", "offer", "school", "after"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "Can I choose multiple schools?",
+    "expected_service": "Education",
+    "must_include_any": ["schools", "preferences", "choose", "application"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "How are school places allocated?",
+    "expected_service": "Education",
+    "must_include_any": ["allocated", "school places", "criteria", "admissions"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "What if I miss the deadline?",
+    "expected_service": "Education",
+    "must_include_any": ["miss the deadline", "late", "application", "school"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "Do I need proof of address?",
+    "expected_service": "Education",
+    "must_include_any": ["proof of address", "address", "documents", "admissions"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "How do I apply for school transport?",
+    "expected_service": "Education",
+    "must_include_any": ["school transport", "apply", "transport", "school"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "transport", "school"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "Can I transfer mid-year?",
+    "expected_service": "Education",
+    "must_include_any": ["transfer", "mid-year", "school", "application"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions", "in-year"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "What is EHCP?",
+    "expected_service": "Education",
+    "must_include_any": ["ehcp", "education", "health", "care"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "send", "ehcp"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  },
+  {
+    "section": "Education",
+    "question": "How do I track my application?",
+    "expected_service": "Education",
+    "must_include_any": ["track", "application", "account", "offer", "online"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["education", "school-admissions"],
+    "expected_suggestion_keywords": ["school place", "deadline", "transfer"],
+    "allow_generic": false
+  }
+]

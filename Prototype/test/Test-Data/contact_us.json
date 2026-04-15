@@ -1,0 +1,202 @@
+[
+  {
+    "section": "Contact Us",
+    "question": "How can I contact the council?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["contact", "council", "phone", "email", "social"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact"],
+    "expected_suggestion_keywords": ["contact", "phone", "email", "alerts"],
+    "allow_generic": true
+  },
+  {
+    "section": "Contact Us",
+    "question": "What is the council phone number?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["phone", "number", "contact", "call"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "phone"],
+    "expected_suggestion_keywords": ["contact", "phone", "email"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "Can I email the council?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["email", "contact", "council"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "email"],
+    "expected_suggestion_keywords": ["contact", "email", "phone"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "What are the council opening hours?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["opening", "hours", "contact", "office"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "opening"],
+    "expected_suggestion_keywords": ["contact", "phone", "office"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "Where is the council office?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["office", "address", "contact", "location"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "office"],
+    "expected_suggestion_keywords": ["contact", "office", "phone"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "How do I make a complaint?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["complaint", "contact", "report", "feedback"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "complaint"],
+    "expected_suggestion_keywords": ["contact", "complaint", "feedback"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "How do I give feedback to the council?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["feedback", "contact", "council", "form"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "feedback"],
+    "expected_suggestion_keywords": ["contact", "feedback", "complaint"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "Can I visit the council in person?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["visit", "office", "contact", "in person"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "office"],
+    "expected_suggestion_keywords": ["contact", "office", "hours"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "What is the customer service number?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["customer service", "phone", "number", "contact"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "phone"],
+    "expected_suggestion_keywords": ["contact", "phone", "email"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "How do I contact support?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["support", "contact", "phone", "email"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "support"],
+    "expected_suggestion_keywords": ["contact", "support", "phone"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "Is there an online chat available?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["online chat", "contact", "support", "chat"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "chat"],
+    "expected_suggestion_keywords": ["contact", "chat", "phone"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "How do I book an appointment with the council?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["appointment", "book", "contact", "office"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "appointment"],
+    "expected_suggestion_keywords": ["contact", "office", "hours"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "What departments can I contact?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["departments", "contact", "services"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact"],
+    "expected_suggestion_keywords": ["contact", "phone", "email"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "Is there an emergency contact number?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["emergency", "contact", "number", "phone"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "emergency"],
+    "expected_suggestion_keywords": ["contact", "phone", "emergency"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "Can I contact the council via social media?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["social media", "contact", "facebook", "twitter"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "social"],
+    "expected_suggestion_keywords": ["contact", "social", "email"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "How do I get updates from the council?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["updates", "contact", "alerts", "email"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "updates", "alerts"],
+    "expected_suggestion_keywords": ["contact", "alerts", "email"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "How do I sign up for email alerts?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["email alerts", "email address", "sign up", "subscribe"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["email-alerts", "contact"],
+    "expected_suggestion_keywords": ["contact", "phone", "alerts"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "Can I contact the council by post?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["post", "address", "contact", "mail"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "post"],
+    "expected_suggestion_keywords": ["contact", "address", "phone"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "Where do I send documents to the council?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["documents", "send", "address", "contact"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "documents"],
+    "expected_suggestion_keywords": ["contact", "address", "email"],
+    "allow_generic": false
+  },
+  {
+    "section": "Contact Us",
+    "question": "Who handles complaints in the council?",
+    "expected_service": "Contact Us",
+    "must_include_any": ["complaints", "contact", "department", "feedback"],
+    "bad_phrases": ["context does not provide"],
+    "expected_url_keywords": ["contact", "complaint"],
+    "expected_suggestion_keywords": ["contact", "complaint", "feedback"],
+    "allow_generic": false
+  }
+]

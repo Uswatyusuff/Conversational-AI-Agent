@@ -1,0 +1,145 @@
+[
+  {
+    "section": "Benefits & Support",
+    "question": "Can I get benefits?",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["benefit", "support", "eligible", "apply"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["benefits", "support"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  },
+  {
+    "section": "Benefits & Support",
+    "question": "How do I apply for benefits?",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["apply", "benefit", "support", "form", "contact"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["benefits"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  },
+  {
+    "section": "Benefits & Support",
+    "question": "Am I eligible for benefits?",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["eligible", "eligibility", "income", "circumstances"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["benefits"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  },
+  {
+    "section": "Benefits & Support",
+    "question": "How much benefits can I get?",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["depends", "income", "circumstances", "benefit"],
+    "bad_phrases": [
+      "context does not specify exact amounts",
+      "context does not specify"
+    ],
+    "expected_url_keywords": ["benefits"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  },
+  {
+    "section": "Benefits & Support",
+    "question": "What documents do I need for benefits?",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["documents", "evidence", "proof", "application"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["benefits"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  },
+  {
+    "section": "Benefits & Support",
+    "question": "How do I apply for a Blue Badge?",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["blue badge", "apply", "disabled", "mobility"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["blue-badge", "benefits"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  },
+  {
+    "section": "Benefits & Support",
+    "question": "Am I eligible for a Blue Badge?",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["blue badge", "eligible", "mobility", "disabled"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["blue-badge", "benefits"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  },
+  {
+    "section": "Benefits & Support",
+    "question": "What evidence do I need for Blue Badge?",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["blue badge", "evidence", "documents", "proof"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["blue-badge", "benefits"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  },
+  {
+    "section": "Benefits & Support",
+    "question": "Can I get support if I’m unemployed?",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["support", "unemployed", "benefit", "universal credit"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["benefits", "support"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  },
+  {
+    "section": "Benefits & Support",
+    "question": "What financial support is available?",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["financial", "support", "benefit", "help"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["benefits", "support"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  },
+  {
+    "section": "Benefits & Support",
+    "question": "How do I apply for housing benefit?",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["housing benefit", "apply", "rent", "support"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["benefits", "housing"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  },
+  {
+    "section": "Benefits & Support",
+    "question": "What is universal credit?",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["universal credit", "benefit", "support"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["benefits", "universal"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  },
+  {
+    "section": "Benefits & Support",
+    "question": "Can I get hardship support?",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["hardship", "support", "financial", "help"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["benefits", "support", "hardship"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  },
+  {
+    "section": "Benefits & Support",
+    "question": "I need help paying bills",
+    "expected_service": "Benefits & Support",
+    "must_include_any": ["support", "help", "bills", "financial"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["benefits", "support"],
+    "expected_suggestion_keywords": ["apply", "eligible", "evidence"],
+    "allow_generic": false
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "section": "Housing",
+    "question": "How do I get housing support?",
+    "expected_service": "Housing",
+    "must_include_any": ["housing", "support", "help", "contact", "apply"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing"],
+    "expected_suggestion_keywords": ["housing", "homeless", "home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "I am homeless, what should I do?",
+    "expected_service": "Housing",
+    "must_include_any": ["homeless", "housing", "advice", "contact", "help"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "homeless"],
+    "expected_suggestion_keywords": ["housing", "homeless", "home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "Can I get help with rent?",
+    "expected_service": "Housing",
+    "must_include_any": ["rent", "support", "housing", "help"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "rent"],
+    "expected_suggestion_keywords": ["housing", "home", "rent"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "How do I apply for council housing?",
+    "expected_service": "Housing",
+    "must_include_any": ["apply", "housing", "contact", "service"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing"],
+    "expected_suggestion_keywords": ["housing", "homeless", "home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "I am at risk of eviction",
+    "expected_service": "Housing",
+    "must_include_any": ["eviction", "housing", "support", "advice"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "eviction"],
+    "expected_suggestion_keywords": ["housing", "homeless", "home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "What support is available for tenants?",
+    "expected_service": "Housing",
+    "must_include_any": ["tenants", "support", "housing", "help"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "tenants"],
+    "expected_suggestion_keywords": ["housing", "home", "rent"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "How do I find a home?",
+    "expected_service": "Housing",
+    "must_include_any": ["home", "housing", "find", "support"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "home"],
+    "expected_suggestion_keywords": ["housing", "home", "homeless"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "Can I apply for emergency housing?",
+    "expected_service": "Housing",
+    "must_include_any": ["emergency housing", "housing", "support", "apply"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "emergency"],
+    "expected_suggestion_keywords": ["housing", "homeless", "home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "What documents do I need for housing support?",
+    "expected_service": "Housing",
+    "must_include_any": ["documents", "proof", "housing", "support"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing"],
+    "expected_suggestion_keywords": ["housing", "home", "apply"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "How long does a housing application take?",
+    "expected_service": "Housing",
+    "must_include_any": ["application", "housing", "time", "process"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing"],
+    "expected_suggestion_keywords": ["housing", "apply", "home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "Can I get temporary accommodation?",
+    "expected_service": "Housing",
+    "must_include_any": ["temporary accommodation", "housing", "eligible", "support"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing"],
+    "expected_suggestion_keywords": ["housing", "homeless", "home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "Who do I contact for housing help?",
+    "expected_service": "Housing",
+    "must_include_any": ["contact", "housing", "help", "support"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "contact"],
+    "expected_suggestion_keywords": ["housing", "home", "homeless"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "What is housing benefit?",
+    "expected_service": "Housing",
+    "must_include_any": ["housing benefit", "support", "rent", "help"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "benefit"],
+    "expected_suggestion_keywords": ["housing", "rent", "home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "Can I get rent support?",
+    "expected_service": "Housing",
+    "must_include_any": ["rent", "support", "housing", "help"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "rent"],
+    "expected_suggestion_keywords": ["housing", "rent", "home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "What happens if I lose my home?",
+    "expected_service": "Housing",
+    "must_include_any": ["lose my home", "housing", "homeless", "help"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "homeless"],
+    "expected_suggestion_keywords": ["housing", "homeless", "home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "How do I report landlord issues?",
+    "expected_service": "Housing",
+    "must_include_any": ["landlord", "issues", "report", "housing"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "landlord"],
+    "expected_suggestion_keywords": ["housing", "tenants", "home"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "Can I transfer my housing?",
+    "expected_service": "Housing",
+    "must_include_any": ["transfer", "housing", "move", "home"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "transfer"],
+    "expected_suggestion_keywords": ["housing", "home", "move"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "What is priority housing?",
+    "expected_service": "Housing",
+    "must_include_any": ["priority housing", "housing", "eligible", "support"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "priority"],
+    "expected_suggestion_keywords": ["housing", "home", "support"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "Can families get housing help?",
+    "expected_service": "Housing",
+    "must_include_any": ["families", "housing", "help", "support"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "families"],
+    "expected_suggestion_keywords": ["housing", "home", "support"],
+    "allow_generic": false
+  },
+  {
+    "section": "Housing",
+    "question": "What is supported housing?",
+    "expected_service": "Housing",
+    "must_include_any": ["supported housing", "housing", "support", "help"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["housing", "support"],
+    "expected_suggestion_keywords": ["housing", "home", "support"],
+    "allow_generic": false
+  }
+]

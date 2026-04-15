@@ -1,0 +1,202 @@
+[
+  {
+    "section": "Waste & Bins",
+    "question": "When is my bin collection?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["postcode", "collection", "bin"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["bins", "waste", "recycling"],
+    "expected_suggestion_keywords": ["bin", "missed", "postcode", "address"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "What day is my bin collected?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["postcode", "collection", "bin", "day"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["bins", "waste", "recycling"],
+    "expected_suggestion_keywords": ["bin", "missed", "postcode", "address"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "My bin was not collected",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["missed bin", "report", "form", "call"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["missed-bin", "bins", "waste"],
+    "expected_suggestion_keywords": ["bin", "missed", "postcode", "address"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "Report a missed bin",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["missed bin", "report", "form", "call"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["missed-bin", "bins", "waste"],
+    "expected_suggestion_keywords": ["bin", "missed", "postcode", "address"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "I need a new bin",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["new bin", "replacement", "bin", "container"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["bins", "containers", "waste"],
+    "expected_suggestion_keywords": ["bin", "replacement", "missed", "address"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "How much is a new bin?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["cost", "charge", "price", "new bin", "bin"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["bins", "containers", "waste"],
+    "expected_suggestion_keywords": ["bin", "replacement", "missed", "address"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "What goes in recycling bin?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["recycling", "recycle", "bin"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["recycling", "bins", "waste"],
+    "expected_suggestion_keywords": ["bin", "recycling", "waste", "collection"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "What goes in general waste?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["general waste", "waste", "bin"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["bins", "waste"],
+    "expected_suggestion_keywords": ["bin", "recycling", "waste", "collection"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "Tell me about garden waste",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["garden waste", "collection", "subscription", "waste"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["garden", "waste", "bins"],
+    "expected_suggestion_keywords": ["garden waste", "bin", "collection", "address"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "Do you collect bins on Sundays?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["postcode", "collection", "bin", "address"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["bins", "waste", "recycling"],
+    "expected_suggestion_keywords": ["bin", "postcode", "address", "missed"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "Can I change my bin collection day?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["collection day", "bin", "postcode", "address"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["bins", "waste", "collection"],
+    "expected_suggestion_keywords": ["bin", "postcode", "address", "collection"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "What time should I put my bin out?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["bin", "collection", "out", "time"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["bins", "waste", "collection"],
+    "expected_suggestion_keywords": ["bin", "collection", "postcode", "address"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "How do I get a replacement bin?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["replacement", "bin", "new bin", "container"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["bins", "containers", "waste"],
+    "expected_suggestion_keywords": ["bin", "replacement", "collection", "address"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "What if my bin is damaged?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["damaged", "replacement", "bin", "container"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["bins", "containers", "waste"],
+    "expected_suggestion_keywords": ["bin", "replacement", "collection", "address"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "How do I report missed recycling?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["missed", "recycling", "report", "form", "call"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["missed-bin", "recycling", "bins"],
+    "expected_suggestion_keywords": ["bin", "missed", "recycling", "postcode"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "Do you collect bulky waste?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["bulky waste", "collection", "bulky"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["bulky", "waste", "bins"],
+    "expected_suggestion_keywords": ["bulky", "waste", "collection", "bin"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "How do I book bulky waste collection?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["bulky waste", "book", "collection", "bulky"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["bulky", "waste", "bins"],
+    "expected_suggestion_keywords": ["bulky", "waste", "collection", "bin"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "What bins do I need?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["bin", "bins", "waste", "recycling"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["bins", "waste", "recycling"],
+    "expected_suggestion_keywords": ["bin", "recycling", "waste", "collection"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "How do I recycle electronics?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["electronics", "electrical", "recycle", "recycling"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["recycling", "waste", "bins"],
+    "expected_suggestion_keywords": ["recycling", "waste", "bin", "collection"],
+    "allow_generic": false
+  },
+  {
+    "section": "Waste & Bins",
+    "question": "What happens if I miss collection day?",
+    "expected_service": "Waste & Bins",
+    "must_include_any": ["missed", "collection", "report", "bin"],
+    "bad_phrases": ["context does not specify"],
+    "expected_url_keywords": ["missed-bin", "bins", "waste"],
+    "expected_suggestion_keywords": ["missed", "bin", "postcode", "address"],
+    "allow_generic": false
+  }
+]
