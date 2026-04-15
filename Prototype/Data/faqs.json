@@ -1,5 +1,29 @@
 [
   {
+  "Service": "General",
+  "Title": "Greeting",
+  "Keywords": ["hello", "hi", "hey", "good morning", "good afternoon"],
+  "Answer": "Hello! I can help with Bradford Council services such as Council Tax, bins, benefits, and school admissions. What would you like help with today?",
+  "Responses": [
+    "Hello! How can I help you today?",
+    "Hi there — what Bradford Council service do you need help with?",
+    "Hello! I can help with Council Tax, bins, benefits, and education."
+  ],
+  "NextStepsUrl": ""
+},
+{
+  "Service": "General",
+  "Title": "Goodbye",
+  "Keywords": ["bye", "goodbye", "see you", "thanks bye"],
+  "Answer": "Goodbye. If you need more help with Bradford Council services, just ask.",
+  "Responses": [
+    "Goodbye — feel free to come back if you need more help.",
+    "Bye! I’m here whenever you need help with council services.",
+    "Take care — come back anytime if you need support."
+  ],
+  "NextStepsUrl": ""
+},
+{
     "Service": "Council Tax",
     "Title": "How do I pay my Council Tax online?",
     "Keywords": ["pay council tax online", "online payment", "card payment", "council tax pay"],

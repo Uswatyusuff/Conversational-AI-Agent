@@ -214,7 +214,7 @@ def is_weak_answer(answer: str) -> bool:
     return any(phrase in lower for phrase in _WEAK_PHRASES)
 
 
-def rag_search_tool(query: str, service_hint: str = ""):
+def rag_search_tool(query: str, service_hint: str = "", history: list = None):
     results = search_rag(query, service_hint, 12)
 
     if not results:
@@ -233,7 +233,7 @@ def rag_search_tool(query: str, service_hint: str = ""):
     exact_match = find_exact_intent_match(query_lower, results, intent)
     if exact_match is not None:
         context_chunks = build_context_chunks([exact_match], max_chunks=1, max_chars_per_chunk=1800)
-        answer = generate_answer_with_llm(query, "\n\n".join(context_chunks))
+        answer = generate_answer_with_llm(query, "\n\n".join(context_chunks), history=history)
         answer = post_process_answer(answer, query)
 
         # If the LLM hedged or said the context is missing, return empty so the
@@ -276,7 +276,7 @@ def rag_search_tool(query: str, service_hint: str = ""):
     top_chunks = build_context_chunks(ranked_results, max_chunks=2, max_chars_per_chunk=1400)
     context = "\n\n".join(top_chunks)
 
-    answer = generate_answer_with_llm(query, context)
+    answer = generate_answer_with_llm(query, context, history=history)
     answer = post_process_answer(answer, query)
 
     # If the LLM hedged or said the context is missing, return empty so the
@@ -869,8 +869,21 @@ def choose_best_url(query_lower: str, results, intent: str = "") -> str:
     return results[0].get("url", "")
 
 
-def generate_answer_with_llm(query, context):
+def generate_answer_with_llm(query, context, history: list = None):
     client = get_openai_client()
+
+    # Build a conversation history block so the LLM can handle follow-up questions
+    history_block = ""
+    if history:
+        lines = []
+        for turn in history[-6:]:  # last 6 turns is plenty of context
+            role = getattr(turn, "role", turn.get("role", "")) if not hasattr(turn, "role") else turn.role
+            msg = getattr(turn, "message", turn.get("message", "")) if not hasattr(turn, "message") else turn.message
+            if role and msg:
+                label = "Resident" if role.lower() == "user" else "Assistant"
+                lines.append(f"{label}: {msg}")
+        if lines:
+            history_block = "Recent conversation (for context — use this to understand follow-up questions):\n" + "\n".join(lines) + "\n\n"
 
     prompt = f"""
 You are a Bradford Council assistant. Answer the resident's question directly and helpfully.
@@ -895,11 +908,15 @@ QUESTION-TYPE GUIDANCE:
 - Arrears / struggling to pay / payment arrangement: explain the options available, e.g. "If you are behind on payments, you can contact the council to set up a payment arrangement..."
 - Missed bin / collection not done: tell the resident how to report it
 
+FOLLOW-UP QUESTIONS:
+- If the resident's question is a follow-up (e.g. "am I eligible if I have ADHD", "what about the cost?"), use the recent conversation above to understand what topic they are referring to and answer accordingly
+- Never ask the resident to repeat information they have already given
+
 FALLBACK (last resort only — use sparingly):
 - If the information genuinely does not cover the question, say one short sentence: "I don't have the specific details for that — please check the official Bradford Council website or contact the council directly."
 - Do not use the fallback when an approximate or partial answer can be given
 
-Resident's question:
+{history_block}Resident's current question:
 {query}
 
 Information:

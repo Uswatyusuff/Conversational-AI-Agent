@@ -3177,3 +3177,82 @@ a:focus-visible {
 
 .hs-back-btn:hover { color: var(--accent); }
 
+
+/* ═══════════════════════════════════════════════════════════════
+   VOICE PIPELINE — mic button + voice output toggle
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Mic button ──────────────────────────────────────────────── */
+.mic-btn { flex-shrink: 0; position: relative; }
+
+/* Recording state: red tint + pulsing ring */
+.mic-btn.recording {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.mic-btn.recording::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid rgba(239, 68, 68, 0.6);
+  animation: mic-pulse 1.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes mic-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(1.2); }
+}
+
+/* ── Voice output toggle ─────────────────────────────────────── */
+.voice-toggle-btn { flex-shrink: 0; }
+
+/* Active (voice output on): accent-coloured */
+.voice-toggle-btn.active,
+.voice-toggle-btn[aria-pressed="true"] {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+/* The outer wave fades in when active */
+.voice-toggle-btn[aria-pressed="true"] .speaker-wave-2 {
+  opacity: 1;
+}
+
+/* Mobile: hide voice toggle label-sized hint if present */
+@media (max-width: 600px) {
+  .mic-btn::after { inset: -2px; }
+}
+
+/* Voice button disabled/transcribing state */
+.mic-btn:disabled,
+.voice-toggle-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+}
+.mic-btn:disabled:hover,
+.voice-toggle-btn:disabled:hover {
+  background: inherit;
+  color: inherit;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Optional visual state for transcribing */
+.mic-btn.transcribing {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.mic-btn.transcribing::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  animation: mic-pulse 1s ease-in-out infinite;
+  pointer-events: none;
+}

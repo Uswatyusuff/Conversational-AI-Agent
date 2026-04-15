@@ -122,6 +122,7 @@ def resolve_service_hint(question: str, existing_hint: str) -> str:
 def run_agent(req):
     question = req.question or ""
     service_hint = req.service_hint or ""
+    history = req.history if req.history else []
     lower = normalize(question)
 
     # =========================
@@ -169,7 +170,7 @@ def run_agent(req):
     # =========================
     # 3. TARGETED RAG SEARCH
     # =========================
-    rag = rag_search_tool(question, resolved_service_hint)
+    rag = rag_search_tool(question, resolved_service_hint, history=history)
 
     if rag["answer"]:
         return {
@@ -185,7 +186,7 @@ def run_agent(req):
     # 4. SECOND PASS WITHOUT SERVICE HINT
     # =========================
     if resolved_service_hint not in ("", "Unknown"):
-        rag = rag_search_tool(question, "")
+        rag = rag_search_tool(question, "", history=history)
 
         if rag["answer"]:
             return {

@@ -51,6 +51,10 @@ const scrollFab         = document.getElementById("scrollFab");
 // Toast
 const toastContainer    = document.getElementById("toastContainer");
 
+// Voice
+const micBtn            = document.getElementById("micBtn");
+const voiceToggleBtn    = document.getElementById("voiceToggleBtn");
+
 // ── STATE ─────────────────────────────────────────────────────────
 let lastService              = "Unknown";
 let pendingSkeletonId        = null;
@@ -67,6 +71,16 @@ let lastFocusedBeforeModal = null;
 // Search state
 let searchMatches    = [];
 let searchIndex      = 0;
+
+// Voice state
+let voiceOutputEnabled = false;
+let isRecording        = false;
+let isTranscribing     = false;
+let mediaRecorder      = null;
+let mediaStream        = null;
+let audioChunks        = [];
+let currentAudio       = null;
+let recordTimeoutId    = null;
 
 // Prefs (persisted in localStorage)
 const PREFS_KEY = "bca_prefs";
@@ -494,6 +508,9 @@ function replaceSkeletonWithBotReply(data) {
   updateStatus("Ready to help");
   sendBtn.disabled = false;
   chat.scrollTop = chat.scrollHeight;
+  // Speak the reply if voice output is enabled.
+  // Internal tool signals (POSTCODE_LOOKUP::, LOCATION_LOOKUP::) are stripped inside speakText.
+  speakText(data.reply || "");
 }
 
 // ── SUGGESTION CHIPS ──────────────────────────────────────────────
@@ -635,6 +652,323 @@ async function searchLocation(postcode, type) {
   }
 }
 
+
+// ── VOICE PIPELINE ────────────────────────────────────────────────
+// Internal tool signals that should never be spoken aloud.
+const _VOICE_STRIP = [
+  /POSTCODE_LOOKUP::[^\s]*/g,
+  /LOCATION_LOOKUP::([^:\s]*::?[^\s]*)?/g,
+];
+
+function stripVoiceSignals(raw) {
+  let text = raw || "";
+  for (const pat of _VOICE_STRIP) text = text.replace(pat, "");
+  // Strip HTML tags and collapse whitespace.
+  text = text.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  return text;
+}
+
+function getSupportedMimeType() {
+  if (typeof MediaRecorder === "undefined") return "";
+  const types = [
+    "audio/webm;codecs=opus",
+    "audio/webm",
+    "audio/ogg;codecs=opus",
+    "audio/mp4",
+  ];
+  return types.find(t => MediaRecorder.isTypeSupported(t)) || "";
+}
+
+// ── resetMicButton ─────────────────────────────────────────────────
+// Single source of truth for returning the mic button to idle state.
+// Called from every error path, onstop early-return, and transcription finally.
+function resetMicButton() {
+  isRecording    = false;
+  isTranscribing = false;
+  micBtn.disabled = false;
+  micBtn.classList.remove("recording", "transcribing");
+  micBtn.setAttribute("aria-label", "Record voice input");
+  micBtn.setAttribute("aria-pressed", "false");
+}
+
+// ── cleanupRecordingState ──────────────────────────────────────────
+// Releases the MediaStream and resets all recording state variables.
+// Does NOT touch isTranscribing — call resetMicButton() for full UI reset.
+function cleanupRecordingState() {
+  if (recordTimeoutId) {
+    clearTimeout(recordTimeoutId);
+    recordTimeoutId = null;
+  }
+  if (mediaStream) {
+    mediaStream.getTracks().forEach(t => t.stop());
+    mediaStream = null;
+  }
+  mediaRecorder = null;
+  audioChunks   = [];
+  isRecording   = false;
+}
+
+async function startRecording() {
+  // Bug-fix: guard against re-entry while getUserMedia is in flight or transcribing.
+  if (isRecording || isTranscribing) return;
+
+  // Disable immediately to prevent a double-click race before getUserMedia resolves.
+  micBtn.disabled = true;
+
+  // ── Upfront environment checks ─────────────────────────────────
+  // getUserMedia requires a secure context (HTTPS or localhost).
+  if (!window.isSecureContext) {
+    showToast("Microphone requires HTTPS or localhost — cannot record on plain HTTP.");
+    console.warn("[Voice] Not a secure context — getUserMedia will be blocked.");
+    resetMicButton();
+    return;
+  }
+
+  // MediaRecorder must exist (not present in some older/embedded browsers).
+  if (typeof MediaRecorder === "undefined") {
+    showToast("Voice recording is not supported in this browser. Please use Chrome or Edge.");
+    console.warn("[Voice] MediaRecorder API not available.");
+    resetMicButton();
+    return;
+  }
+
+  // getUserMedia must be available (may be absent even on HTTPS in some contexts).
+  if (!navigator.mediaDevices?.getUserMedia) {
+    showToast("Microphone API not available in this browser.");
+    console.warn("[Voice] navigator.mediaDevices.getUserMedia not found.");
+    resetMicButton();
+    return;
+  }
+
+  try {
+    // Bug-fix: was `currentStream` (undeclared) — must be `mediaStream` (declared in state).
+    mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    audioChunks = [];
+
+    const mimeType = getSupportedMimeType();
+    const recorder = mimeType
+      ? new MediaRecorder(mediaStream, { mimeType })
+      : new MediaRecorder(mediaStream);
+
+    mediaRecorder = recorder;
+
+    recorder.ondataavailable = (e) => {
+      if (e.data && e.data.size > 0) audioChunks.push(e.data);
+    };
+
+    recorder.onstop = async () => {
+      const finalMime   = recorder.mimeType || "audio/webm";
+      const finalChunks = [...audioChunks];
+
+      // Release stream and recorder resources.
+      cleanupRecordingState();
+
+      // Bug-fix: early returns previously left micBtn.disabled = true (set by stopRecording).
+      // resetMicButton() re-enables it in all paths, then transcribeAndSend re-applies
+      // the transcribing state if needed.
+
+      if (!finalChunks.length) {
+        resetMicButton();
+        updateStatus("Ready to help");
+        showToast("No audio recorded — please try again.");
+        return;
+      }
+
+      const blob = new Blob(finalChunks, { type: finalMime });
+      if (!blob.size) {
+        resetMicButton();
+        updateStatus("Ready to help");
+        showToast("Recording was empty — please try again.");
+        return;
+      }
+
+      await transcribeAndSend(blob, finalMime);
+    };
+
+    recorder.onerror = (evt) => {
+      // Bug-fix: was `currentStream` (undeclared) — now handled by cleanupRecordingState.
+      console.error("[Voice] MediaRecorder error:", evt?.error);
+      cleanupRecordingState();
+      resetMicButton();
+      updateStatus("Ready to help");
+      showToast("Recording failed — please try again.");
+    };
+
+    recorder.start();
+    isRecording = true;
+
+    micBtn.classList.remove("transcribing");
+    micBtn.classList.add("recording");
+    micBtn.disabled = false;    // re-enable now that recording has started
+    micBtn.setAttribute("aria-label", "Stop recording");
+    micBtn.setAttribute("aria-pressed", "true");
+    updateStatus("Listening…", true);
+
+  } catch (err) {
+    // Bug-fix: was only distinguishing NotAllowedError.
+    // Now maps every known DOMException name to a user-readable message,
+    // and always logs the real error to the console for debugging.
+    console.error("[Voice] getUserMedia error:", err?.name, err?.message);
+
+    let msg;
+    switch (err?.name) {
+      case "NotAllowedError":
+      case "PermissionDeniedError":
+        msg = "Microphone access denied. Click the 🔒 icon in your browser address bar and allow microphone, then try again.";
+        break;
+      case "NotFoundError":
+      case "DevicesNotFoundError":
+        msg = "No microphone found. Please connect a microphone and try again.";
+        break;
+      case "NotReadableError":
+      case "TrackStartError":
+        msg = "Microphone is in use by another application. Please close it and try again.";
+        break;
+      case "OverconstrainedError":
+        msg = "Microphone does not meet requirements. Try a different device.";
+        break;
+      case "SecurityError":
+        msg = "Microphone blocked for security reasons. Please use HTTPS or localhost.";
+        break;
+      case "AbortError":
+        msg = "Microphone request was cancelled.";
+        break;
+      default:
+        msg = `Could not start microphone (${err?.name || "unknown error"}). Check the browser console for details.`;
+    }
+
+    showToast(msg);
+    updateStatus("Ready to help");
+    // Bug-fix: missing micBtn reset in catch — button stayed disabled.
+    resetMicButton();
+  }
+}
+
+function stopRecording() {
+  if (!mediaRecorder || !isRecording) return;
+  if (mediaRecorder.state !== "recording") return;
+
+  // Transition to transcribing state before stopping so the user sees
+  // immediate visual feedback while onstop fires asynchronously.
+  micBtn.classList.remove("recording");
+  micBtn.classList.add("transcribing");
+  micBtn.disabled = true;
+  micBtn.setAttribute("aria-label", "Transcribing voice input");
+  micBtn.setAttribute("aria-pressed", "false");
+  updateStatus("Transcribing…", true);
+
+  mediaRecorder.stop();
+}
+
+async function transcribeAndSend(blob, mimeType) {
+  // Guard: should never be called twice, but protect defensively.
+  if (isTranscribing) return;
+
+  isTranscribing = true;
+  micBtn.disabled = true;
+  micBtn.classList.remove("recording");
+  micBtn.classList.add("transcribing");
+
+  try {
+    const form = new FormData();
+    const ext = mimeType.includes("ogg") ? ".ogg"
+              : mimeType.includes("mp4") ? ".mp4"
+              : ".webm";
+    form.append("audio", blob, "recording" + ext);
+
+    const res = await fetch("/api/voice/transcribe", { method: "POST", body: form });
+
+    if (!res.ok) {
+      // Bug-fix: was always "Transcription failed." — now gives actionable detail.
+      let msg = "Transcription failed.";
+      if (res.status === 503) {
+        msg = "Voice service not configured — the OpenAI API key may be missing. See setup guide.";
+      } else if (res.status === 401) {
+        msg = "Voice service authentication failed — check your OpenAI API key.";
+      } else if (res.status === 429) {
+        msg = "OpenAI rate limit reached — please wait a moment and try again.";
+      } else if (res.status >= 500) {
+        msg = `Transcription server error (${res.status}) — please try again.`;
+      }
+      console.error("[Voice] /api/voice/transcribe returned", res.status);
+      showToast(msg);
+      updateStatus("Ready to help");
+      return;
+    }
+
+    const data       = await res.json();
+    const transcript = (data.transcript || "").trim();
+
+    if (!transcript) {
+      showToast("No speech detected — please speak clearly and try again.");
+      updateStatus("Ready to help");
+      return;
+    }
+
+    msgInput.value = transcript;
+    updateStatus("Thinking…", true);
+    send();   // hands off to the existing text chat pipeline unchanged
+
+  } catch (err) {
+    console.error("[Voice] transcribeAndSend fetch error:", err);
+    showToast("Could not reach transcription service. Check your network connection.");
+    updateStatus("Ready to help");
+  } finally {
+    // Always restore the mic button regardless of success, failure, or empty result.
+    resetMicButton();
+  }
+}
+async function speakText(rawText) {
+  if (!voiceOutputEnabled) return;
+  const text = stripVoiceSignals(rawText);
+  if (!text) return;
+
+  // Stop any currently playing audio before starting a new one.
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio = null;
+  }
+
+  try {
+    updateStatus("Speaking…", true);
+    const res = await fetch("/api/voice/speak", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text })
+    });
+    if (!res.ok) { updateStatus("Ready to help"); return; }
+
+    const blob = await res.blob();
+    const url  = URL.createObjectURL(blob);
+    currentAudio = new Audio(url);
+    currentAudio.onended = () => {
+      URL.revokeObjectURL(url);
+      currentAudio = null;
+      updateStatus("Ready to help");
+    };
+    currentAudio.onerror = () => {
+      updateStatus("Ready to help");
+    };
+    await currentAudio.play();
+  } catch {
+    updateStatus("Ready to help");
+  }
+}
+
+function toggleVoiceOutput() {
+  voiceOutputEnabled = !voiceOutputEnabled;
+  voiceToggleBtn.setAttribute("aria-pressed", voiceOutputEnabled ? "true" : "false");
+  voiceToggleBtn.setAttribute("aria-label", voiceOutputEnabled ? "Disable voice output" : "Enable voice output");
+  voiceToggleBtn.classList.toggle("active", voiceOutputEnabled);
+  showToast(voiceOutputEnabled ? "Voice output on" : "Voice output off");
+
+  // If turned off mid-playback, stop audio.
+  if (!voiceOutputEnabled && currentAudio) {
+    currentAudio.pause();
+    currentAudio = null;
+    updateStatus("Ready to help");
+  }
+}
 
 // ── SEND MESSAGE ──────────────────────────────────────────────────
 async function send() {
@@ -917,6 +1251,17 @@ function initEventListeners() {
   // Send
   sendBtn.addEventListener("click", send);
   msgInput.addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); } });
+
+  // Voice input (mic)
+  micBtn?.addEventListener("click", () => {
+  if (isTranscribing) return;
+
+  if (isRecording) stopRecording();
+  else startRecording();
+});
+
+  // Voice output toggle
+  voiceToggleBtn?.addEventListener("click", toggleVoiceOutput);
 
   // Reset
   resetBtn.addEventListener("click", resetChat);
@@ -3997,7 +4342,7 @@ if (msgInput) {
   if (sendBtn) {
     sendBtn.addEventListener("click", function hsCapture(e) {
       if (_bypassIntercept) return;
-      const input = document.getElementById("chatInput");
+      const input = document.getElementById("msg");
       const raw   = input ? (input.value || "").trim() : "";
       if (raw && isHousingIntent(raw)) {
         e.stopImmediatePropagation();
