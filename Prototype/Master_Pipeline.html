@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bradford Council Chatbot – Master Pipeline</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0b0f1a;
+    color: #e2e8f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 32px;
+  }
+
+  /* ── Header ── */
+  .header {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #f8fafc;
+  }
+  .header p {
+    font-size: 12.5px;
+    color: #64748b;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* ── Pipeline wrapper ── */
+  .pipeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+    max-width: 560px;
+  }
+
+  /* ── Stage row ── */
+  .stage-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+  }
+
+  /* ── Node ── */
+  .node {
+    flex: 1;
+    border-radius: 14px;
+    padding: 16px 20px;
+    border: 1.5px solid;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: default;
+  }
+  .node:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 28px rgba(0,0,0,0.5);
+  }
+
+  .node-icon {
+    font-size: 22px;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 36px;
+    text-align: center;
+  }
+
+  .node-text {}
+  .node-title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+  .node-sub {
+    font-size: 11px;
+    opacity: 0.6;
+    line-height: 1.3;
+  }
+
+  /* Layer label on the right */
+  .layer-tag {
+    font-size: 9.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-left: 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    opacity: 0.75;
+  }
+
+  /* ── Arrow ── */
+  .arrow-wrap {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 18px;
+    padding: 4px 0;
+    width: calc(100% - 18px);
+  }
+  .arrow-line {
+    width: 2px;
+    height: 28px;
+    margin-left: 17px; /* icon centre offset */
+    position: relative;
+  }
+  .arrow-line::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 2px;
+    height: calc(100% - 8px);
+    border-radius: 1px;
+  }
+  .arrow-line::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -4px;
+    width: 0; height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+  }
+
+  /* ── Colour themes per node ── */
+
+  /* 1 Citizen */
+  .n1 { background: #0d1b2e; border-color: #1e40af; }
+  .n1 .node-title { color: #93c5fd; }
+  .n1 .layer-tag { background: #1e3a5f; color: #93c5fd; }
+  .a1 .arrow-line::before { background: #3b82f6; }
+  .a1 .arrow-line::after  { border-top: 8px solid #3b82f6; }
+
+  /* 2 Frontend */
+  .n2 { background: #130d2a; border-color: #6d28d9; }
+  .n2 .node-title { color: #c4b5fd; }
+  .n2 .layer-tag { background: #2e1065; color: #c4b5fd; }
+  .a2 .arrow-line::before { background: #7c3aed; }
+  .a2 .arrow-line::after  { border-top: 8px solid #7c3aed; }
+
+  /* 3 API Gateway */
+  .n3 { background: #1a1005; border-color: #b45309; }
+  .n3 .node-title { color: #fcd34d; }
+  .n3 .layer-tag { background: #3b1e00; color: #fcd34d; }
+  .a3 .arrow-line::before { background: #f59e0b; }
+  .a3 .arrow-line::after  { border-top: 8px solid #f59e0b; }
+
+  /* 4 Backend */
+  .n4 { background: #0d1f14; border-color: #166534; }
+  .n4 .node-title { color: #86efac; }
+  .n4 .layer-tag { background: #052e16; color: #86efac; }
+  .a4 .arrow-line::before { background: #22c55e; }
+  .a4 .arrow-line::after  { border-top: 8px solid #22c55e; }
+
+  /* 5 RAG */
+  .n5 { background: #0e1a1f; border-color: #0e7490; }
+  .n5 .node-title { color: #67e8f9; }
+  .n5 .layer-tag { background: #0a2535; color: #67e8f9; }
+  .a5 .arrow-line::before { background: linear-gradient(to bottom, #0ea5e9, #7c3aed); }
+  .a5 .arrow-line::after  { border-top: 8px solid #7c3aed; }
+
+  /* 6 LangChain — special */
+  .n6 {
+    background: linear-gradient(135deg, #150b2e 0%, #0d1a35 100%);
+    border-color: #7c3aed;
+    border-width: 2px;
+    box-shadow: 0 0 20px rgba(124,58,237,0.3);
+  }
+  .n6 .node-title { color: #e9d5ff; }
+  .n6 .layer-tag { background: #4c1d95; color: #e9d5ff; }
+  .n6-badge {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    background: #7c3aed;
+    color: #f5f3ff;
+    padding: 2px 7px;
+    border-radius: 999px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .a6 .arrow-line::before { background: linear-gradient(to bottom, #7c3aed, #f43f5e); }
+  .a6 .arrow-line::after  { border-top: 8px solid #f43f5e; }
+
+  /* 7 ChatGPT */
+  .n7 { background: #1a070c; border-color: #9f1239; }
+  .n7 .node-title { color: #fda4af; }
+  .n7 .layer-tag { background: #4c0519; color: #fda4af; }
+  .a7 .arrow-line::before { background: #f43f5e; }
+  .a7 .arrow-line::after  { border-top: 8px solid #f43f5e; }
+
+  /* 8 Validation */
+  .n8 { background: #100a1f; border-color: #4a1d96; }
+  .n8 .node-title { color: #ddd6fe; }
+  .n8 .layer-tag { background: #2e1065; color: #ddd6fe; }
+  .a8 .arrow-line::before { background: #8b5cf6; }
+  .a8 .arrow-line::after  { border-top: 8px solid #8b5cf6; }
+
+  /* 9 Response */
+  .n9 { background: #0d1b0e; border-color: #15803d; }
+  .n9 .node-title { color: #6ee7b7; }
+  .n9 .layer-tag { background: #052e16; color: #6ee7b7; }
+
+  /* ── Deployment strip ── */
+  .infra-strip {
+    margin-top: 44px;
+    width: 100%;
+    max-width: 560px;
+    background: #061c14;
+    border: 1.5px solid #065f46;
+    border-radius: 14px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .infra-strip .node-icon { font-size: 20px; }
+  .infra-strip .node-title { font-size: 13px; font-weight: 700; color: #6ee7b7; }
+  .infra-strip .node-sub   { font-size: 10.5px; color: #94a3b8; margin-top: 2px; }
+  .infra-items {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+  .infra-chip {
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: #0a2e22;
+    border: 1px solid #065f46;
+    color: #6ee7b7;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Bradford Council Chatbot</h1>
+  <p>Master System Pipeline</p>
+</div>
+
+<div class="pipeline">
+
+  <!-- 1 · Citizen -->
+  <div class="stage-row">
+    <div class="node n1">
+      <div class="node-icon">👤</div>
+      <div class="node-text">
+        <div class="node-title">Citizen</div>
+        <div class="node-sub">Web / Mobile</div>
+      </div>
+      <span class="layer-tag">Frontend</span>
+    </div>
+  </div>
+  <div class="arrow-wrap a1"><div class="arrow-line"></div></div>
+
+  <!-- 2 · .NET Chatbot UI -->
+  <div class="stage-row">
+    <div class="node n2">
+      <div class="node-icon">💬</div>
+      <div class="node-text">
+        <div class="node-title">.NET Chatbot Interface</div>
+        <div class="node-sub">Session · Accessibility · HTTPS</div>
+      </div>
+      <span class="layer-tag">Frontend</span>
+    </div>
+  </div>
+  <div class="arrow-wrap a2"><div class="arrow-line"></div></div>
+
+  <!-- 3 · API Gateway -->
+  <div class="stage-row">
+    <div class="node n3">
+      <div class="node-icon">🔀</div>
+      <div class="node-text">
+        <div class="node-title">API Gateway</div>
+        <div class="node-sub">Auth · Rate Limiting · Routing</div>
+      </div>
+      <span class="layer-tag">Backend</span>
+    </div>
+  </div>
+  <div class="arrow-wrap a3"><div class="arrow-line"></div></div>
+
+  <!-- 4 · Intent + Orchestration -->
+  <div class="stage-row">
+    <div class="node n4">
+      <div class="node-icon">⚙️</div>
+      <div class="node-text">
+        <div class="node-title">Intent Processing &amp; Orchestration</div>
+        <div class="node-sub">Normalise · Route · Domain Services</div>
+      </div>
+      <span class="layer-tag">Backend</span>
+    </div>
+  </div>
+  <div class="arrow-wrap a4"><div class="arrow-line"></div></div>
+
+  <!-- 5 · RAG -->
+  <div class="stage-row">
+    <div class="node n5">
+      <div class="node-icon">🗄️</div>
+      <div class="node-text">
+        <div class="node-title">RAG Retrieval</div>
+        <div class="node-sub">Embed · FAISS Vector Search · Top-K Chunks</div>
+      </div>
+      <span class="layer-tag">AI Services</span>
+    </div>
+  </div>
+  <div class="arrow-wrap a5"><div class="arrow-line"></div></div>
+
+  <!-- 6 · LangChain -->
+  <div class="stage-row">
+    <div class="node n6">
+      <div class="node-icon">🔗</div>
+      <div class="node-text">
+        <div class="node-title">LangChain <span class="n6-badge">New</span></div>
+        <div class="node-sub">Orchestrate · Chain · Memory · Tool Routing</div>
+      </div>
+      <span class="layer-tag">AI Services</span>
+    </div>
+  </div>
+  <div class="arrow-wrap a6"><div class="arrow-line"></div></div>
+
+  <!-- 7 · ChatGPT -->
+  <div class="stage-row">
+    <div class="node n7">
+      <div class="node-icon">🤖</div>
+      <div class="node-text">
+        <div class="node-title">ChatGPT API (GPT-4)</div>
+        <div class="node-sub">Context Injection · Response Generation</div>
+      </div>
+      <span class="layer-tag">AI Services</span>
+    </div>
+  </div>
+  <div class="arrow-wrap a7"><div class="arrow-line"></div></div>
+
+  <!-- 8 · Validation -->
+  <div class="stage-row">
+    <div class="node n8">
+      <div class="node-icon">✅</div>
+      <div class="node-text">
+        <div class="node-title">Response Validation</div>
+        <div class="node-sub">Safety · Accuracy · Policy Compliance</div>
+      </div>
+      <span class="layer-tag">AI Services</span>
+    </div>
+  </div>
+  <div class="arrow-wrap a8"><div class="arrow-line"></div></div>
+
+  <!-- 9 · Delivered -->
+  <div class="stage-row">
+    <div class="node n9">
+      <div class="node-icon">📨</div>
+      <div class="node-text">
+        <div class="node-title">Response Delivered</div>
+        <div class="node-sub">Answer returned to Citizen</div>
+      </div>
+      <span class="layer-tag">Frontend</span>
+    </div>
+  </div>
+
+  <!-- Deployment strip -->
+  <div class="infra-strip">
+    <div class="node-icon">☁️</div>
+    <div>
+      <div class="node-title">Deployment &amp; Infrastructure</div>
+      <div class="infra-items">
+        <span class="infra-chip">GitHub Actions CI/CD</span>
+        <span class="infra-chip">Docker</span>
+        <span class="infra-chip">Microsoft Azure</span>
+        <span class="infra-chip">Monitoring &amp; Alerting</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

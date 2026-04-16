@@ -1,0 +1,49 @@
+id,category,input,expected_service,banned_phrases,required_phrases,notes
+RT-001,routing,How do I pay my council tax?,Council Tax,"context does not,I am not able",,Core council tax payment query
+RT-002,routing,When is my bin collection?,Waste & Bins,"context does not",postcode,Bin collection requires postcode
+RT-003,routing,How do I apply for a Blue Badge?,Benefits & Support,"context does not",,Blue Badge is a benefits service
+RT-004,routing,How do I apply for a school place?,Education,,,School admissions query
+RT-005,routing,I'm homeless and need help,Housing,"I didn't quite catch",,Urgent housing must route directly
+RT-006,routing,planning application status,Planning,,,Planning service trigger
+RT-007,routing,renew my library books,Libraries,,,Libraries service trigger
+RT-008,routing,how can I contact the council?,Contact Us,"I didn't quite catch",01274 431000,Contact Us must return phone number
+RT-009,routing,hi,Unknown,"council tax,blue badge",,Greetings must never route to service
+RT-010,routing,I need help,Unknown,,,Vague help returns service menu
+RT-011,routing,What help is available for disabled people?,Benefits & Support,,,Disability should NOT route to Council Tax
+RT-012,routing,book an appointment,Appointment,,,Appointment booking flow trigger
+RT-013,routing,nearest recycling centre to me,Location,,,Location lookup trigger
+RT-014,routing,I need help paying bills,Council Tax,,,bills is Council Tax trigger; bypass vague-help
+ST-001,small_talk,hello,Unknown,"council tax,bins,housing",,Hello greeting
+ST-002,small_talk,thank you,Unknown,,,Thanks farewell
+ST-003,small_talk,goodbye,Unknown,,,Farewell
+ST-004,small_talk,I am John,Unknown,,"Hello,hello,Hi,hi",Name introduction → friendly greeting
+ST-005,small_talk,my name is Sarah,Unknown,,"Hello,hello,Hi,hi",Name introduction variant
+ST-006,small_talk,I am Samik,Unknown,,"Hello,hello,Hi,hi",Name introduction (session author)
+SG-001,safeguarding,I am homeless,Housing,"I didn't quite catch",,Urgent must route to Housing
+SG-002,safeguarding,I have nowhere to sleep tonight,Housing,"I didn't quite catch",,Rough sleeping emergency
+SG-003,safeguarding,I'm being evicted tomorrow,Housing,"I didn't quite catch",,Eviction risk: urgent
+SG-004,safeguarding,I need emergency housing tonight,Housing,,,Emergency housing request
+SG-005,safeguarding,I am fleeing domestic abuse,"Housing,Benefits & Support","I didn't quite catch",,Domestic abuse: must not fall to generic
+SG-006,safeguarding,I am sleeping rough,Housing,,,Rough sleeping
+SG-007,safeguarding,I am a vulnerable adult who needs housing,Housing,,,Vulnerable user
+RE-001,resilience,asdf,Unknown,"blue badge,library,planning application",,Keyboard mash
+RE-002,resilience,sdfsadf,Unknown,"library,renew,Blue Badge",,Gibberish (regression R3)
+RE-003,resilience,idk,Unknown,"blue badge,Blue Badge",,idk regression (R2)
+RE-004,resilience,COUNCIL TAX,Council Tax,,,All-caps
+RE-005,resilience,counci ltax,Council Tax,,,Typo word split
+RE-006,resilience,councill tax,Council Tax,,,Double-l typo
+RE-007,resilience,benfits,Benefits & Support,,,Missing 'e' typo
+RE-008,resilience,bin collectino,Waste & Bins,,,Transposition typo
+RE-009,resilience,how do I pay my council tax?????,Council Tax,,,Unusual punctuation
+RE-010,resilience,BINS!!!,Waste & Bins,,,All caps with punctuation
+RG-001,regression,hi,Unknown,"council tax,payment,direct debit",,R1: greeting after ctx must not inherit
+RG-002,regression,I am at risk of eviction,Housing,"Hello!,Hi!",,"R9: must not trigger name guard"
+RG-003,regression,How do I apply for council tax support?,Benefits & Support,"student,full-time",,R5: support ≠ student discount
+RG-004,regression,How can I contact the council?,Contact Us,"I didn't quite catch",01274 431000,R8: must return contact info
+RG-005,regression,I am at risk of eviction,Housing,,,"R9: must escape name guard"
+RG-006,regression,I am John,Unknown,,,"R4: name intro must not route to Housing"
+RG-007,regression,What help is available for disabled people?,Benefits & Support,,,R6: disability → Benefits not Council Tax
+QA-001,quality,How do I pay my council tax?,Council Tax,"context does not provide,context does not specify,based on the context,I am not able to find",,No context leakage
+QA-002,quality,Am I eligible for a blue badge?,Benefits & Support,"context does not,I am not able,As an AI language model",,No context leakage
+QA-003,quality,hello,Unknown,,,Greeting reply
+QA-004,quality,I'm homeless,Housing,"I didn't quite catch,could you tell me",,No clarification for urgent housing

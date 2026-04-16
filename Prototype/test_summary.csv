@@ -1,0 +1,15 @@
+Metric,Value
+Total tests,160
+Passed,108
+Overall accuracy %,67.50
+Target met,No
+
+Section,Passed,Total,Accuracy %
+Council Tax,0,20,0.00
+Waste & Bins,19,20,95.00
+Benefits & Support,17,20,85.00
+Education,17,20,85.00
+Planning,20,20,100.00
+Libraries,19,20,95.00
+Housing,10,20,50.00
+Contact Us,6,20,30.00

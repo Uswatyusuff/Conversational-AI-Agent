@@ -1,0 +1,35 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# LangChainService/.dockerignore
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Secrets (injected by docker-compose — NEVER bake the real key into an image)
+.env
+.env.*
+!.env.example
+
+# Data ingestion / scraping scripts — only needed locally to build the FAISS index.
+# The index itself (data/faiss_index/) IS needed and must NOT be excluded.
+scrape_bradford.py
+scrape_bradford_targeted.py
+ingest.py
+
+# Test files
+test_rag.py
+.pytest_cache/
+.coverage
+
+# Packaging artefacts
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/

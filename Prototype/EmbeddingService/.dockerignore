@@ -1,0 +1,28 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# EmbeddingService/.dockerignore
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Secrets (injected by docker-compose, never baked into the image)
+.env
+.env.*
+!.env.example
+
+# Packaging artefacts
+*.egg-info/
+dist/
+build/
+
+# Test cache
+.pytest_cache/
+.coverage
+
+# IDE
+.vscode/
+.idea/

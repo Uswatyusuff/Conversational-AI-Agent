@@ -1,0 +1,357 @@
+{
+  "metadata": {
+    "description": "Bradford Council Chatbot test cases for automated evaluation",
+    "version": "1.0",
+    "categories": ["routing", "quality", "regression", "safeguarding", "resilience"]
+  },
+  "test_cases": [
+
+    // ── Routing ───────────────────────────────────────────────────────────────
+    {
+      "id": "RT-001",
+      "category": "routing",
+      "input": "How do I pay my council tax?",
+      "expected_service": "Council Tax",
+      "banned_phrases": ["context does not", "I am not able"],
+      "required_phrases": [],
+      "notes": "Core council tax payment query"
+    },
+    {
+      "id": "RT-002",
+      "category": "routing",
+      "input": "When is my bin collection?",
+      "expected_service": "Waste & Bins",
+      "banned_phrases": ["context does not", "I am not able"],
+      "required_phrases": ["postcode"],
+      "notes": "Bin collection requires postcode"
+    },
+    {
+      "id": "RT-003",
+      "category": "routing",
+      "input": "How do I apply for a Blue Badge?",
+      "expected_service": "Benefits & Support",
+      "banned_phrases": ["context does not"],
+      "required_phrases": [],
+      "notes": "Blue Badge is a benefits service"
+    },
+    {
+      "id": "RT-004",
+      "category": "routing",
+      "input": "How do I apply for a school place?",
+      "expected_service": "Education",
+      "banned_phrases": [],
+      "required_phrases": [],
+      "notes": "School admissions query"
+    },
+    {
+      "id": "RT-005",
+      "category": "routing",
+      "input": "I'm homeless and need help",
+      "expected_service": "Housing",
+      "banned_phrases": ["I didn't quite catch", "could you tell me more"],
+      "required_phrases": [],
+      "notes": "Urgent housing must route directly"
+    },
+    {
+      "id": "RT-006",
+      "category": "routing",
+      "input": "planning application status",
+      "expected_service": "Planning",
+      "banned_phrases": [],
+      "required_phrases": [],
+      "notes": "Planning service trigger"
+    },
+    {
+      "id": "RT-007",
+      "category": "routing",
+      "input": "renew my library books",
+      "expected_service": "Libraries",
+      "banned_phrases": [],
+      "required_phrases": [],
+      "notes": "Libraries service trigger"
+    },
+    {
+      "id": "RT-008",
+      "category": "routing",
+      "input": "how can I contact the council?",
+      "expected_service": "Contact Us",
+      "banned_phrases": ["I didn't quite catch"],
+      "required_phrases": ["01274 431000"],
+      "notes": "Contact Us must return phone number"
+    },
+    {
+      "id": "RT-009",
+      "category": "routing",
+      "input": "hi",
+      "expected_service": "Unknown",
+      "banned_phrases": ["council tax", "council_tax", "blue badge"],
+      "required_phrases": [],
+      "notes": "Greetings must never route to a service"
+    },
+    {
+      "id": "RT-010",
+      "category": "routing",
+      "input": "I need help",
+      "expected_service": "Unknown",
+      "banned_phrases": [],
+      "required_phrases": [],
+      "notes": "Vague help returns service menu"
+    },
+    {
+      "id": "RT-011",
+      "category": "routing",
+      "input": "What help is available for disabled people?",
+      "expected_service": "Benefits & Support",
+      "banned_phrases": [],
+      "required_phrases": [],
+      "notes": "Disability should NOT route to Council Tax"
+    },
+    {
+      "id": "RT-012",
+      "category": "routing",
+      "input": "book an appointment",
+      "expected_service": "Appointment",
+      "banned_phrases": [],
+      "required_phrases": [],
+      "notes": "Appointment booking flow trigger"
+    },
+    {
+      "id": "RT-013",
+      "category": "routing",
+      "input": "nearest recycling centre to me",
+      "expected_service": "Location",
+      "banned_phrases": [],
+      "required_phrases": [],
+      "notes": "Location lookup trigger"
+    },
+    {
+      "id": "RT-014",
+      "category": "routing",
+      "input": "I need help paying bills",
+      "expected_service": "Council Tax",
+      "banned_phrases": [],
+      "required_phrases": [],
+      "notes": "'bills' is a Council Tax trigger; must bypass vague-help guard"
+    },
+
+    // ── Small talk ────────────────────────────────────────────────────────────
+    {
+      "id": "ST-001",
+      "category": "small_talk",
+      "input": "hello",
+      "expected_service": "Unknown",
+      "banned_phrases": ["council tax", "bins", "housing"],
+      "required_phrases": [],
+      "notes": "Hello greeting"
+    },
+    {
+      "id": "ST-002",
+      "category": "small_talk",
+      "input": "thank you",
+      "expected_service": "Unknown",
+      "banned_phrases": [],
+      "required_phrases": [],
+      "notes": "Thanks farewell"
+    },
+    {
+      "id": "ST-003",
+      "category": "small_talk",
+      "input": "goodbye",
+      "expected_service": "Unknown",
+      "banned_phrases": [],
+      "required_phrases": [],
+      "notes": "Farewell"
+    },
+    {
+      "id": "ST-004",
+      "category": "small_talk",
+      "input": "I am John",
+      "expected_service": "Unknown",
+      "banned_phrases": [],
+      "required_phrases": ["Hello", "hello", "Hi", "hi"],
+      "notes": "Name introduction → friendly greeting"
+    },
+    {
+      "id": "ST-005",
+      "category": "small_talk",
+      "input": "my name is Sarah",
+      "expected_service": "Unknown",
+      "banned_phrases": [],
+      "required_phrases": ["Hello", "hello", "Hi", "hi"],
+      "notes": "Name introduction variant"
+    },
+
+    // ── Safeguarding ──────────────────────────────────────────────────────────
+    {
+      "id": "SG-001",
+      "category": "safeguarding",
+      "input": "I am homeless",
+      "expected_service": "Housing",
+      "banned_phrases": ["I didn't quite catch", "I'm not sure what you mean"],
+      "required_phrases": [],
+      "notes": "Urgent: must route directly to Housing"
+    },
+    {
+      "id": "SG-002",
+      "category": "safeguarding",
+      "input": "I have nowhere to sleep tonight",
+      "expected_service": "Housing",
+      "banned_phrases": ["I didn't quite catch"],
+      "required_phrases": [],
+      "notes": "Rough sleeping emergency"
+    },
+    {
+      "id": "SG-003",
+      "category": "safeguarding",
+      "input": "I'm being evicted tomorrow",
+      "expected_service": "Housing",
+      "banned_phrases": ["I didn't quite catch"],
+      "required_phrases": [],
+      "notes": "Eviction risk: urgent"
+    },
+    {
+      "id": "SG-004",
+      "category": "safeguarding",
+      "input": "I need emergency housing tonight",
+      "expected_service": "Housing",
+      "banned_phrases": [],
+      "required_phrases": [],
+      "notes": "Emergency housing request"
+    },
+    {
+      "id": "SG-005",
+      "category": "safeguarding",
+      "input": "I am fleeing domestic abuse",
+      "expected_service_options": ["Housing", "Benefits & Support"],
+      "banned_phrases": ["I didn't quite catch", "I'm not sure"],
+      "required_phrases": [],
+      "notes": "Domestic abuse: must not fall to generic clarification"
+    },
+
+    // ── Resilience ────────────────────────────────────────────────────────────
+    {
+      "id": "RE-001",
+      "category": "resilience",
+      "input": "asdf",
+      "expected_service": "Unknown",
+      "banned_phrases": ["blue badge", "library", "planning application"],
+      "required_phrases": [],
+      "notes": "Keyboard mash must not return RAG content"
+    },
+    {
+      "id": "RE-002",
+      "category": "resilience",
+      "input": "sdfsadf",
+      "expected_service": "Unknown",
+      "banned_phrases": ["library", "renew", "Blue Badge"],
+      "required_phrases": [],
+      "notes": "Gibberish historically returned Library content (R3)"
+    },
+    {
+      "id": "RE-003",
+      "category": "resilience",
+      "input": "idk",
+      "expected_service": "Unknown",
+      "banned_phrases": ["blue badge", "Blue Badge"],
+      "required_phrases": [],
+      "notes": "'idk' historically returned Blue Badge content (R2)"
+    },
+    {
+      "id": "RE-004",
+      "category": "resilience",
+      "input": "COUNCIL TAX",
+      "expected_service": "Council Tax",
+      "banned_phrases": [],
+      "required_phrases": [],
+      "notes": "All-caps must route correctly"
+    },
+    {
+      "id": "RE-005",
+      "category": "resilience",
+      "input": "counci ltax",
+      "expected_service": "Council Tax",
+      "banned_phrases": [],
+      "required_phrases": [],
+      "notes": "Typo with word split"
+    },
+
+    // ── Regression ────────────────────────────────────────────────────────────
+    {
+      "id": "RG-001",
+      "category": "regression",
+      "input": "hi",
+      "context_service": "Council Tax",
+      "expected_service": "Unknown",
+      "banned_phrases": ["council tax", "payment", "direct debit"],
+      "required_phrases": [],
+      "notes": "R1: greeting after Council Tax must not inherit context"
+    },
+    {
+      "id": "RG-002",
+      "category": "regression",
+      "input": "I am at risk of eviction",
+      "expected_service": "Housing",
+      "banned_phrases": ["Hello!", "Hi!"],
+      "required_phrases": [],
+      "notes": "R9: 'I am at risk of...' must not trigger name-greeting guard"
+    },
+    {
+      "id": "RG-003",
+      "category": "regression",
+      "input": "How do I apply for council tax support?",
+      "expected_service": "Benefits & Support",
+      "banned_phrases": ["student", "full-time student"],
+      "required_phrases": [],
+      "notes": "R5: council tax support ≠ student discount"
+    },
+    {
+      "id": "RG-004",
+      "category": "regression",
+      "input": "How can I contact the council?",
+      "expected_service": "Contact Us",
+      "banned_phrases": ["I didn't quite catch", "could you tell me more"],
+      "required_phrases": ["01274 431000"],
+      "notes": "R8: must return contact info, not clarification"
+    },
+
+    // ── Quality ───────────────────────────────────────────────────────────────
+    {
+      "id": "QA-001",
+      "category": "quality",
+      "input": "How do I pay my council tax?",
+      "expected_service": "Council Tax",
+      "banned_phrases": [
+        "context does not provide",
+        "context does not specify",
+        "the context does not",
+        "based on the context",
+        "I am not able to find",
+        "I cannot find"
+      ],
+      "required_phrases": [],
+      "notes": "Must never expose internal context references"
+    },
+    {
+      "id": "QA-002",
+      "category": "quality",
+      "input": "Am I eligible for a blue badge?",
+      "expected_service": "Benefits & Support",
+      "banned_phrases": [
+        "context does not",
+        "I am not able",
+        "As an AI language model"
+      ],
+      "required_phrases": [],
+      "notes": "No AI/context leakage in benefits reply"
+    },
+    {
+      "id": "QA-003",
+      "category": "quality",
+      "input": "hello",
+      "expected_service": "Unknown",
+      "min_reply_length": 5,
+      "max_reply_length": 200,
+      "notes": "Greeting reply should be short but not empty"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# docker-compose.yml  —  Development / local build
+#
+# Run from the PROJECT ROOT (not from Infrastructure/):
+#
+#   docker compose -f Infrastructure/docker-compose.yml up --build
+#
+# Docker Compose reads .env from the current working directory, so running
+# from the project root means the root-level .env file is picked up
+# automatically and ${OPENAI_API_KEY} resolves correctly.
+# ─────────────────────────────────────────────────────────────────────────────
+
+services:
+
+  # ── 1. Embedding service (sentence-transformers, CPU-only) ──────────────────
+  embeddingservice:
+    build:
+      context: ../EmbeddingService
+      dockerfile: Dockerfile
+    container_name: embeddingservice
+    ports:
+      - "8001:8001"
+    restart: unless-stopped
+    networks:
+      - chatbot-net
+    # Healthcheck mirrors the HEALTHCHECK in EmbeddingService/Dockerfile.
+    # start_period covers the ~60 s it takes to load the sentence-transformers model.
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 90s
+
+  # ── 2. LangChain / agent service ────────────────────────────────────────────
+  langchainservice:
+    build:
+      context: ../LangChainService
+      dockerfile: Dockerfile
+    container_name: langchainservice
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_MODEL: gpt-4o-mini
+      # CRITICAL: must use the Docker service name, NOT localhost/127.0.0.1.
+      # Without this, every RAG call fails with "connection refused" because
+      # localhost inside this container is the container itself.
+      EMBEDDING_URL: http://embeddingservice:8001/embed
+      # Used by tools.py when it calls back to the .NET API for postcode/bin lookups.
+      BACKEND_BASE_URL: http://councilchatbot:8080
+    ports:
+      - "8010:8010"
+    restart: unless-stopped
+    networks:
+      - chatbot-net
+    depends_on:
+      embeddingservice:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8010/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  # ── 3. ASP.NET Core chatbot ──────────────────────────────────────────────────
+  councilchatbot:
+    build:
+      context: ..
+      dockerfile: Infrastructure/Dockerfile
+    container_name: councilchatbot
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_URLS: http://+:8080
+      ASPNETCORE_ENVIRONMENT: Production
+      OpenAI__ApiKey: ${OPENAI_API_KEY}
+      # CRITICAL: use Docker service names, not 127.0.0.1.
+      # appsettings.json has 127.0.0.1 as defaults; these env vars override them.
+      EmbeddingService__BaseUrl: http://embeddingservice:8001
+      LangChain__BaseUrl: http://langchainservice:8010
+      Playwright__TargetUrl: https://onlineforms.bradford.gov.uk/ufs/collectiondates.eb
+      Playwright__Headless: "true"
+      Playwright__WaitAfterSubmitMs: "2000"
+    depends_on:
+      embeddingservice:
+        condition: service_healthy
+      langchainservice:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - chatbot-net
+    volumes:
+      - chatbot_logs:/app/Logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      # Generous start_period: on first run the app calls EmbeddingService to build
+      # chunk embeddings during DI initialisation before HTTP becomes available.
+      start_period: 180s
+
+volumes:
+  chatbot_logs:
+
+networks:
+  chatbot-net:
+    driver: bridge
